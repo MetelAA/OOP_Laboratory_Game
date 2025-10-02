@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.24)
+project(laba1)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(laba1 main.cpp Entities/Creatures/Creature.cpp Entities/Creatures/Creature.h Entities/Creatures/Player.cpp Entities/Creatures/Player.h Entities/Creatures/Enemy.cpp Entities/Creatures/Enemy.h GameField/Field.cpp GameField/Field.h GameField/Cell.cpp GameField/Cell.h GameManagers/GameSetup.cpp GameManagers/GameSetup.h GameManagers/GameMaster.cpp GameManagers/GameMaster.h Entities/Entity.cpp Entities/Entity.h Entities/buildings/Building.cpp Entities/buildings/Building.h Entities/buildings/EnemyBuilding.cpp Entities/buildings/EnemyBuilding.h Exceptions/UniversalStringException.h Exceptions/CoordinateException.h Entities/Creatures/Attacks/Attack.cpp Entities/Creatures/Attacks/Attack.h GameManagers/EntityManagers/CreatureManagers/PlayerManager.cpp GameManagers/EntityManagers/CreatureManagers/PlayerManager.h GameManagers/EntityManagers/CreatureManagers/CreatureManager.cpp GameManagers/EntityManagers/CreatureManagers/CreatureManager.h GameManagers/EntityManagers/CreatureManagers/EnemyManager.cpp GameManagers/EntityManagers/CreatureManagers/EnemyManager.h GameField/CellType.h Exceptions/CellImpassableException.h Entities/EntityType.h)

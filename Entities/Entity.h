@@ -1,0 +1,28 @@
+//
+// Created by Artem on 24.09.2025.
+//
+
+#ifndef LABA1_ENTITY_H
+#define LABA1_ENTITY_H
+#include "EntityType.h"
+
+class Entity {
+private:
+
+public:
+    Entity(int xCoordinate, int yCoordinate, EntityType type) : xCoordinate(xCoordinate), yCoordinate(yCoordinate),
+                                                                type(type) {}
+
+    virtual int getXCoordinate() const noexcept final;
+
+    virtual int getYCoordinate() const noexcept final;
+
+    virtual EntityType getType() const noexcept final;
+
+protected:
+    int xCoordinate, yCoordinate;
+    EntityType type;
+};
+
+
+#endif //LABA1_ENTITY_H

@@ -1,0 +1,16 @@
+# ninja log v5
+4	792	7811168970640988	CMakeFiles/laba1.dir/Entities/Creatures/Player.cpp.obj	e0d7e300017a2b6f
+96	836	7811168971072474	CMakeFiles/laba1.dir/Entities/Creatures/Creature.cpp.obj	11d29137020eddc9
+137	814	7811169072619624	laba1.exe	3c447281bfe8b10
+109	764	7811168970357920	CMakeFiles/laba1.dir/Entities/Creatures/Enemy.cpp.obj	80d0b8035acbdad5
+39	707	7804316092323474	CMakeFiles/laba1.dir/GameSetup/GameSetup.cpp.obj	9e7eefc8f05a4e8e
+52	271	7804348173958632	CMakeFiles/laba1.dir/Entities/Entity.cpp.obj	4d2aace1b41476e
+69	710	7804316092522927	CMakeFiles/laba1.dir/GameField/cell.cpp.obj	63edf3139a154e5e
+3	137	7811169065902409	CMakeFiles/laba1.dir/GameField/Field.cpp.obj	b65fddd25910d0e1
+77	708	7804316092393283	CMakeFiles/laba1.dir/Entities/buildings/EnemyBuilding.cpp.obj	6bb5c52f5653f1ea
+687	805	7804316093661749	CMakeFiles/laba1.dir/GameSetup/GameMaster.cpp.obj	fd571eb12fa714f2
+61	738	7804348178683212	CMakeFiles/laba1.dir/main.cpp.obj	493afed3ef32e290
+34	223	7804327032392500	CMakeFiles/laba1.dir/Entities/buildings/Building.cpp.obj	efdf5b9b6ea32c03
+1	330	7811367773976545	build.ninja	ef654d6951f74a44
+115	757	7811168970289081	CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj	fdb04c5af90fee09
+35	273	7804348173978575	CMakeFiles/laba1.dir/GameField/Cell.cpp.obj	9cf7d2531e58dfdb
