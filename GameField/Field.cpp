@@ -3,6 +3,8 @@
 //
 
 #include "Field.h"
+#include "../Exceptions/CoordinateException.h"
+#include "../Exceptions/CellImpassableException.h"
 
 int Field::getWidth() const noexcept {
     return width;
@@ -14,6 +16,37 @@ int Field::getHeight() const noexcept {
 
 std::vector<std::vector<Cell>> &Field::getFieldCells() noexcept{
     return cells;
+}
+
+
+bool Field::canMoveToOrSpawnOn(int x, int y) {
+    if (x < 0 || x >= this->width){
+        throw CoordinateException{"x coordinate must be between 0 and "
+                                  + std::to_string(this->width)
+                                  + " but x is "
+                                  + std::to_string(x)
+                                  + '\n'};
+    }
+
+    if (y < 0 || y >= this->height){
+        throw CoordinateException{"y coordinate must be between 0 and "
+                                  + std::to_string(this->height)
+                                  + " but y is "
+                                  + std::to_string(y)
+                                  + '\n'};
+    }
+
+    Cell fieldCell = this->cells[x][y];
+
+    if (fieldCell.getType() != CellType::Impassable){
+        throw CellImpassableException("cell is impassible, wall or something sht like that");
+    }
+
+    if (fieldCell.hasEntityInCell() && fieldCell.getEntityInCell().getType() == EntityType::EnemyBuildingEnt){
+        throw CellImpassableException("cell is occupied by enemy building");
+    }
+
+    return true;
 }
 
 

@@ -18,6 +18,7 @@ public:
     int getWidth() const noexcept; //return data
     int getHeight() const noexcept; //return data
     std::vector<std::vector<Cell>>& getFieldCells() noexcept; //returns instance to modify
+    virtual bool canMoveToOrSpawnOn(int dx, int dy) final;
 
 protected:
     int width = 10, height = 10;

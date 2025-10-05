@@ -15,3 +15,7 @@ int Entity::getYCoordinate() const noexcept{
 EntityType Entity::getType() const noexcept{
     return type;
 }
+
+int Entity::getHealthPoints() const noexcept {
+    return healthPoint;
+}

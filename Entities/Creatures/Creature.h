@@ -4,21 +4,25 @@
 #include <string>
 #include "../EntityType.h"
 
-class Creature : public Entity{
+class Creature : public Entity {
 private:
 
 public:
-    Creature(int xCoordinate, int yCoordinate, int healthPoints, EntityType type) : Entity(xCoordinate, yCoordinate, type){
-        this->healthPoints = healthPoints;
-    }
+    Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isSlowedFlag) : Entity(
+            xCoordinate, yCoordinate, healthPoint, type), isSlowedFlag(isSlowedFlag) {}
 
     virtual bool isAlive() noexcept final;
-    virtual void getHP(int dHealth) noexcept final;
+
+    virtual int getHP() noexcept final;
+
+    virtual bool isSlowed() noexcept final;
+
     virtual void setXCoordinate(int x) noexcept final;
+
     virtual void setYCoordinate(int y) noexcept final;
 
 protected:
-    int healthPoints;
+    bool isSlowedFlag;
 };
 
 

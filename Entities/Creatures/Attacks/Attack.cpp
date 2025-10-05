@@ -3,3 +3,11 @@
 //
 
 #include "Attack.h"
+
+AttackType Attack::getType() noexcept {
+    return type;
+}
+
+int Attack::getDamage() noexcept {
+    return damage;
+}

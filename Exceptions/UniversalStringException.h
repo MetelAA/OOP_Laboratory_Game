@@ -13,6 +13,7 @@ public:
     {
         return message.c_str();
     }
+
 private:
     std::string message;
 };

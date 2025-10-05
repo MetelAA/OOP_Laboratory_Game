@@ -4,3 +4,6 @@
 
 #include "Enemy.h"
 
+int Enemy::getDamage() noexcept {
+    return damage;
+}

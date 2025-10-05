@@ -14,18 +14,11 @@
 class CreatureManager {
 public:
     CreatureManager(Creature &creature, Field &field) : creature(creature), field(field) {}
-
-    virtual void moveTo(int dx, int dy) final;
-    virtual bool canMoveTo(int dx, int dy) final;
-
-
-
-private:
-    Creature &creature;
-    Field &field;
+    virtual void moveTo(int dx, int dy) = 0;
 
 protected:
-
+    Creature &creature;
+    Field &field;
 };
 
 

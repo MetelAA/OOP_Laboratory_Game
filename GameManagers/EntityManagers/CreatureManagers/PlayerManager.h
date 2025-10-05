@@ -8,7 +8,7 @@
 
 class PlayerManager : CreatureManager{
 
-    PlayerManager() {}
+
 };
 
 

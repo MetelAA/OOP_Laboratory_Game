@@ -2,12 +2,10 @@
 #include "Creature.h"
 
 
-void Creature::getHP(int dHealth) noexcept{
-    this->healthPoints + dHealth;
-}
+
 
 bool Creature::isAlive() noexcept{
-    return this->healthPoints > 0;
+    return this->healthPoint > 0;
 }
 
 void Creature::setYCoordinate(int y) noexcept{
@@ -17,3 +15,12 @@ void Creature::setYCoordinate(int y) noexcept{
 void Creature::setXCoordinate(int x) noexcept{
     this->xCoordinate = x;
 }
+
+int Creature::getHP() noexcept {
+    return this->healthPoint;
+}
+
+bool Creature::isSlowed() noexcept {
+    return isSlowedFlag;
+}
+

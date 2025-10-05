@@ -9,10 +9,10 @@
 
 class Enemy : public Creature {
 public:
-    Enemy(int xCoordinate, int yCoordinate, int healthPoints, int damage) : Creature(xCoordinate, yCoordinate,
-                                                                                     healthPoints, EntityType::EnemyEnt),
-                                                                            damage(damage) {
-    }
+    Enemy(int xCoordinate, int yCoordinate, int healthPoint, bool isSlowedFlag, int damage) : Creature(
+            xCoordinate, yCoordinate, healthPoint, EntityType::EnemyEnt, isSlowedFlag), damage(damage) {}
+
+    virtual int getDamage() noexcept final;
 
 private:
 

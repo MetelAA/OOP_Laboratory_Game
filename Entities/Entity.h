@@ -10,8 +10,12 @@ class Entity {
 private:
 
 public:
-    Entity(int xCoordinate, int yCoordinate, EntityType type) : xCoordinate(xCoordinate), yCoordinate(yCoordinate),
-                                                                type(type) {}
+    Entity(int xCoordinate, int yCoordinate, int healthPoint, EntityType type) : xCoordinate(xCoordinate),
+                                                                                 yCoordinate(yCoordinate),
+                                                                                 healthPoint(healthPoint),
+                                                                                 type(type) {
+    }
+
 
     virtual int getXCoordinate() const noexcept final;
 
@@ -19,8 +23,10 @@ public:
 
     virtual EntityType getType() const noexcept final;
 
+    virtual int getHealthPoints() const noexcept final;
+
 protected:
-    int xCoordinate, yCoordinate;
+    int xCoordinate, yCoordinate, healthPoint;
     EntityType type;
 };
 

@@ -4,12 +4,25 @@
 
 #ifndef LABA1_PLAYER_H
 #define LABA1_PLAYER_H
-#include "Creature.h"
 
-class Player : public Creature{
+#include "Creature.h"
+#include "Attacks/LongRangeAttack.h"
+#include "Attacks/CloseRangeAttack.h"
+
+class Player : public Creature {
 public:
-    Player(int xCoordinate, int yCoordinate, int healthPoints) : Creature(xCoordinate, yCoordinate,
-                                                                                  healthPoints, EntityType::PlayerEnt) {}
+    Player(int xCoordinate, int yCoordinate, int healthPoint, bool isSlowedFlag,
+           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack) :
+            Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isSlowedFlag),
+            closeRangeAttack(closeRangeAttack),
+            longRangeAttack(longRangeAttack) {}
+
+    virtual CloseRangeAttack &getCloseRangeAttack() noexcept final; //gets link with modify opportunities
+    virtual LongRangeAttack &getLongRangeAttack() noexcept final; //gets link with modify opportunities
+
+protected:
+    CloseRangeAttack closeRangeAttack;
+    LongRangeAttack longRangeAttack;
 };
 
 
