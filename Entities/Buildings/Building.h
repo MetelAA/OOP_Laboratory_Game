@@ -7,12 +7,11 @@
 
 #include "../Entity.h"
 
-class Building : Entity{
+class Building : public Entity{
 public:
     Building(int xCoordinate, int yCoordinate, int healthPoint, EntityType type) : Entity(xCoordinate,
                                                                                           yCoordinate,
                                                                                           healthPoint, type) {}
-
 };
 
 

@@ -8,7 +8,7 @@
 #include <string>
 #include "UniversalStringException.h"
 
-class CellImpassableException : UniversalStringException{
+class CellImpassableException : public UniversalStringException{
 public:
     explicit CellImpassableException(const std::string &message) : UniversalStringException(message) {}
 };

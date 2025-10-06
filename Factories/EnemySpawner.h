@@ -9,14 +9,14 @@
 #include "../GameField/Field.h"
 #include "../Exceptions/CellImpassableException.h"
 #include "../Exceptions/CoordinateException.h"
-#include "../Exceptions/CanNotSpawnEntityException.h"
+#include "../Exceptions/SpawnEntityException.h"
 
 
 class EnemySpawner {
 public:
     EnemySpawner(EnemyModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
 
-    Enemy createEnemy(int x, int y, bool isSlowed);
+    Enemy& createEnemy(int x, int y);
 
 protected:
     EnemyModel& enemyModel;

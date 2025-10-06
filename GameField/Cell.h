@@ -10,23 +10,28 @@
 
 class Cell {
 public:
-    Cell(int xCoordinate, int yCoordinate, CellType type) : xCoordinate(xCoordinate),yCoordinate(yCoordinate),
-                                                                                        type(type){
-    }
+    Cell(int xCoordinate, int yCoordinate, CellType type) : xCoordinate(
+            xCoordinate), yCoordinate(yCoordinate), type(type){}
 
 
     int getXCoordinate() const noexcept;
+
     int getYCoordinate() const noexcept;
+
     CellType getType() const noexcept;
+
+    void setEntityInCell(Entity *entity) noexcept;
+
     bool hasEntityInCell() const noexcept;
-    const Entity& getEntityInCell() const noexcept;
+
+    Entity& getEntityInCell() const;
 
 private:
 
 protected:
     int xCoordinate, yCoordinate;
     CellType type;
-    Entity* entityInCell;
+    Entity *entityInCell;
 
 
 };

@@ -5,17 +5,15 @@
 #include "EnemySpawner.h"
 
 
-Enemy EnemySpawner::createEnemy(int x, int y, bool isSlowed) {
-
+Enemy& EnemySpawner::createEnemy(int x, int y) {
     try{
         this->field.canMoveToOrSpawnOn(x, y);
-        return Enemy(x, y, enemyModel.healthPoint, isSlowed, enemyModel.damage);
+        Enemy *enemy = new Enemy(x, y, enemyModel.healthPoint, this->field.getFieldCells()[x][y].getType() == CellType::Slowing, enemyModel.damage);
+        this->field.getFieldCells()[x][y].setEntityInCell(enemy);
+        return *enemy;
     }catch (CellImpassableException& ex){
-        ex.what();
-        throw CanNotSpawnEntityException("Can't spawn enemy because: " + ex.what());
+        throw SpawnEntityException(std::string("Can't spawn enemy because: ") + ex.what());
     }catch (CoordinateException& ex){
-
+        throw SpawnEntityException(std::string("Can't spawn enemy because: ") + ex.what());
     }
-
-
 }

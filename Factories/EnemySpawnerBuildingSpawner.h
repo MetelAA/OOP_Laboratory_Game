@@ -1,0 +1,14 @@
+//
+// Created by Artem on 05.10.2025.
+//
+
+#ifndef LABA1_ENEMYSPAWNERBUILDINGSPAWNER_H
+#define LABA1_ENEMYSPAWNERBUILDINGSPAWNER_H
+
+
+class EnemySpawnerBuildingSpawner {
+
+};
+
+
+#endif //LABA1_ENEMYSPAWNERBUILDINGSPAWNER_H

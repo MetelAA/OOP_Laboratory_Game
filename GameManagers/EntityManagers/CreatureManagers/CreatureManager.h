@@ -6,19 +6,14 @@
 #define LABA1_CREATUREMANAGER_H
 #include "../../../Entities/Creatures/Creature.h"
 #include "../../../GameField/Field.h"
-#include "../../../Exceptions/CoordinateException.h"
-#include "../../../GameField/CellType.h"
-#include "../../../Exceptions/CellImpassableException.h"
-#include "../../../Entities/EntityType.h"
+#include "../EntityManager.h"
 
-class CreatureManager {
+class CreatureManager : public EntityManager{
 public:
-    CreatureManager(Creature &creature, Field &field) : creature(creature), field(field) {}
-    virtual void moveTo(int dx, int dy) = 0;
+    explicit CreatureManager(Field &field) : EntityManager(field) {}
 
 protected:
-    Creature &creature;
-    Field &field;
+
 };
 
 

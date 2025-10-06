@@ -19,3 +19,11 @@ EntityType Entity::getType() const noexcept{
 int Entity::getHealthPoints() const noexcept {
     return healthPoint;
 }
+
+void Entity::changeHealthPoint(int dHP) noexcept {
+    this->healthPoint + dHP;
+}
+
+bool Entity::isAlive() noexcept {
+    return this->healthPoint > 0;
+}

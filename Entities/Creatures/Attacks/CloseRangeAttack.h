@@ -6,7 +6,7 @@
 #define LABA1_CLOSERANGEATTACK_H
 #include "Attack.h"
 
-class CloseRangeAttack : Attack{
+class CloseRangeAttack : public Attack{
 public:
     CloseRangeAttack(int damage) : Attack(damage, AttackType::CloseRange){}
 

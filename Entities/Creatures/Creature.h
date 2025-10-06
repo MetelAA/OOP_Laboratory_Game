@@ -11,10 +11,6 @@ public:
     Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isSlowedFlag) : Entity(
             xCoordinate, yCoordinate, healthPoint, type), isSlowedFlag(isSlowedFlag) {}
 
-    virtual bool isAlive() noexcept final;
-
-    virtual int getHP() noexcept final;
-
     virtual bool isSlowed() noexcept final;
 
     virtual void setXCoordinate(int x) noexcept final;

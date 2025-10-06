@@ -16,6 +16,8 @@ public:
                                                                                  type(type) {
     }
 
+    Entity() {}
+
 
     virtual int getXCoordinate() const noexcept final;
 
@@ -24,6 +26,10 @@ public:
     virtual EntityType getType() const noexcept final;
 
     virtual int getHealthPoints() const noexcept final;
+
+    virtual void changeHealthPoint(int dHP) noexcept final;
+
+    virtual bool isAlive() noexcept final;
 
 protected:
     int xCoordinate, yCoordinate, healthPoint;

@@ -6,7 +6,7 @@
 #define LABA1_LONGRANGEATTACK_H
 #include "Attack.h"
 
-class LongRangeAttack : Attack{
+class LongRangeAttack : public Attack{
 public:
     LongRangeAttack(int damage, int range) : Attack(damage, AttackType::LongRange), range(range){}
 protected:

@@ -16,11 +16,16 @@ CellType Cell::getType() const noexcept{
     return type;
 }
 
-const Entity &Cell::getEntityInCell() const noexcept{
-    return *entityInCell;
+bool Cell::hasEntityInCell() const noexcept{
+    return this->entityInCell != nullptr;
 }
 
-bool Cell::hasEntityInCell() const noexcept{
-    return entityInCell != nullptr;
+Entity &Cell::getEntityInCell() const {
+    return *this->entityInCell;
 }
+
+void Cell::setEntityInCell(Entity *entity) noexcept {
+    this->entityInCell = entity;
+}
+
 
