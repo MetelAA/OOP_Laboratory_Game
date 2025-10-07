@@ -8,8 +8,9 @@ class Creature : public Entity {
 private:
 
 public:
-    Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isSlowedFlag) : Entity(
-            xCoordinate, yCoordinate, healthPoint, type), isSlowedFlag(isSlowedFlag) {}
+
+    Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isSlowedFlag, int stepRange)
+            : Entity(xCoordinate, yCoordinate, healthPoint, type), isSlowedFlag(isSlowedFlag), stepRange(stepRange) {}
 
     virtual bool isSlowed() noexcept final;
 
@@ -17,8 +18,11 @@ public:
 
     virtual void setYCoordinate(int y) noexcept final;
 
+    virtual int getStepRange() noexcept final;
+
 protected:
     bool isSlowedFlag;
+    int stepRange;
 };
 
 

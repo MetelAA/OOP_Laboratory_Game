@@ -15,3 +15,7 @@ bool Creature::isSlowed() noexcept {
     return isSlowedFlag;
 }
 
+int Creature::getStepRange() noexcept {
+    return this->stepRange;
+}
+

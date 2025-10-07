@@ -368,6 +368,30 @@ Factories/EnemySpawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.s
 .PHONY : Factories/EnemySpawner.cpp.s
 
+Factories/EnemySpawnerBuildingSpawner.obj: Factories/EnemySpawnerBuildingSpawner.cpp.obj
+.PHONY : Factories/EnemySpawnerBuildingSpawner.obj
+
+# target to build an object file
+Factories/EnemySpawnerBuildingSpawner.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj
+.PHONY : Factories/EnemySpawnerBuildingSpawner.cpp.obj
+
+Factories/EnemySpawnerBuildingSpawner.i: Factories/EnemySpawnerBuildingSpawner.cpp.i
+.PHONY : Factories/EnemySpawnerBuildingSpawner.i
+
+# target to preprocess a source file
+Factories/EnemySpawnerBuildingSpawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.i
+.PHONY : Factories/EnemySpawnerBuildingSpawner.cpp.i
+
+Factories/EnemySpawnerBuildingSpawner.s: Factories/EnemySpawnerBuildingSpawner.cpp.s
+.PHONY : Factories/EnemySpawnerBuildingSpawner.s
+
+# target to generate assembly for a file
+Factories/EnemySpawnerBuildingSpawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.s
+.PHONY : Factories/EnemySpawnerBuildingSpawner.cpp.s
+
 GameField/Cell.obj: GameField/Cell.cpp.obj
 .PHONY : GameField/Cell.obj
 
@@ -415,6 +439,30 @@ GameField/Field.s: GameField/Field.cpp.s
 GameField/Field.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/GameField/Field.cpp.s
 .PHONY : GameField/Field.cpp.s
+
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.obj: GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.obj
+
+# target to build an object file
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj
+
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.i: GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.i
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.i
+
+# target to preprocess a source file
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.i
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.i
+
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.s: GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.s
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.s
+
+# target to generate assembly for a file
+GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba1.dir\build.make CMakeFiles/laba1.dir/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.s
+.PHONY : GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.s
 
 GameManagers/EntityManagers/CreatureManagers/EnemyManager.obj: GameManagers/EntityManagers/CreatureManagers/EnemyManager.cpp.obj
 .PHONY : GameManagers/EntityManagers/CreatureManagers/EnemyManager.obj
@@ -575,12 +623,18 @@ help:
 	@echo ... Factories/EnemySpawner.obj
 	@echo ... Factories/EnemySpawner.i
 	@echo ... Factories/EnemySpawner.s
+	@echo ... Factories/EnemySpawnerBuildingSpawner.obj
+	@echo ... Factories/EnemySpawnerBuildingSpawner.i
+	@echo ... Factories/EnemySpawnerBuildingSpawner.s
 	@echo ... GameField/Cell.obj
 	@echo ... GameField/Cell.i
 	@echo ... GameField/Cell.s
 	@echo ... GameField/Field.obj
 	@echo ... GameField/Field.i
 	@echo ... GameField/Field.s
+	@echo ... GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.obj
+	@echo ... GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.i
+	@echo ... GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.s
 	@echo ... GameManagers/EntityManagers/CreatureManagers/EnemyManager.obj
 	@echo ... GameManagers/EntityManagers/CreatureManagers/EnemyManager.i
 	@echo ... GameManagers/EntityManagers/CreatureManagers/EnemyManager.s

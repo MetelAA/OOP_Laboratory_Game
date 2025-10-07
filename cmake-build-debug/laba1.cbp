@@ -144,13 +144,13 @@
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Entities/EntityType.h">
 			<Option target="laba1"/>
 		</Unit>
-		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Exceptions/CanNotSpawnEntityException.h">
-			<Option target="laba1"/>
-		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Exceptions/CellImpassableException.h">
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h">
+			<Option target="laba1"/>
+		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h">
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h">
@@ -160,6 +160,12 @@
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.h">
+			<Option target="laba1"/>
+		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Factories/EnemySpawnerBuildingSpawner.cpp">
+			<Option target="laba1"/>
+		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/Factories/EnemySpawnerBuildingSpawner.h">
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameField/Cell.cpp">
@@ -177,6 +183,12 @@
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameField/Field.h">
 			<Option target="laba1"/>
 		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp">
+			<Option target="laba1"/>
+		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h">
+			<Option target="laba1"/>
+		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/EntityManagers/CreatureManagers/CreatureManager.h">
 			<Option target="laba1"/>
 		</Unit>
@@ -190,6 +202,9 @@
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/EntityManagers/CreatureManagers/PlayerManager.h">
+			<Option target="laba1"/>
+		</Unit>
+		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/EntityManagers/EntityManager.h">
 			<Option target="laba1"/>
 		</Unit>
 		<Unit filename="C:/Users/Artem/clionProj/OOP_Laboratory_Game/GameManagers/GameMaster.cpp">

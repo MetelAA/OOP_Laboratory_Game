@@ -16,8 +16,6 @@ public:
                                                                                  type(type) {
     }
 
-    Entity() {}
-
 
     virtual int getXCoordinate() const noexcept final;
 
