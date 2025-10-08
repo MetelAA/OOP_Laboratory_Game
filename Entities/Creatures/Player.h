@@ -12,13 +12,13 @@
 class Player : public Creature {
 public:
     Player(int xCoordinate, int yCoordinate, int healthPoint, bool isSlowedFlag,
-           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack) :
-            Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isSlowedFlag),
+           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack, int stepRange) :
+            Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isSlowedFlag, stepRange),
             closeRangeAttack(closeRangeAttack),
             longRangeAttack(longRangeAttack) {}
 
-    virtual CloseRangeAttack &getCloseRangeAttack() noexcept final; //gets link with modify opportunities
-    virtual LongRangeAttack &getLongRangeAttack() noexcept final; //gets link with modify opportunities
+    virtual CloseRangeAttack getCloseRangeAttack() noexcept final; //gets link with modify opportunities
+    virtual LongRangeAttack getLongRangeAttack() noexcept final; //gets link with modify opportunities
 
 protected:
     CloseRangeAttack closeRangeAttack;

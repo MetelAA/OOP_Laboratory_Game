@@ -3,3 +3,7 @@
 //
 
 #include "LongRangeAttack.h"
+
+int LongRangeAttack::getRange() const noexcept {
+    return this->range;
+}

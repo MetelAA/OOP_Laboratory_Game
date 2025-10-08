@@ -4,14 +4,6 @@
 
 #include "Cell.h"
 
-int Cell::getXCoordinate() const noexcept{
-    return xCoordinate;
-}
-
-int Cell::getYCoordinate() const noexcept{
-    return yCoordinate;
-}
-
 CellType Cell::getType() const noexcept{
     return type;
 }
@@ -24,8 +16,12 @@ Entity &Cell::getEntityInCell() const {
     return *this->entityInCell;
 }
 
-void Cell::setEntityInCell(Entity *entity) noexcept {
+void Cell::addEntityInCell(Entity *entity) noexcept {
     this->entityInCell = entity;
+}
+
+void Cell::clearCell() noexcept {
+    this->entityInCell = nullptr;
 }
 
 

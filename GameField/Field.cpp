@@ -19,7 +19,7 @@ std::vector<std::vector<Cell>> &Field::getFieldCells() noexcept {
 }
 
 
-bool Field::canMoveToOrSpawnOn(int x, int y) {
+bool Field::canMoveToOrSpawnOn(int x, int y) const {
     if (x < 0 || x >= this->width) {
         throw CoordinateException{"x coordinate must be between 0 and "
                                   + std::to_string(this->width)
@@ -49,17 +49,22 @@ bool Field::canMoveToOrSpawnOn(int x, int y) {
     return true;
 }
 
-std::vector<std::pair<int, int>>
-Field::hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) noexcept {
-    std::vector<std::pair<int, int>> result;
-    for (std::pair<int, int> pair: this->dxdys) {
-        if ((x + pair.first) >= 0 && (x + pair.first) < this->width && (y + pair.second) >= 0 &&
-            (y + pair.second) < this->height) {
-            if (this->cells[x + pair.first][y + pair.second].hasEntityInCell() &&
-                types.count(this->cells[x + pair.first][y + pair.second].getEntityInCell().getType()) > 0) {
-                result.emplace_back(x + pair.first, y + pair.second);
+std::vector<Constants::XYPair> Field::hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept { //возварщает координаты стоящих в радиусе атаки Entity определённых типов
+    std::vector<Constants::XYPair> result;
+    for (Constants::XYPair pair: Constants::dxdys) {
+        if ((x + pair.x) >= 0 && (x + pair.x) < this->width
+        && (y + pair.y) >= 0 && (y + pair.y) < this->height) {
+            if (this->cells[x + pair.x][y + pair.y].hasEntityInCell() &&
+                types.count(this->cells[x + pair.x][y + pair.y].getEntityInCell().getType()) > 0) {
+                result.push_back({x + pair.x, y + pair.y});
             }
         }
     }
     return result;
 }
+
+const std::vector<std::vector<Cell>> &Field::getFieldCells() const noexcept {
+    return this->cells;
+}
+
+

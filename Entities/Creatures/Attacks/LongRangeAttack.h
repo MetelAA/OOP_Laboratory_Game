@@ -9,6 +9,8 @@
 class LongRangeAttack : public Attack{
 public:
     LongRangeAttack(int damage, int range) : Attack(damage, AttackType::LongRange), range(range){}
+
+    virtual int getRange() const noexcept final;
 protected:
     int range;
 };

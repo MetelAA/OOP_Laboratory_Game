@@ -85,17 +85,17 @@ build CMakeFiles/laba1.dir/GameField/Cell.cpp.obj: CXX_COMPILER__laba1_Debug D$:
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameField
 
-build CMakeFiles/laba1.dir/GameManagers/GameSetup.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagers/GameSetup.cpp || cmake_object_order_depends_target_laba1
-  DEP_FILE = CMakeFiles\laba1.dir\GameManagers\GameSetup.cpp.obj.d
+build CMakeFiles/laba1.dir/GameManagment/GameSetup.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/GameSetup.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\GameSetup.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagers
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment
 
-build CMakeFiles/laba1.dir/GameManagers/GameMaster.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagers/GameMaster.cpp || cmake_object_order_depends_target_laba1
-  DEP_FILE = CMakeFiles\laba1.dir\GameManagers\GameMaster.cpp.obj.d
+build CMakeFiles/laba1.dir/GameManagment/GameMaster.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/GameMaster.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\GameMaster.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagers
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment
 
 build CMakeFiles/laba1.dir/Entities/Entity.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/Entities/Entity.cpp || cmake_object_order_depends_target_laba1
   DEP_FILE = CMakeFiles\laba1.dir\Entities\Entity.cpp.obj.d
@@ -121,17 +121,17 @@ build CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj: CXX_COMPIL
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir\Entities\Creatures\Attacks
 
-build CMakeFiles/laba1.dir/GameManagers/EntityManagers/CreatureManagers/PlayerManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagers/EntityManagers/CreatureManagers/PlayerManager.cpp || cmake_object_order_depends_target_laba1
-  DEP_FILE = CMakeFiles\laba1.dir\GameManagers\EntityManagers\CreatureManagers\PlayerManager.cpp.obj.d
+build CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\EntityManagers\CreatureManagers\PlayerManager.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagers\EntityManagers\CreatureManagers
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\EntityManagers\CreatureManagers
 
-build CMakeFiles/laba1.dir/GameManagers/EntityManagers/CreatureManagers/EnemyManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagers/EntityManagers/CreatureManagers/EnemyManager.cpp || cmake_object_order_depends_target_laba1
-  DEP_FILE = CMakeFiles\laba1.dir\GameManagers\EntityManagers\CreatureManagers\EnemyManager.cpp.obj.d
+build CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\EntityManagers\CreatureManagers\EnemyManager.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagers\EntityManagers\CreatureManagers
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\EntityManagers\CreatureManagers
 
 build CMakeFiles/laba1.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/Entities/Creatures/Attacks/LongRangeAttack.cpp || cmake_object_order_depends_target_laba1
   DEP_FILE = CMakeFiles\laba1.dir\Entities\Creatures\Attacks\LongRangeAttack.cpp.obj.d
@@ -151,17 +151,23 @@ build CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.obj: CXX_COMPILER__laba1_D
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir\Factories
 
-build CMakeFiles/laba1.dir/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp || cmake_object_order_depends_target_laba1
-  DEP_FILE = CMakeFiles\laba1.dir\GameManagers\EntityManagers\BuildingManagers\EnemySpawnerBuildingManager.cpp.obj.d
+build CMakeFiles/laba1.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\EntityManagers\BuildingManagers\EnemySpawnerBuildingManager.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagers\EntityManagers\BuildingManagers
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\EntityManagers\BuildingManagers
 
 build CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/Factories/EnemySpawnerBuildingSpawner.cpp || cmake_object_order_depends_target_laba1
   DEP_FILE = CMakeFiles\laba1.dir\Factories\EnemySpawnerBuildingSpawner.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir\Factories
+
+build CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/Controllers/EnemyController.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\Controllers\EnemyController.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\laba1.dir
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\Controllers
 
 
 # =============================================================================
@@ -171,7 +177,7 @@ build CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj: CXX_CO
 #############################################
 # Link the executable laba1.exe
 
-build laba1.exe: CXX_EXECUTABLE_LINKER__laba1_Debug CMakeFiles/laba1.dir/main.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Creature.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Player.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Enemy.cpp.obj CMakeFiles/laba1.dir/GameField/Field.cpp.obj CMakeFiles/laba1.dir/GameField/Cell.cpp.obj CMakeFiles/laba1.dir/GameManagers/GameSetup.cpp.obj CMakeFiles/laba1.dir/GameManagers/GameMaster.cpp.obj CMakeFiles/laba1.dir/Entities/Entity.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/Building.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj CMakeFiles/laba1.dir/GameManagers/EntityManagers/CreatureManagers/PlayerManager.cpp.obj CMakeFiles/laba1.dir/GameManagers/EntityManagers/CreatureManagers/EnemyManager.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.obj CMakeFiles/laba1.dir/GameManagers/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj
+build laba1.exe: CXX_EXECUTABLE_LINKER__laba1_Debug CMakeFiles/laba1.dir/main.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Creature.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Player.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Enemy.cpp.obj CMakeFiles/laba1.dir/GameField/Field.cpp.obj CMakeFiles/laba1.dir/GameField/Cell.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameSetup.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameMaster.cpp.obj CMakeFiles/laba1.dir/Entities/Entity.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/Building.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\laba1.dir
