@@ -32,35 +32,27 @@ void EnemyController::doMove() {
         }
 
         for (Constants::dxdy dxdy: Constants::dxdys) {
-            try {
-                if (this->field.canMoveToOrSpawnOn(tempCoords.x + dxdy.x, tempCoords.y + dxdy.y) &&
-                    distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] == -1) {
-                    distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] = distances[tempCoords.x][tempCoords.y] + 1;
-                    queue.push({tempCoords.x + dxdy.x, tempCoords.y + dxdy.y});
-                }
-            } catch (...) {
-                continue;
+            if (this->field.canMoveToOrSpawnOnNoExcept(tempCoords.x + dxdy.x, tempCoords.y + dxdy.y) &&
+                            distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] == -1) {
+                distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] = distances[tempCoords.x][tempCoords.y] + 1;
+                queue.push({tempCoords.x + dxdy.x, tempCoords.y + dxdy.y});
             }
         }
     }
 
-    EntityWithNearestPositionToAttackFrom priorityEnemy = chooseByPriority(nearestHostileEntityCoordinates);
+    EntityWithNearestPositionToAttackFrom priorityEnemy = chooseByPriority(nearestHostileEntityCoordinates, distances);
 
     bool canAttack = this->manager.getStepRange() >= distances[priorityEnemy.attackFromCoordinates.x][priorityEnemy.attackFromCoordinates.y];
 
     Constants::XYPair pair = priorityEnemy.attackFromCoordinates;
     while(pair.x != manager.getEntityCoords().x && pair.y != manager.getEntityCoords().y){
         for(Constants::dxdy dxdy : Constants::dxdys){
-            try {
-                if (this->field.canMoveToOrSpawnOn(pair.x + dxdy.x, pair.y + dxdy.y) && distances[pair.x + dxdy.x][pair.y + dxdy.y] == (distances[pair.x][pair.y] - 1)){
-                    if (this->manager.getStepRange() >= distances[pair.x][pair.y]){
-                        trip.push(pair);
-                    }
-                    pair.x= pair.x + dxdy.x;
-                    pair.y = pair.y + dxdy.y;
+            if (this->field.canMoveToOrSpawnOn(pair.x + dxdy.x, pair.y + dxdy.y) && distances[pair.x + dxdy.x][pair.y + dxdy.y] == (distances[pair.x][pair.y] - 1)){
+                if (this->manager.getStepRange() >= distances[pair.x][pair.y]){
+                    trip.push(pair);
                 }
-            }catch (...){
-                continue;
+                pair.x= pair.x + dxdy.x;
+                pair.y = pair.y + dxdy.y;
             }
         }
     }

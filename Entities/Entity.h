@@ -12,7 +12,7 @@ private:
 public:
     Entity(int xCoordinate, int yCoordinate, int healthPoint, EntityType type) : xCoordinate(xCoordinate),
                                                                                  yCoordinate(yCoordinate),
-                                                                                 healthPoint(healthPoint),
+                                                                                 healthPoints(healthPoint),
                                                                                  type(type) {
     }
 
@@ -25,12 +25,12 @@ public:
 
     virtual int getHealthPoints() const noexcept final;
 
-    virtual void changeHealthPoint(int dHP) noexcept final;
+    virtual void changeHealthPoints(int dHP) noexcept final;
 
-    virtual bool isAlive() noexcept final;
+    virtual bool isAlive() const noexcept final;
 
 protected:
-    int xCoordinate, yCoordinate, healthPoint;
+    int xCoordinate, yCoordinate, healthPoints;
     EntityType type;
 };
 

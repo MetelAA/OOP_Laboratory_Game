@@ -25,8 +25,6 @@ public:
 
 protected:
     int spawnInterval, stepCounter = 0;
-
-
 };
 
 

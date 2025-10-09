@@ -11,21 +11,37 @@
 
 class Field {
 public:
+    Field(const int width, const int height, const std::vector<std::vector<Cell>> &cells) : width(width),
+                                                                                            height(height),
+                                                                                            cells(cells) {}
 
-    Field(int W, int H){
-        height = W;
-        width = H;
+    Field(const Field& other): width{other.width}, height(other.height), cells(other.cells){}
+    Field(Field&& other): width{other.width}, height(other.height), cells(std::move(other.cells)){}
+
+    Field& operator=(Field&& other) noexcept {
+        if (this != &other) {
+            *this = Field(std::move(other));
+        }
+        return *this;
+    }
+
+    Field& operator=(const Field& other) {
+        if (this != &other) {
+            *this = Field(other);
+        }
+        return *this;
     }
 
     int getWidth() const noexcept; //return data
     int getHeight() const noexcept; //return data
     std::vector<std::vector<Cell>>& getFieldCells() noexcept; //returns instance with modify ability to can modify Cells in vectors
     const std::vector<std::vector<Cell>>& getFieldCells() const noexcept; //returns instance to read or use static Cell methods
-    virtual bool canMoveToOrSpawnOn(int dx, int dy) const final;
-    virtual std::vector<Constants::XYPair> hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept final;
+    bool canMoveToOrSpawnOn(int x, int y) const;
+    bool canMoveToOrSpawnOnNoExcept(int x, int y) const noexcept;
+    std::vector<Constants::XYPair> hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept;
 
 protected:
-    int width = 10, height = 10;
+    const int width, height;
     std::vector<std::vector<Cell>> cells;
 
 private:

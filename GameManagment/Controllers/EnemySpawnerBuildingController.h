@@ -1,0 +1,14 @@
+//
+// Created by Artem on 09.10.2025.
+//
+
+#ifndef LABA1_ENEMYSPAWNERBUILDINGCONTROLLER_H
+#define LABA1_ENEMYSPAWNERBUILDINGCONTROLLER_H
+
+
+class EnemySpawnerBuildingController {
+
+};
+
+
+#endif //LABA1_ENEMYSPAWNERBUILDINGCONTROLLER_H

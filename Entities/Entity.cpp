@@ -17,13 +17,13 @@ EntityType Entity::getType() const noexcept{
 }
 
 int Entity::getHealthPoints() const noexcept {
-    return healthPoint;
+    return healthPoints;
 }
 
-void Entity::changeHealthPoint(int dHP) noexcept {
-    this->healthPoint + dHP;
+void Entity::changeHealthPoints(int dHP) noexcept {
+    this->healthPoints + dHP;
 }
 
-bool Entity::isAlive() noexcept {
-    return this->healthPoint > 0;
+bool Entity::isAlive() const noexcept {
+    return this->healthPoints > 0;
 }

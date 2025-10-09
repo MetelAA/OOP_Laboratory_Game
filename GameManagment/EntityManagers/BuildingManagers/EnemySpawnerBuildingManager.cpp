@@ -23,7 +23,6 @@ EnemyManager EnemySpawnerBuildingManager::spawnEnemy() {
     while (!dxdyCopy.empty()) {
         try{
             Constants::dxdy pair = chooseDxDy(dxdyCopy);
-
             Enemy& enemy = this->enemySpawner.createEnemy(this->building.getXCoordinate() + pair.x,
                                                    this->building.getYCoordinate() + pair.y);
             return {this->field, &enemy};

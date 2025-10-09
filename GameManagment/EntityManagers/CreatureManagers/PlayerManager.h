@@ -6,6 +6,7 @@
 #define LABA1_PLAYERMANAGER_H
 #include "CreatureManager.h"
 #include "../../../Entities/Creatures/Player.h"
+#include <cmath>
 
 class PlayerManager : public CreatureManager{
 public:
@@ -14,11 +15,10 @@ public:
 
     void attack(Entity &attackWhom, AttackType type);
 
-    int getStepRange() override;
+    int getStepRange() const noexcept override;
 
 protected:
     Player& player;
-
 };
 
 

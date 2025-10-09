@@ -9,10 +9,10 @@ private:
 
 public:
 
-    Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isSlowedFlag, int stepRange)
-            : Entity(xCoordinate, yCoordinate, healthPoint, type), isSlowedFlag(isSlowedFlag), stepRange(stepRange) {}
+    Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isDisabledFlag, int stepRange)
+            : Entity(xCoordinate, yCoordinate, healthPoint, type), isDisabledFlag(isDisabledFlag), stepRange(stepRange) {}
 
-    virtual bool isSlowed() noexcept final;
+    virtual bool isDisabled() noexcept final;
 
     virtual void setXCoordinate(int x) noexcept final;
 
@@ -21,7 +21,7 @@ public:
     virtual int getStepRange() noexcept final;
 
 protected:
-    bool isSlowedFlag;
+    bool isDisabledFlag;
     int stepRange;
 };
 

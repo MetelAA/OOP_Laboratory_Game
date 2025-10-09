@@ -11,8 +11,8 @@ void Creature::setXCoordinate(int x) noexcept{
     this->xCoordinate = x;
 }
 
-bool Creature::isSlowed() noexcept {
-    return isSlowedFlag;
+bool Creature::isDisabled() noexcept {
+    return isDisabledFlag;
 }
 
 int Creature::getStepRange() noexcept {

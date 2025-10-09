@@ -19,12 +19,9 @@ public:
     virtual void incrementTimeToSpawnCounter() noexcept final;
     virtual EnemyManager spawnEnemy() final;
 
-
 protected:
     EnemySpawnerBuilding &building;
     EnemySpawner &enemySpawner;
-
-
 };
 
 

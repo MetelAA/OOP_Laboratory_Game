@@ -51,7 +51,7 @@ bool Field::canMoveToOrSpawnOn(int x, int y) const {
 
 std::vector<Constants::XYPair> Field::hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept { //возварщает координаты стоящих в радиусе атаки Entity определённых типов
     std::vector<Constants::XYPair> result;
-    for (Constants::XYPair pair: Constants::dxdys) {
+    for (Constants::dxdy pair : Constants::dxdys) {
         if ((x + pair.x) >= 0 && (x + pair.x) < this->width
         && (y + pair.y) >= 0 && (y + pair.y) < this->height) {
             if (this->cells[x + pair.x][y + pair.y].hasEntityInCell() &&
@@ -65,6 +65,14 @@ std::vector<Constants::XYPair> Field::hasNearEntityOfSomeTypes(std::map<EntityTy
 
 const std::vector<std::vector<Cell>> &Field::getFieldCells() const noexcept {
     return this->cells;
+}
+
+bool Field::canMoveToOrSpawnOnNoExcept(int x, int y) const noexcept {
+    try {
+        return this->canMoveToOrSpawnOn(x, y);
+    }catch (...) {
+        return false;
+    }
 }
 
 

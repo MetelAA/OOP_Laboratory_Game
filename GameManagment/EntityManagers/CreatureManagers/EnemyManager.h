@@ -17,7 +17,7 @@ public:
 
     virtual void attack(Entity& attackWhom);
 
-    int getStepRange() noexcept override;
+    int getStepRange() const noexcept override;
 
 
 protected:

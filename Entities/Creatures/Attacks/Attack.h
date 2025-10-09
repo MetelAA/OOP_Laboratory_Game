@@ -11,8 +11,8 @@ class Attack {
 public:
     Attack(int damage, AttackType type) : damage(damage), type(type) {}
 
-    virtual int getDamage() noexcept final;
-    virtual AttackType getType() noexcept final;
+    virtual int getDamage() const noexcept final;
+    virtual AttackType getType() const noexcept final;
 private:
 
 protected:

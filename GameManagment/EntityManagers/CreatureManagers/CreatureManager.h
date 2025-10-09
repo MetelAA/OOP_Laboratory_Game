@@ -13,7 +13,7 @@ public:
     CreatureManager(Field &field, Entity *entity) : EntityManager(field, entity) {}
 
     virtual void moveTo(Constants::dxdy toCoordinates) = 0;
-    virtual int getStepRange() = 0;
+    virtual int getStepRange() const noexcept = 0;
 
 
 protected:

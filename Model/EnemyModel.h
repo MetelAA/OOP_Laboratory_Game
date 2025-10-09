@@ -8,9 +8,10 @@
 
 class EnemyModel {
 public:
-    int healthPoint, damage;
+    int healthPoint, damage, stepCount;
 
-    EnemyModel(int healthPoint, int damage) : healthPoint(healthPoint), damage(damage) {}
+    EnemyModel(int healthPoint, int damage, int stepCount) : healthPoint(healthPoint), damage(damage),
+                                                             stepCount(stepCount) {}
 
 };
 

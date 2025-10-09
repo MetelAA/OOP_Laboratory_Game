@@ -8,7 +8,7 @@
 Enemy& EnemySpawner::createEnemy(int x, int y) {
     try{
         this->field.canMoveToOrSpawnOn(x, y);
-        Enemy *enemy = new Enemy(x, y, enemyModel.healthPoint, this->field.getFieldCells()[x][y].getType() == CellType::Slowing, enemyModel.damage);
+        Enemy *enemy = new Enemy(x, y, enemyModel.healthPoint, this->field.getFieldCells()[x][y].getType() == CellType::Slowing, enemyModel.damage, enemyModel.stepCount);
         this->field.getFieldCells()[x][y].addEntityInCell(enemy);
         return *enemy;
     }catch (CellImpassableException& ex){

@@ -4,10 +4,10 @@
 
 #include "Player.h"
 
-LongRangeAttack Player::getLongRangeAttack() noexcept {
+LongRangeAttack Player::getLongRangeAttack() const noexcept {
     return longRangeAttack;
 }
 
-CloseRangeAttack Player::getCloseRangeAttack() noexcept {
+CloseRangeAttack Player::getCloseRangeAttack() const noexcept {
     return closeRangeAttack;
 }

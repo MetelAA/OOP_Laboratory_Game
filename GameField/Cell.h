@@ -7,22 +7,50 @@
 
 #include "../Entities/Entity.h"
 #include "CellType.h"
+#include "../Entities/Creatures/Player.h"
+#include "../Entities/Creatures/Enemy.h"
+#include "../Entities/Buildings/EnemySpawnerBuilding.h"
 
 class Cell {
 public:
-    Cell(CellType type) : type(type){}
+    Cell(CellType type) : type(type){
+        entityInCell = nullptr;
+    }
 
-    CellType getType() const noexcept;
+    Cell(const Cell& other): type(other.type){
+        if (other.hasEntityInCell()){
+            switch (other.getEntityInCell().getType()) {
+                case EntityType::PlayerEnt:{
+                    const Player *otherPlayer = dynamic_cast<const Player*>(&other.getEntityInCell());
+                    Player* playerCopy = new Player(*otherPlayer);
+                    this->addEntityInCell(playerCopy);
+                }
+                    break;
+                case EntityType::EnemyEnt:{
+                    const Enemy *otherEnemy = dynamic_cast<const Enemy*>(&other.getEntityInCell());
+                    Enemy* enemyCopy = new Enemy(*otherEnemy);
+                    this->addEntityInCell(enemyCopy);
+                }
+                    break;
+                case EntityType::EnemyBuildingEnt:{
+                    const EnemySpawnerBuilding *otherEnemySpawnerBuilding = dynamic_cast<const EnemySpawnerBuilding*>(&other.getEntityInCell());
+                    EnemySpawnerBuilding* buildingCopy = new EnemySpawnerBuilding(*otherEnemySpawnerBuilding);
+                    this->addEntityInCell(buildingCopy);
+                }
+                    break;
+            }
+        }
+    }
 
-    void addEntityInCell(Entity *entity) noexcept;
+    virtual CellType getType() const noexcept final;
 
-    void clearCell() noexcept;
+    virtual void addEntityInCell(Entity *entity) noexcept final;
 
-    bool hasEntityInCell() const noexcept;
+    virtual void clearCell() noexcept final;
 
-    Entity& getEntityInCell() const;
+    virtual bool hasEntityInCell() const noexcept final;
 
-private:
+    virtual Entity& getEntityInCell() const final;
 
 protected:
     CellType type;

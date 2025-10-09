@@ -169,6 +169,18 @@ build CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj: CX
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\Controllers
 
+build CMakeFiles/laba1.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/Controllers/EnemySpawnerBuildingController.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\Controllers\EnemySpawnerBuildingController.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\laba1.dir
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\Controllers
+
+build CMakeFiles/laba1.dir/GameManagment/Controllers/PlayerController.cpp.obj: CXX_COMPILER__laba1_Debug D$:/clionProj/laba1/GameManagment/Controllers/PlayerController.cpp || cmake_object_order_depends_target_laba1
+  DEP_FILE = CMakeFiles\laba1.dir\GameManagment\Controllers\PlayerController.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\laba1.dir
+  OBJECT_FILE_DIR = CMakeFiles\laba1.dir\GameManagment\Controllers
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target laba1
@@ -177,7 +189,7 @@ build CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj: CX
 #############################################
 # Link the executable laba1.exe
 
-build laba1.exe: CXX_EXECUTABLE_LINKER__laba1_Debug CMakeFiles/laba1.dir/main.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Creature.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Player.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Enemy.cpp.obj CMakeFiles/laba1.dir/GameField/Field.cpp.obj CMakeFiles/laba1.dir/GameField/Cell.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameSetup.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameMaster.cpp.obj CMakeFiles/laba1.dir/Entities/Entity.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/Building.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj
+build laba1.exe: CXX_EXECUTABLE_LINKER__laba1_Debug CMakeFiles/laba1.dir/main.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Creature.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Player.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Enemy.cpp.obj CMakeFiles/laba1.dir/GameField/Field.cpp.obj CMakeFiles/laba1.dir/GameField/Cell.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameSetup.cpp.obj CMakeFiles/laba1.dir/GameManagment/GameMaster.cpp.obj CMakeFiles/laba1.dir/Entities/Entity.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/Building.cpp.obj CMakeFiles/laba1.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/Attack.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj CMakeFiles/laba1.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj CMakeFiles/laba1.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj CMakeFiles/laba1.dir/GameManagment/Controllers/EnemyController.cpp.obj CMakeFiles/laba1.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj CMakeFiles/laba1.dir/GameManagment/Controllers/PlayerController.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\laba1.dir

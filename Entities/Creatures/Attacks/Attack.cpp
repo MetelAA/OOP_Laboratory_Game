@@ -4,10 +4,10 @@
 
 #include "Attack.h"
 
-AttackType Attack::getType() noexcept {
+AttackType Attack::getType() const noexcept {
     return type;
 }
 
-int Attack::getDamage() noexcept {
+int Attack::getDamage() const noexcept {
     return damage;
 }
