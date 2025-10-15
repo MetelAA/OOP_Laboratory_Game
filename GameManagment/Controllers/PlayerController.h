@@ -4,10 +4,17 @@
 
 #ifndef LABA1_PLAYERCONTROLLER_H
 #define LABA1_PLAYERCONTROLLER_H
-
+#include "../EntityManagers/CreatureManagers/PlayerManager.h"
 
 class PlayerController {
+public:
+    PlayerController(PlayerManager &manager, const Field &field) : manager(manager), field(field) {}
 
+    void doMove();
+
+protected:
+    PlayerManager& manager;
+    const Field& field;
 };
 
 

@@ -19,10 +19,12 @@ public:
 
     virtual CloseRangeAttack getCloseRangeAttack() const noexcept final; //gets link with modify opportunities
     virtual LongRangeAttack getLongRangeAttack() const noexcept final; //gets link with modify opportunities
+    virtual bool isCloseRangeAttackSelected() const noexcept final;
 
 protected:
     CloseRangeAttack closeRangeAttack;
     LongRangeAttack longRangeAttack;
+    bool isCloseRangeAttackSelectedFlag;
 };
 
 

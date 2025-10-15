@@ -4,9 +4,17 @@
 
 #include <queue>
 #include <stack>
+#include <iostream>
 #include "EnemyController.h"
 
 void EnemyController::doMove() {
+    std::cout << "Ход Enemy id: " << &this->manager << std::endl;
+
+    if (manager.isCreatureDisabled()){
+        std::cout << "Enemy: " << &this->manager << "disabled -> пропускает ход" << std::endl;
+        return;
+    }
+
     std::stack<Constants::XYPair> trip;
 
     std::vector<EntityWithNearestPositionToAttackFrom> nearestHostileEntityCoordinates;
@@ -57,11 +65,19 @@ void EnemyController::doMove() {
         }
     }
 
+
+
     while(!trip.empty()){
         Constants::XYPair stepTo = trip.top();
         trip.pop();
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
+        std::cout << "Enemy: " << &this->manager << " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
         manager.moveTo(howToMove);
+        if (this->field.getFieldCells()[stepTo.x][stepTo.y].getType() == CellType::Slowing){
+            manager.disableCreature();
+            std::cout << "Enemy: " << &this->manager << " попало на замедляющую клетку" << std::endl;
+            return;
+        }
     }
 
     if (canAttack) {

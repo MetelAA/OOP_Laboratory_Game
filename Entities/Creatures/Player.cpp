@@ -11,3 +11,7 @@ LongRangeAttack Player::getLongRangeAttack() const noexcept {
 CloseRangeAttack Player::getCloseRangeAttack() const noexcept {
     return closeRangeAttack;
 }
+
+bool Player::isCloseRangeAttackSelected() const noexcept {
+    return this->isCloseRangeAttackSelectedFlag;
+}

@@ -15,7 +15,13 @@ bool Creature::isDisabled() noexcept {
     return isDisabledFlag;
 }
 
-int Creature::getStepRange() noexcept {
+int Creature::getStepRange() const noexcept {
     return this->stepRange;
 }
+void Creature::setDisabledFlag(bool flag) noexcept {
+    this->isDisabledFlag = flag;
+}
+
+
+
 

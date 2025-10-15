@@ -55,8 +55,6 @@ public:
 protected:
     CellType type;
     Entity *entityInCell;
-
-
 };
 
 

@@ -12,10 +12,7 @@ class PlayerManager : public CreatureManager{
 public:
 
     void moveTo(Constants::dxdy dxdy) override;
-
     void attack(Entity &attackWhom, AttackType type);
-
-    int getStepRange() const noexcept override;
 
 protected:
     Player& player;

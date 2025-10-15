@@ -15,7 +15,3 @@ void EnemyManager::moveTo(Constants::dxdy dxdy) {
 void EnemyManager::attack(Entity &attackWhom) {
     attackWhom.changeHealthPoints((-1) * this->enemy.getDamage());
 }
-
-int EnemyManager::getStepRange() const noexcept{
-    return this->enemy.getStepRange();
-}

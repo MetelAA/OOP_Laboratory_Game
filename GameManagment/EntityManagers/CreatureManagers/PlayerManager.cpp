@@ -23,8 +23,3 @@ void PlayerManager::attack(Entity &attackWhom, AttackType type) {
             }
     }
 }
-
-int PlayerManager::getStepRange() const noexcept {
-    return this->player.getStepRange();
-}
-

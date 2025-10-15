@@ -3,3 +3,7 @@
 //
 
 #include "EnemySpawnerBuildingController.h"
+
+void EnemySpawnerBuildingController::doMove() {
+
+}

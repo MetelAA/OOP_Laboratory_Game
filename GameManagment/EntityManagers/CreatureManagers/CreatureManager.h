@@ -10,13 +10,18 @@
 
 class CreatureManager : public EntityManager{
 public:
-    CreatureManager(Field &field, Entity *entity) : EntityManager(field, entity) {}
+    CreatureManager(Field &field, Creature *creature) : EntityManager(field, creature), creature(creature) {}
 
     virtual void moveTo(Constants::dxdy toCoordinates) = 0;
-    virtual int getStepRange() const noexcept = 0;
-
+    virtual int getStepRange() const noexcept final;
+    virtual bool isCreatureDisabled() const noexcept final;
+    virtual void disableCreature() noexcept final;
+    virtual void freeCreature() noexcept final;
 
 protected:
+
+private:
+    Creature* creature;
 
 };
 

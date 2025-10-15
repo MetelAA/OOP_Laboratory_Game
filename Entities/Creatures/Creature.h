@@ -14,11 +14,13 @@ public:
 
     virtual bool isDisabled() noexcept final;
 
+    virtual void setDisabledFlag(bool flag) noexcept final;
+
     virtual void setXCoordinate(int x) noexcept final;
 
     virtual void setYCoordinate(int y) noexcept final;
 
-    virtual int getStepRange() noexcept final;
+    virtual int getStepRange() const noexcept final;
 
 protected:
     bool isDisabledFlag;
