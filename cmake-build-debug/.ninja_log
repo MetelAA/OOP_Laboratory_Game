@@ -1,0 +1,25 @@
+# ninja log v5
+82	541	7823661315127895	CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj	eacf07f2d0e97b08
+561	756	7823661317172339	CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Attack.cpp.obj	a294373394050fc7
+57	1187	7823661321630097	CMakeFiles/labaOOP2.dir/Entities/Creatures/Enemy.cpp.obj	e17233a8988b740c
+90	529	7823661315048106	CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj	a224797e86b0d419
+98	568	7823661315357265	CMakeFiles/labaOOP2.dir/Entities/Entity.cpp.obj	6d2703d3d4c45755
+1177	2574	7823661335551886	CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj	d47885d87e1ca97a
+756	943	7823661319216686	CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/LongRangeAttack.cpp.obj	243d5bd2e1295ecd
+530	717	7823661316992787	CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj	204191e329ba97db
+40	1175	7823661321510439	CMakeFiles/labaOOP2.dir/Entities/Creatures/Creature.cpp.obj	c94d519dc13ab173
+64	1210	7823661321769736	CMakeFiles/labaOOP2.dir/Entities/Creatures/Player.cpp.obj	7077de85fa8c492f
+1162	1362	7823661323365324	CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj	4f5049237615327a
+4	1350	7823661323265621	CMakeFiles/labaOOP2.dir/main.cpp.obj	861f2ef9b0c2980c
+943	1162	7823661321390731	CMakeFiles/labaOOP2.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj	b30c90f2e8c4305e
+1187	2396	7823661333775127	CMakeFiles/labaOOP2.dir/Factories/EnemySpawner.cpp.obj	6ce276c9f574b6f7
+73	560	7823661315307417	CMakeFiles/labaOOP2.dir/GameField/Cell.cpp.obj	d31f190203e7cf06
+541	1631	7823661326122850	CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj	12bd9c8afa1a45cc
+569	1906	7823661328840403	CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj	7914c308c1b927c2
+1210	2545	7823661335272422	CMakeFiles/labaOOP2.dir/GameManagment/Controllers/PlayerController.cpp.obj	bd59ec9a68875f4f
+48	2125	7823661331020331	CMakeFiles/labaOOP2.dir/GameField/Field.cpp.obj	373fc86f64e6e178
+1351	2445	7823661334243798	CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj	ba92b71f25b53c44
+1632	2501	7823661334843566	CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp.obj	9beeb6926a1f5b00
+717	1893	7823661328720727	CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp.obj	81de882cc80a52a7
+1362	3224	7823661342042596	CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.obj	787295e9c481f7a5
+3225	3537	7823661345030109	labaOOP2.exe	175c35f7c6009c98
