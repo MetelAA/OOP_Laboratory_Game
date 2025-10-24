@@ -9,7 +9,7 @@
 #include "CellType.h"
 #include "../Exceptions/Notifications/NoEntityInCellNotification.h"
 //#include "../Entities/Creatures/Player.h"
-//#include "../Entities/Creatures/Enemy.h"
+//#include "../Entities/Creatures/CompControlledCreature.h"
 //#include "../Entities/Buildings/EnemySpawnerBuilding.h"
 
 class Cell {
@@ -28,8 +28,8 @@ public:
 //                }
 //                    break;
 //                case EntityType::EnemyEnt:{
-//                    const Enemy *otherEnemy = dynamic_cast<const Enemy*>(&other.getEntityInCell());
-//                    Enemy* enemyCopy = new Enemy(*otherEnemy);
+//                    const CompControlledCreature *otherEnemy = dynamic_cast<const CompControlledCreature*>(&other.getEntityInCell());
+//                    CompControlledCreature* enemyCopy = new CompControlledCreature(*otherEnemy);
 //                    this->addEntityInCell(enemyCopy);
 //                }
 //                    break;

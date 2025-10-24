@@ -1,3 +1,0 @@
-D:/clionProj/labaOOP2/cmake-build-debug/CMakeFiles/labaOOP2.dir
-D:/clionProj/labaOOP2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/clionProj/labaOOP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

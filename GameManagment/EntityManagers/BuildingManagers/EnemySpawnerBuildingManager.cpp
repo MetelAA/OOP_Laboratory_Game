@@ -16,21 +16,21 @@ Constants::dxdy chooseDxDy(std::vector<Constants::dxdy> dxdys) {
     return pair;
 }
 
-EnemyManager EnemySpawnerBuildingManager::spawnEnemy() {
+CompControlledCreatureManager EnemySpawnerBuildingManager::spawnEnemy() {
     this->building.resetSpawnCounter();
     std::vector<Constants::dxdy> dxdyCopy = Constants::dxdys;
 
     while (!dxdyCopy.empty()) {
         try{
             Constants::dxdy pair = chooseDxDy(dxdyCopy);
-            Enemy& enemy = this->enemySpawner.createEnemy(this->building.getXCoordinate() + pair.x,
+            CompControlledCreature& enemy = this->enemySpawner.createEnemy(this->building.getXCoordinate() + pair.x,
                                                    this->building.getYCoordinate() + pair.y);
             return {this->field, &enemy};
         }catch (SpawnEntityException& ex){
             continue;
         }
     }
-    throw SpawnEntityException("EnemySpawnerBuildingManager spawnEnemy(): enable to spawn enemy nearby");
+    throw SpawnEntityException("EnemySpawnerBuildingManager spawnEnemy(): enable to spawn compControlledCreature nearby");
 }
 
 void EnemySpawnerBuildingManager::incrementTimeToSpawnCounter() noexcept {

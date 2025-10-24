@@ -8,8 +8,8 @@ add_executable(labaOOP2 main.cpp
         Entities/Creatures/Creature.h
         Entities/Creatures/Player.cpp
         Entities/Creatures/Player.h
-        Entities/Creatures/Enemy.cpp
-        Entities/Creatures/Enemy.h
+        Entities/Creatures/CompControlledCreature.cpp
+        Entities/Creatures/CompControlledCreature.h
         GameField/Field.cpp
         GameField/Field.h
         GameField/Cell.cpp
@@ -31,8 +31,8 @@ add_executable(labaOOP2 main.cpp
         GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp
         GameManagment/EntityManagers/CreatureManagers/PlayerManager.h
         GameManagment/EntityManagers/CreatureManagers/CreatureManager.h
-        GameManagment/EntityManagers/CreatureManagers/EnemyManager.cpp
-        GameManagment/EntityManagers/CreatureManagers/EnemyManager.h
+        GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.cpp
+        GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h
         GameField/CellType.h Exceptions/Notifications/CellImpassableNotification.h
         Entities/EntityType.h
         Entities/Creatures/Attacks/AttackType.h
@@ -40,7 +40,7 @@ add_executable(labaOOP2 main.cpp
         Entities/Creatures/Attacks/LongRangeAttack.h
         Entities/Creatures/Attacks/CloseRangeAttack.cpp
         Entities/Creatures/Attacks/CloseRangeAttack.h
-        Model/PlayerModel.h Model/EnemyModel.h
+        Model/PlayerModel.h Model/CompControlledCreatureModel.h
         Factories/EnemySpawner.cpp
         Factories/EnemySpawner.h
         Exceptions/SpawnEntityException.h
@@ -58,4 +58,4 @@ add_executable(labaOOP2 main.cpp
         GameManagment/Controllers/PlayerController.cpp
         GameManagment/Controllers/PlayerController.h
         GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp
-        Exceptions/Notifications/SlowingCellNotification.h Exceptions/Notifications/NoEntityInCellNotification.h Entities/Creatures/Attacks/Spels/SpellType.h Entities/Creatures/Attacks/Spels/Spell.cpp Entities/Creatures/Attacks/Spels/Spell.h)
+        Exceptions/Notifications/SlowingCellNotification.h Exceptions/Notifications/NoEntityInCellNotification.h Entities/Creatures/Attacks/Spels/SpellType.h Entities/Creatures/Attacks/Spels/Spell.cpp Entities/Creatures/Attacks/Spels/Spell.h GameManagment/Controllers/CompControlledCreatureController.cpp GameManagment/Controllers/CompControlledCreatureController.h GameManagment/Controllers/AllyController.cpp GameManagment/Controllers/AllyController.h Factories/AllySpawner.cpp Factories/AllySpawner.h Entities/Creatures/Attacks/Spels/SpellHand.cpp Entities/Creatures/Attacks/Spels/SpellHand.h Entities/Creatures/Attacks/Spels/DirectDamageSpell.cpp Entities/Creatures/Attacks/Spels/DirectDamageSpell.h Entities/Creatures/Attacks/Spels/AreaDamageSpell.cpp Entities/Creatures/Attacks/Spels/AreaDamageSpell.h Entities/Creatures/Attacks/Spels/CreateTrapSpell.cpp Entities/Creatures/Attacks/Spels/CreateTrapSpell.h Entities/Creatures/Attacks/Spels/BuffSpellSpell.cpp Entities/Creatures/Attacks/Spels/BuffSpellSpell.h)

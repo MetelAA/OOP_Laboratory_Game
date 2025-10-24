@@ -19,7 +19,7 @@ void PlayerManager::attack(Entity &attackWhom, AttackType type) {
             if (round(sqrt(pow(attackWhom.getXCoordinate() - this->player.getXCoordinate(), 2) + pow(attackWhom.getYCoordinate() - this->player.getYCoordinate(), 2))) <= this->player.getLongRangeAttack().getRange()){ //neto!
                 attackWhom.changeHealthPoints((-1) * this->player.getLongRangeAttack().getDamage());
             }else{
-                throw "Enemy is far away!";
+                throw "CompControlledCreature is far away!";
             }
     }
 }

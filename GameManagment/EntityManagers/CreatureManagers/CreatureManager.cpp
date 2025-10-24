@@ -15,3 +15,7 @@ void CreatureManager::disableCreature() noexcept {
 void CreatureManager::freeCreature() noexcept {
     this->creature->setDisabledFlag(false);
 }
+
+EntityType CreatureManager::getEntityType() noexcept {
+    return this->creature->getType();
+}

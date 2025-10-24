@@ -43,7 +43,7 @@ bool Field::canMoveToOrSpawnOn(int x, int y) const {
     }
 
     if (fieldCell.hasEntityInCell() && fieldCell.getEntityInCell().getType() == EntityType::EnemyBuildingEnt) {
-        throw CellImpassableNotification("cell is occupied by enemy building");
+        throw CellImpassableNotification("cell is occupied by compControlledCreature building");
     }
 
     return true;

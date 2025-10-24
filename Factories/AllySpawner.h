@@ -1,9 +1,9 @@
 //
-// Created by Artem on 05.10.2025.
+// Created by Artem on 23.10.2025.
 //
 
-#ifndef LABA1_ENEMYSPAWNER_H
-#define LABA1_ENEMYSPAWNER_H
+#ifndef LABAOOP2_ALLYSPAWNER_H
+#define LABAOOP2_ALLYSPAWNER_H
 #include "../model/CompControlledCreatureModel.h"
 #include "../Entities/Creatures/CompControlledCreature.h"
 #include "../GameField/Field.h"
@@ -12,12 +12,11 @@
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
 
-
-class EnemySpawner {
+class AllySpawner {
 public:
-    EnemySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
+    AllySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
 
-    CompControlledCreature& createEnemy(int x, int y);
+    CompControlledCreature& createAlly(int x, int y);
 
 protected:
     CompControlledCreatureModel& enemyModel;
@@ -25,4 +24,4 @@ protected:
 };
 
 
-#endif //LABA1_ENEMYSPAWNER_H
+#endif //LABAOOP2_ALLYSPAWNER_H

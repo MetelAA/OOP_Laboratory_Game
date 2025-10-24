@@ -17,6 +17,7 @@ public:
     virtual bool isCreatureDisabled() const noexcept final;
     virtual void disableCreature() noexcept final;
     virtual void freeCreature() noexcept final;
+    virtual EntityType getEntityType() noexcept final;
 
 protected:
 

@@ -7,7 +7,7 @@
 
 #include "../../../Entities/Buildings/EnemySpawnerBuilding.h"
 #include "../../../GameField/Field.h"
-#include "../CreatureManagers/EnemyManager.h"
+#include "../CreatureManagers/CompControlledCreatureManager.h"
 #include "../EntityManager.h"
 
 class EnemySpawnerBuildingManager : public EntityManager{
@@ -18,7 +18,7 @@ public:
     virtual bool isTimeToSpawn() noexcept final;
     virtual void resetSpawnCounter() noexcept final;
     virtual void incrementTimeToSpawnCounter() noexcept final;
-    virtual EnemyManager spawnEnemy() final;
+    virtual CompControlledCreatureManager spawnEnemy() final;
 
 protected:
     EnemySpawnerBuilding building;
