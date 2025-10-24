@@ -148,5 +148,3 @@ void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip
         }
     }
 }
-
-
