@@ -8,6 +8,7 @@
 #include "../Entities/Entity.h"
 #include "CellType.h"
 #include "../Exceptions/Notifications/NoEntityInCellNotification.h"
+#include "CellEvents/CellEvent.h"
 //#include "../Entities/Creatures/Player.h"
 //#include "../Entities/Creatures/CompControlledCreature.h"
 //#include "../Entities/Buildings/EnemySpawnerBuilding.h"
@@ -16,6 +17,7 @@ class Cell {
 public:
     Cell(CellType type) : type(type){
         entityInCell = nullptr;
+        event = nullptr;
     }
 
 //    Cell(const Cell& other): type(other.type){
@@ -53,13 +55,16 @@ public:
 
     virtual void damageEntityInCell(int damage) final;
 
-    virtual Entity& getEntityInCell() const noexcept final;
+    virtual Entity& getEntityInCell() noexcept final;
 
     virtual EntityType getEntityInCellType() const final;
+
+    virtual void setCellEvent(CellEvent)
 
 protected:
     CellType type;
     Entity *entityInCell;
+    CellEvent* event;
 };
 
 

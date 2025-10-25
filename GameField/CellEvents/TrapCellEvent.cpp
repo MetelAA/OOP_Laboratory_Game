@@ -3,3 +3,7 @@
 //
 
 #include "TrapCellEvent.h"
+
+void TrapCellEvent::impactOnCreatureInCell(Creature &creature) {
+    creature.changeHealthPoints((-1) * this->damage);
+}

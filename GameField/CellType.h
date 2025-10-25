@@ -7,7 +7,7 @@
 
 
 enum class CellType {
-    Default, Impassable, Slowing
+    Default, Impassable
 };
 
 

@@ -34,7 +34,7 @@ EntityType Cell::getEntityInCellType() const {
     throw NoEntityInCellNotification("В клетке нету сущности");
 }
 
-Entity &Cell::getEntityInCell() const noexcept {
+Entity &Cell::getEntityInCell() noexcept {
     return *this->entityInCell;
 }
 
