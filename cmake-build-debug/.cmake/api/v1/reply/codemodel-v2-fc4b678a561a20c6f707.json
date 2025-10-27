@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Artem/clionProj/OOP_Laboratory_Game/cmake-build-debug",
-		"source" : "C:/Users/Artem/clionProj/OOP_Laboratory_Game"
+		"build" : "D:/clionProj/OOP_Laboratory_Game/cmake-build-debug",
+		"source" : "D:/clionProj/OOP_Laboratory_Game"
 	},
 	"version" : 
 	{

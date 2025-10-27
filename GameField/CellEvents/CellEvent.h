@@ -12,6 +12,7 @@ public:
     explicit CellEvent(CellEventType type) : type(type) {}
 
     virtual CellEventType getType() const noexcept final;
+    virtual ~CellEvent() = default;
     virtual void impactOnCreatureInCell(Creature& creature) = 0;
 private:
     CellEventType type;

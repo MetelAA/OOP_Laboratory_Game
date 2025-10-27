@@ -17,8 +17,8 @@ public:
             closeRangeAttack(closeRangeAttack),
             longRangeAttack(longRangeAttack) {}
 
-    virtual CloseRangeAttack getCloseRangeAttack() const noexcept final; //gets link with modify opportunities
-    virtual LongRangeAttack getLongRangeAttack() const noexcept final; //gets link with modify opportunities
+    virtual const CloseRangeAttack& getCloseRangeAttack() const noexcept final; //gets link with modify opportunities
+    virtual const LongRangeAttack& getLongRangeAttack() const noexcept final; //gets link with modify opportunities
     virtual bool isCloseRangeAttackSelected() const noexcept final;
 
 protected:

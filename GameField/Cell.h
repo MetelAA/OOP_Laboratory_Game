@@ -9,6 +9,10 @@
 #include "CellType.h"
 #include "../Exceptions/Notifications/NoEntityInCellNotification.h"
 #include "CellEvents/CellEvent.h"
+#include "CellEvents/SlowingCellEvent.h"
+#include <memory>
+#include "CellEvents/TrapCellEvent.h"
+#include "../Exceptions/UnexpectedBehaviorException.h"
 //#include "../Entities/Creatures/Player.h"
 //#include "../Entities/Creatures/CompControlledCreature.h"
 //#include "../Entities/Buildings/EnemySpawnerBuilding.h"
@@ -55,16 +59,21 @@ public:
 
     virtual void damageEntityInCell(int damage) final;
 
-    virtual Entity& getEntityInCell() noexcept final;
+    virtual Entity & getEntityInCell() const noexcept final;
 
     virtual EntityType getEntityInCellType() const final;
 
-    virtual void setCellEvent(CellEvent)
+    virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) final;
+
+    virtual bool hasCellEvent() const final;
+
+    virtual void impactOnCreatureByCellEvent() const final; //к этому моменту creature уже должно быть перемещено в эту клетку
 
 protected:
     CellType type;
     Entity *entityInCell;
-    CellEvent* event;
+    mutable std::unique_ptr<CellEvent> event;
+//    mutable CellEvent* event;
 };
 
 

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="labaOOP2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="labaOOP2">
+				<Option output="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/labaOOP2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 labaOOP2"/>
+					<CompileFile command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="labaOOP2/fast">
+				<Option output="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/labaOOP2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include/c++/15.2.0/backward"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include"/>
+					<Add directory="C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 labaOOP2/fast"/>
+					<CompileFile command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/clionProj/OOP_Laboratory_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys/mingw64/bin/mingw32-make.exe -f &quot;D:/clionProj/OOP_Laboratory_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/AttackType.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/AreaDamageSpell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/AreaDamageSpell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/BuffSpellSpell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/BuffSpellSpell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/CreateTrapSpell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/CreateTrapSpell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellHand.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellHand.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Entity.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/NoEntityInCellNotification.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/SlowingCellNotification.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawnerBuildingSpawner.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawnerBuildingSpawner.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/Cell.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEventType.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/CellType.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/Field.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameField/Field.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/AllyController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/AllyController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/CompControlledCreatureController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/CompControlledCreatureController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/PlayerController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/PlayerController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/PlayerManager.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameSetup.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameSetup.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/PlayerModel.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/main.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

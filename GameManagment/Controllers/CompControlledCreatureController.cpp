@@ -142,9 +142,11 @@ void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
         std::cout << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
         manager.moveTo(howToMove);
-        if (this->field.getFieldCells()[stepTo.x][stepTo.y].getCellType() == CellType::Slowing){
-            manager.disableCreature();
-            throw SlowingCellNotification("compControlledCreature on slowing cell!");
+        if (this->field.getFieldCells()[stepTo.x][stepTo.y].hasCellEvent()){
+            this->field.getFieldCells()[stepTo.x][stepTo.y].impactOnCreatureByCellEvent();
+            if (this->manager.isCreatureDisabled()){ //если ивент задизейблил нашу сущность, то проверяем и останавливаем дальнейшие ходы!
+                throw SlowingCellNotification("compControlledCreature on slowing cell!");
+            }
         }
     }
 }
