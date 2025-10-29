@@ -8,7 +8,7 @@
 
 class PlayerModel {
 public:
-    int healthPoint, ;
+    int healthPoint;
 };
 
 

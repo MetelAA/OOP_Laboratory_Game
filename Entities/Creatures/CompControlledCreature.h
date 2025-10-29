@@ -18,6 +18,8 @@ public:
     virtual int getDamage() noexcept final;
     virtual int getChanceToDetectHostile() noexcept final;
 
+    std::unique_ptr<Entity> clone() const override;
+
 private:
 
 protected:

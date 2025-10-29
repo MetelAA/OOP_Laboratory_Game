@@ -5,17 +5,25 @@
 #ifndef LABAOOP2_AREADAMAGESPELL_H
 #define LABAOOP2_AREADAMAGESPELL_H
 #include "Spell.h"
+#include <map>
+#include <memory>
 
 class AreaDamageSpell : public Spell {
 public:
-    AreaDamageSpell(int damage, int range, int areaRad) : Spell(SpellType::AreaDamageSpell), damage(damage), range(range),
-                                                                       areaRad(areaRad) {}
-    virtual int getDamage() const noexcept final;
-    virtual int getRange() const noexcept final;
-    virtual int getAreaRad() const noexcept final;
+    AreaDamageSpell() : Spell(SpellType::AreaDamageSpell) {}
+    virtual int getDamage(int gradeLevel) const noexcept final;
+    virtual int getRange(int gradeLevel) const noexcept final;
+    virtual int getAreaRad(int gradeLevel) const noexcept final;
 
 private:
-    int damage, range, areaRad;
+    struct levelInfo{
+        int damage, range, areaRad;
+    };
+    const std::map<int, levelInfo> levels = {{0, {1,   4, 2}},
+                                             {1, {2,   4, 2}},
+                                             {2, {3,   4, 3}},
+                                             {3, {5, 6, 3}}
+    };
 
 };
 

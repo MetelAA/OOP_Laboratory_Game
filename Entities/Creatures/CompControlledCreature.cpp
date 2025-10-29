@@ -11,3 +11,7 @@ int CompControlledCreature::getDamage() noexcept {
 int CompControlledCreature::getChanceToDetectHostile() noexcept {
     return chanceToDetectHostile;
 }
+
+std::unique_ptr<Entity> CompControlledCreature::clone() const {
+    std::make_unique<CompControlledCreature>(*this);
+}

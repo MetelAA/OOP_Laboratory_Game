@@ -15,3 +15,7 @@ const CloseRangeAttack& Player::getCloseRangeAttack() const noexcept {
 bool Player::isCloseRangeAttackSelected() const noexcept {
     return this->isCloseRangeAttackSelectedFlag;
 }
+
+std::unique_ptr<Entity> Player::clone() const {
+    return std::make_unique<Player>(*this);
+}

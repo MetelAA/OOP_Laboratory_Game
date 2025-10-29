@@ -7,7 +7,7 @@
 
 
 enum class SpellType {
-    DirectDamageSpell, AreaDamageSpell, SummoningSpell, BuffNextUsedSpell
+    DirectDamageSpell, AreaDamageSpell, SummoningSpell, BuffNextUsedSpell, CreateTrapSpell
 };
 
 

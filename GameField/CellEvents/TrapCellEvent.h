@@ -13,6 +13,8 @@ public:
 
     void impactOnCreatureInCell(Creature &creature) override;
 
+    std::unique_ptr<CellEvent> clone() const override;
+
 private:
     int damage;
 };

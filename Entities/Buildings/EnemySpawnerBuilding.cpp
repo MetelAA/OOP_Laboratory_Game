@@ -19,3 +19,7 @@ void EnemySpawnerBuilding::resetSpawnCounter() noexcept {
 int EnemySpawnerBuilding::getSpawnInterval() noexcept {
     return this->spawnInterval;
 }
+
+std::unique_ptr<Entity> EnemySpawnerBuilding::clone() const {
+    return std::make_unique<EnemySpawnerBuilding>(*this);
+}

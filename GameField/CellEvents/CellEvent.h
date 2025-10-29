@@ -13,6 +13,7 @@ public:
 
     virtual CellEventType getType() const noexcept final;
     virtual ~CellEvent() = default;
+    virtual std::unique_ptr<CellEvent> clone() const = 0;
     virtual void impactOnCreatureInCell(Creature& creature) = 0;
 private:
     CellEventType type;

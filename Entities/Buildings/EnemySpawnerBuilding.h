@@ -23,6 +23,8 @@ public:
 
     virtual int getSpawnInterval() noexcept final;
 
+    std::unique_ptr<Entity> clone() const override;
+
 protected:
     int spawnInterval, stepCounter = 0;
 };

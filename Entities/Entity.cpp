@@ -21,7 +21,7 @@ int Entity::getHealthPoints() const noexcept {
 }
 
 void Entity::changeHealthPoints(int dHP) noexcept {
-    this->healthPoints + dHP;
+    this->healthPoints = this->healthPoints + dHP;
 }
 
 bool Entity::isAlive() const noexcept {

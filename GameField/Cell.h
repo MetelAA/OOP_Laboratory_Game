@@ -13,9 +13,8 @@
 #include <memory>
 #include "CellEvents/TrapCellEvent.h"
 #include "../Exceptions/UnexpectedBehaviorException.h"
-//#include "../Entities/Creatures/Player.h"
-//#include "../Entities/Creatures/CompControlledCreature.h"
-//#include "../Entities/Buildings/EnemySpawnerBuilding.h"
+
+
 
 class Cell {
 public:
@@ -24,30 +23,54 @@ public:
         event = nullptr;
     }
 
+    Cell(Cell&& other) noexcept : type(other.type){
+        this->entityInCell = other.entityInCell;
+        other.entityInCell = nullptr;
+        this->event = std::move(other.event);
+    }
+
+    Cell& operator=(Cell&& other) noexcept {
+        if (this != &other){
+            this->type = other.type;
+            this->entityInCell = other.entityInCell;
+            other.entityInCell = nullptr;
+            this->event = std::move(other.event);
+        }
+        return *this;
+    }
+
     Cell(const Cell& other): type(other.type){
+        if (other.hasCellEvent()){
+            this->event = std::move(other.event->clone());
+        }else{
+            this->event = nullptr;
+        }
         if (other.hasEntityInCell()){
-            switch (other.getEntityInCell().getCellType()) {
-                case EntityType::PlayerEnt:{
-                    const Player *otherPlayer = dynamic_cast<const Player*>(&other.getEntityInCell());
-                    Player* playerCopy = new Player(*otherPlayer);
-                    this->addEntityInCell(playerCopy);
-                }
-                    break;
-                case EntityType::EnemyEnt:{
-                    const CompControlledCreature *otherEnemy = dynamic_cast<const CompControlledCreature*>(&other.getEntityInCell());
-                    CompControlledCreature* enemyCopy = new CompControlledCreature(*otherEnemy);
-                    this->addEntityInCell(enemyCopy);
-                }
-                    break;
-                case EntityType::EnemyBuildingEnt:{
-                    const EnemySpawnerBuilding *otherEnemySpawnerBuilding = dynamic_cast<const EnemySpawnerBuilding*>(&other.getEntityInCell());
-                    EnemySpawnerBuilding* buildingCopy = new EnemySpawnerBuilding(*otherEnemySpawnerBuilding);
-                    this->addEntityInCell(buildingCopy);
-                }
-                    break;
-            }
+            this->entityInCell = other.entityInCell->clone().release();
+        }else{
+            this->entityInCell = nullptr;
         }
     }
+
+    Cell& operator=(const Cell& other){
+        if (this != &other){
+            this->type = other.type;
+            if (other.hasCellEvent()){
+                this->event = std::move(other.event->clone());
+            }else{
+                this->event = nullptr;
+            }
+            if (other.hasEntityInCell()){
+                this->entityInCell = other.entityInCell->clone().release();
+            }else{
+                this->entityInCell = nullptr;
+            }
+        }
+        return *this;
+    }
+
+
+
 
     virtual CellType getCellType() const noexcept final;
 

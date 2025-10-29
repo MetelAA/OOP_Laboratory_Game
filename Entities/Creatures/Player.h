@@ -21,6 +21,8 @@ public:
     virtual const LongRangeAttack& getLongRangeAttack() const noexcept final; //gets link with modify opportunities
     virtual bool isCloseRangeAttackSelected() const noexcept final;
 
+    std::unique_ptr<Entity> clone() const override;
+
 protected:
     CloseRangeAttack closeRangeAttack;
     LongRangeAttack longRangeAttack;

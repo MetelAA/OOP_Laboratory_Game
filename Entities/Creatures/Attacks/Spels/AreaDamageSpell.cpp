@@ -4,14 +4,17 @@
 
 #include "AreaDamageSpell.h"
 
-int AreaDamageSpell::getDamage() const noexcept {
-    return this->damage;
+int AreaDamageSpell::getDamage(int gradeLevel) const noexcept {
+    int level = this->levels.size() < gradeLevel ? gradeLevel : (this->levels.size() - 1);
+    return this->levels.at(level).damage;
 }
 
-int AreaDamageSpell::getRange() const noexcept {
-    return this->range;
+int AreaDamageSpell::getRange(int gradeLevel) const noexcept {
+    int level = this->levels.size() < gradeLevel ? gradeLevel : (this->levels.size() - 1);
+    return this->levels.at(level).range;
 }
 
-int AreaDamageSpell::getAreaRad() const noexcept {
-    return this->areaRad;
+int AreaDamageSpell::getAreaRad(int gradeLevel) const noexcept {
+    int level = this->levels.size() < gradeLevel ? gradeLevel : (this->levels.size() - 1);
+    return this->levels.at(level).areaRad;
 }

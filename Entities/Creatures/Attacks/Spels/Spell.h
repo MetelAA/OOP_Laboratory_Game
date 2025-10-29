@@ -9,11 +9,11 @@
 
 class Spell {
 public:
-    explicit Spell(SpellType type) : type(type) {}
+    Spell(SpellType type) : type(type) {}
 
     virtual SpellType getSpellType() const noexcept final;
 
-private:
+protected:
     SpellType type;
 };
 

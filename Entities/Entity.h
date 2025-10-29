@@ -5,6 +5,7 @@
 #ifndef LABA1_ENTITY_H
 #define LABA1_ENTITY_H
 #include "EntityType.h"
+#include <memory>
 
 class Entity {
 private:
@@ -28,6 +29,10 @@ public:
     virtual void changeHealthPoints(int dHP) noexcept final;
 
     virtual bool isAlive() const noexcept final;
+
+    virtual std::unique_ptr<Entity> clone() const = 0;
+
+    virtual ~Entity() = default;
 
 protected:
     int xCoordinate, yCoordinate, healthPoints;

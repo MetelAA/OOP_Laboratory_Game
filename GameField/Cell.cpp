@@ -64,3 +64,5 @@ void Cell::impactOnCreatureByCellEvent() const{
             break;
     }
 }
+
+

@@ -5,22 +5,22 @@
 #ifndef LABAOOP2_SPELLHAND_H
 #define LABAOOP2_SPELLHAND_H
 
-#include "Spell.h"
+#include "../Spell.h"
 #include <vector>
+#include <memory>
 
 class SpellHand {
 public:
 
 
-    void addSpell(Spell spell) noexcept;
-    std::vector<Spell> getSpells() const;
+    void addSpell(std::unique_ptr<Spell> spell) noexcept;
+    const std::vector<std::unique_ptr<Spell>>& getSpells() const;
     void useSpell(int position); //позиция от 0 до n-1, если используется заклинание улучшения, то фактически улучщается рука а не другое заклинание!
 
 
 private:
-    int size;
-    int buffed; //улучшено ли следующее заклинание, + уровень улучшение (улучшение улучшения)
-    std::vector<Spell> spells;
+    int gradeLevel;
+    std::vector<std::unique_ptr<Spell>> spells;
 
 };
 

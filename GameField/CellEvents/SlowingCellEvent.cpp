@@ -7,3 +7,7 @@
 void SlowingCellEvent::impactOnCreatureInCell(Creature &creature) {
     creature.setDisabledFlag(true);
 }
+
+std::unique_ptr<CellEvent> SlowingCellEvent::clone() const {
+    return std::make_unique<SlowingCellEvent>(*this);
+}
