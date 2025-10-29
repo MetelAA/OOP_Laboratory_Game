@@ -15,22 +15,22 @@ public:
                                                                                             height(height),
                                                                                             cells(cells) {}
 
-    Field(const Field& other): width{other.width}, height(other.height), cells(other.cells){}
-    Field(Field&& other): width{other.width}, height(other.height), cells(std::move(other.cells)){}
+//    Field(const Field& other): width{other.width}, height(other.height), cells(other.cells){}
+//    Field(Field&& other): width{other.width}, height(other.height), cells(std::move(other.cells)){}
 
-    Field& operator=(Field&& other) noexcept {
-        if (this != &other) {
-            *this = Field(std::move(other));
-        }
-        return *this;
-    }
-
-    Field& operator=(const Field& other) {
-        if (this != &other) {
-            *this = Field(other);
-        }
-        return *this;
-    }
+//    Field& operator=(Field&& other) noexcept {
+//        if (this != &other) {
+//            *this = Field(std::move(other));
+//        }
+//        return *this;
+//    }
+//
+//    Field& operator=(const Field& other) {
+//        if (this != &other) {
+//            *this = Field(other);
+//        }
+//        return *this;
+//    }
 
     int getWidth() const noexcept; //return data
     int getHeight() const noexcept; //return data

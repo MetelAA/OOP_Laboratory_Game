@@ -36,7 +36,7 @@ bool Field::canMoveToOrSpawnOn(int x, int y) const {
                                   + '\n'};
     }
 
-    Cell fieldCell = this->cells[x][y];
+    const Cell& fieldCell = this->cells[x][y];
 
     if (fieldCell.getCellType() != CellType::Impassable) {
         throw CellImpassableNotification("cell is impassible, wall or something sht like that");

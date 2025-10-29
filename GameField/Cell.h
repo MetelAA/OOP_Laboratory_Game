@@ -24,30 +24,30 @@ public:
         event = nullptr;
     }
 
-//    Cell(const Cell& other): type(other.type){
-//        if (other.hasEntityInCell()){
-//            switch (other.getEntityInCell().getCellType()) {
-//                case EntityType::PlayerEnt:{
-//                    const Player *otherPlayer = dynamic_cast<const Player*>(&other.getEntityInCell());
-//                    Player* playerCopy = new Player(*otherPlayer);
-//                    this->addEntityInCell(playerCopy);
-//                }
-//                    break;
-//                case EntityType::EnemyEnt:{
-//                    const CompControlledCreature *otherEnemy = dynamic_cast<const CompControlledCreature*>(&other.getEntityInCell());
-//                    CompControlledCreature* enemyCopy = new CompControlledCreature(*otherEnemy);
-//                    this->addEntityInCell(enemyCopy);
-//                }
-//                    break;
-//                case EntityType::EnemyBuildingEnt:{
-//                    const EnemySpawnerBuilding *otherEnemySpawnerBuilding = dynamic_cast<const EnemySpawnerBuilding*>(&other.getEntityInCell());
-//                    EnemySpawnerBuilding* buildingCopy = new EnemySpawnerBuilding(*otherEnemySpawnerBuilding);
-//                    this->addEntityInCell(buildingCopy);
-//                }
-//                    break;
-//            }
-//        }
-//    }
+    Cell(const Cell& other): type(other.type){
+        if (other.hasEntityInCell()){
+            switch (other.getEntityInCell().getCellType()) {
+                case EntityType::PlayerEnt:{
+                    const Player *otherPlayer = dynamic_cast<const Player*>(&other.getEntityInCell());
+                    Player* playerCopy = new Player(*otherPlayer);
+                    this->addEntityInCell(playerCopy);
+                }
+                    break;
+                case EntityType::EnemyEnt:{
+                    const CompControlledCreature *otherEnemy = dynamic_cast<const CompControlledCreature*>(&other.getEntityInCell());
+                    CompControlledCreature* enemyCopy = new CompControlledCreature(*otherEnemy);
+                    this->addEntityInCell(enemyCopy);
+                }
+                    break;
+                case EntityType::EnemyBuildingEnt:{
+                    const EnemySpawnerBuilding *otherEnemySpawnerBuilding = dynamic_cast<const EnemySpawnerBuilding*>(&other.getEntityInCell());
+                    EnemySpawnerBuilding* buildingCopy = new EnemySpawnerBuilding(*otherEnemySpawnerBuilding);
+                    this->addEntityInCell(buildingCopy);
+                }
+                    break;
+            }
+        }
+    }
 
     virtual CellType getCellType() const noexcept final;
 
@@ -73,7 +73,6 @@ protected:
     CellType type;
     Entity *entityInCell;
     mutable std::unique_ptr<CellEvent> event;
-//    mutable CellEvent* event;
 };
 
 
