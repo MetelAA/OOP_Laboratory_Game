@@ -13,6 +13,8 @@ public:
     AreaDamageSpell() : SpellOnCoords(SpellType::AreaDamageSpell) {}
     void castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const override;
 
+    std::unique_ptr<Spell> clone() const override;
+
 private:
     struct levelInfo{
         int damage, range, areaRad;

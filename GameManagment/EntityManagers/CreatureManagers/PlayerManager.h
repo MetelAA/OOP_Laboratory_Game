@@ -15,7 +15,7 @@ public:
     void attack(Entity &attackWhom, AttackType type);
 
 protected:
-    Player player;
+    std::shared_ptr<Player> player;
 };
 
 

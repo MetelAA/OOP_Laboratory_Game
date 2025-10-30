@@ -17,6 +17,8 @@ public:
                                                                                  type(type) {
     }
 
+    Entity(const Entity& other) = default;
+    Entity(Entity&& other) noexcept = default;
 
     virtual int getXCoordinate() const noexcept final;
 

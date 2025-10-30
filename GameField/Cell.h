@@ -23,6 +23,11 @@ public:
         event = nullptr;
     }
 
+    Cell(CellType type, std::unique_ptr<Entity> entityInCell, std::unique_ptr<CellEvent> event) : type(type),
+                                                                                         entityInCell(std::move(entityInCell)),
+                                                                                         event(std::move(event)) {}
+
+
     Cell(Cell&& other) noexcept : type(other.type){
         this->entityInCell = other.entityInCell;
         other.entityInCell = nullptr;
@@ -46,7 +51,7 @@ public:
             this->event = nullptr;
         }
         if (other.hasEntityInCell()){
-            this->entityInCell = other.entityInCell->clone().release();
+            this->entityInCell = std::move(other.entityInCell->clone());
         }else{
             this->entityInCell = nullptr;
         }
@@ -61,7 +66,7 @@ public:
                 this->event = nullptr;
             }
             if (other.hasEntityInCell()){
-                this->entityInCell = other.entityInCell->clone().release();
+                this->entityInCell = std::move(other.entityInCell->clone());
             }else{
                 this->entityInCell = nullptr;
             }
@@ -74,15 +79,16 @@ public:
 
     virtual CellType getCellType() const noexcept final;
 
-    virtual void addEntityInCell(Entity *entity) noexcept final;
+    virtual void addEntityInCell(std::shared_ptr<Entity> entity) noexcept final;
 
     virtual void clearCell() noexcept final;
 
     virtual bool hasEntityInCell() const noexcept final;
 
-    virtual void damageEntityInCell(int damage) final;
+    virtual void damageEntityInCell(int damage) const final;
 
-    virtual Entity & getEntityInCell() const noexcept final;
+    virtual Entity& getEntityInCell() noexcept final;
+    virtual const Entity& getEntityInCell() const noexcept final;
 
     virtual EntityType getEntityInCellType() const final;
 
@@ -94,7 +100,7 @@ public:
 
 protected:
     CellType type;
-    Entity *entityInCell;
+    std::shared_ptr<Entity>  entityInCell;
     mutable std::unique_ptr<CellEvent> event;
 };
 

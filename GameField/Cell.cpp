@@ -12,7 +12,7 @@ bool Cell::hasEntityInCell() const noexcept{
     return this->entityInCell != nullptr;
 }
 
-void Cell::addEntityInCell(Entity *entity) noexcept {
+void Cell::addEntityInCell(std::shared_ptr<Entity> entity) noexcept {
     this->entityInCell = entity;
 }
 
@@ -20,7 +20,7 @@ void Cell::clearCell() noexcept {
     this->entityInCell = nullptr;
 }
 
-void Cell::damageEntityInCell(int damage) {
+void Cell::damageEntityInCell(int damage) const{
     if (this->hasEntityInCell()){
         this->entityInCell->changeHealthPoints((-1) * damage);
         return;
@@ -35,8 +35,12 @@ EntityType Cell::getEntityInCellType() const {
     throw NoEntityInCellNotification("В клетке нету сущности");
 }
 
-Entity & Cell::getEntityInCell() const noexcept {
+Entity & Cell::getEntityInCell() noexcept {
     return *this->entityInCell;
+}
+
+const Entity &Cell::getEntityInCell() const noexcept {
+    this->entityInCell;
 }
 
 
@@ -51,7 +55,7 @@ void Cell::impactOnCreatureByCellEvent() const{
     if (this->getEntityInCellType() != EntityType::EnemyEnt || this->getEntityInCellType() != EntityType::PlayerEnt || this->getEntityInCellType() != EntityType::Ally){
         throw UnexpectedBehaviorException("К клетке должен быть наследник класса Creature");
     }
-    Creature* creature = dynamic_cast<Creature*>(this->entityInCell);
+    Creature* creature = dynamic_cast<Creature*>(this->entityInCell.get());
     this->event.get()->impactOnCreatureInCell(*creature);//Вот он собсна ООП во плоти, стока по смыслу эквивалент нижнему(уже нет, удалил)! Это писал я, а не нейронка блеат!!!!! Свитч писать даже бы не пришлось если бы не удаление ловушек после получения урона
     switch (this->event.get()->getType()) {
         case CellEventType::SlowingEvent:
@@ -65,5 +69,6 @@ void Cell::impactOnCreatureByCellEvent() const{
 void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent) const {
     this->event = std::move(cellEvent);
 }
+
 
 

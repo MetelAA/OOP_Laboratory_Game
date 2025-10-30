@@ -13,8 +13,8 @@ public:
     void doMove();
 
 private:
-    std::map<EntityType, bool> typesToAttack = {{EntityType::PlayerEnt, true}};
-    std::vector<EntityType> priorityOfAttack = {EntityType::PlayerEnt};
+    std::map<EntityType, bool> typesToAttack = {{EntityType::PlayerEnt, true}, {EntityType::Ally, true}};
+    std::vector<EntityType> priorityOfAttack = {EntityType::PlayerEnt, EntityType::Ally};
 };
 
 

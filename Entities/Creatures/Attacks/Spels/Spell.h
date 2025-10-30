@@ -14,6 +14,7 @@ public:
 
     virtual SpellType getSpellType() const noexcept final;
     virtual ~Spell() = default;
+    virtual std::unique_ptr<Spell> clone() const = 0;
 
 protected:
     SpellType type;

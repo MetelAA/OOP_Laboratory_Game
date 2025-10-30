@@ -15,6 +15,8 @@ public:
     CreateTrapSpell() : SpellOnCoords(SpellType::CreateTrapSpell) {} //инфа почему так в диркет дамаге
     void castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const override;
 
+    std::unique_ptr<Spell> clone() const override;
+
 private:
     struct levelInfo{
         int damage;

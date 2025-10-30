@@ -6,7 +6,7 @@
 #include "EnemySpawnerBuildingManager.h"
 
 bool EnemySpawnerBuildingManager::isTimeToSpawn() noexcept {
-    return this->building.getStepCounter() == this->building.getSpawnInterval();
+    return this->stepCounter == this->building->getSpawnInterval();
 }
 
 Constants::dxdy chooseDxDy(std::vector<Constants::dxdy> dxdys) {
@@ -16,16 +16,15 @@ Constants::dxdy chooseDxDy(std::vector<Constants::dxdy> dxdys) {
     return pair;
 }
 
-CompControlledCreatureManager EnemySpawnerBuildingManager::spawnEnemy() {
-    this->building.resetSpawnCounter();
+CompControlledCreatureManager* EnemySpawnerBuildingManager::spawnEnemy() {
     std::vector<Constants::dxdy> dxdyCopy = Constants::dxdys;
 
     while (!dxdyCopy.empty()) {
         try{
             Constants::dxdy pair = chooseDxDy(dxdyCopy);
-            CompControlledCreature& enemy = this->enemySpawner.createEnemy(this->building.getXCoordinate() + pair.x,
-                                                   this->building.getYCoordinate() + pair.y);
-            return {this->field, &enemy};
+            std::shared_ptr<CompControlledCreature> enemy = this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
+                                                   this->building->getYCoordinate() + pair.y);
+            return (new CompControlledCreatureManager(this->field, enemy));
         }catch (SpawnEntityException& ex){
             continue;
         }
@@ -34,11 +33,11 @@ CompControlledCreatureManager EnemySpawnerBuildingManager::spawnEnemy() {
 }
 
 void EnemySpawnerBuildingManager::incrementTimeToSpawnCounter() noexcept {
-    this->building.incrementStepCounter();
+    this->stepCounter++;
 }
 
 void EnemySpawnerBuildingManager::resetSpawnCounter() noexcept {
-    this->building.resetSpawnCounter();
+    this->stepCounter = 0;
 }
 
 

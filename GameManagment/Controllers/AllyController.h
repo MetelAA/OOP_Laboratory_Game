@@ -12,8 +12,8 @@ class AllyController : public CompControlledCreatureController{
     void doMove();
 
 private:
-    std::map<EntityType, bool> typesToAttack = {{EntityType::EnemyEnt, true}, {EntityType::EnemyBuildingEnt, true}};
-    std::vector<EntityType> priorityOfAttack = {EntityType::EnemyEnt, EntityType::EnemyBuildingEnt};
+    std::map<EntityType, bool> typesToAttack = {{EntityType::EnemyEnt, true}, {EntityType::EnemySpawnerBuildingEnt, true}};
+    std::vector<EntityType> priorityOfAttack = {EntityType::EnemyEnt, EntityType::EnemySpawnerBuildingEnt};
 };
 
 

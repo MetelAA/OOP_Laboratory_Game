@@ -16,15 +16,18 @@ public:
 
     void castSpell(int gradeLevel, const Field& field, Constants::XYPair from, Constants::XYPair to) const override;
 
+    std::unique_ptr<Spell> clone() const override;
+
 private:
     struct levelInfo{
         int damage, range;
     };
-    const std::map<int, levelInfo> levels = {{0, {2,   4}},
-                                       {1, {4,   4}},
-                                       {2, {6,   4}},
-                                       {3, {111, 111}}
-                                    };
+    const std::map<int, levelInfo> levels = {
+            {0, {2,   4}},
+            {1, {4,   4}},
+            {2, {6,   4}},
+            {3, {111, 111}}
+    };
 };
 
 

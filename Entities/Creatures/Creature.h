@@ -12,6 +12,9 @@ public:
     Creature(int xCoordinate, int yCoordinate, int healthPoint, EntityType type, bool isDisabledFlag, int stepRange)
             : Entity(xCoordinate, yCoordinate, healthPoint, type), isDisabledFlag(isDisabledFlag), stepRange(stepRange) {}
 
+    Creature(const Creature& other) = default;
+    Creature(Creature&& other) noexcept: Entity(std::move(other)), isDisabledFlag(other.isDisabledFlag), stepRange(other.stepRange) {}
+
     virtual bool isDisabled() noexcept final;
 
     virtual void setDisabledFlag(bool flag) noexcept final;

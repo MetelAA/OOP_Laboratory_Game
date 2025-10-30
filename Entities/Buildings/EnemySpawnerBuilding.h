@@ -10,23 +10,15 @@
 
 class EnemySpawnerBuilding : public Building {
 public:
-    EnemySpawnerBuilding(int xCoordinate, int yCoordinate, int healthPoint, int spawnInterval,
-                         int stepCounter) : Building(xCoordinate, yCoordinate, healthPoint,
-                                                     EntityType::EnemyBuildingEnt), spawnInterval(spawnInterval),
-                                            stepCounter(stepCounter) {}
-
-    virtual void incrementStepCounter() noexcept final;
-
-    virtual int getStepCounter() noexcept final;
-
-    virtual void resetSpawnCounter() noexcept final;
+    EnemySpawnerBuilding(int xCoordinate, int yCoordinate, int healthPoint, int spawnInterval) : Building(xCoordinate, yCoordinate, healthPoint,
+                                                     EntityType::EnemySpawnerBuildingEnt), spawnInterval(spawnInterval){}
 
     virtual int getSpawnInterval() noexcept final;
 
     std::unique_ptr<Entity> clone() const override;
 
 protected:
-    int spawnInterval, stepCounter = 0;
+    int spawnInterval;
 };
 
 

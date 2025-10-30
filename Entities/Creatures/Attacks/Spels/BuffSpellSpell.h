@@ -7,8 +7,10 @@
 
 #include "Spell.h"
 
-class BuffSpellSpell : public Spell{
+class BuffSpellSpell : public Spell{ //если используется заклинание улучшения, то фактически улучщается рука а не другое заклинание!
+public:
     BuffSpellSpell(): Spell(SpellType::BuffNextUsedSpell){};
+    std::unique_ptr<Spell> clone() const override;
 };
 
 

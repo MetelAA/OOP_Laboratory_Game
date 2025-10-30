@@ -4,17 +4,6 @@
 
 #include "EnemySpawnerBuilding.h"
 
-int EnemySpawnerBuilding::getStepCounter() noexcept {
-    return this->stepCounter;
-}
-
-void EnemySpawnerBuilding::incrementStepCounter() noexcept {
-    this->stepCounter++;
-}
-
-void EnemySpawnerBuilding::resetSpawnCounter() noexcept {
-    this->stepCounter = 0;
-}
 
 int EnemySpawnerBuilding::getSpawnInterval() noexcept {
     return this->spawnInterval;

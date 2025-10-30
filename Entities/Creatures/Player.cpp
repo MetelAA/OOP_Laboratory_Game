@@ -19,3 +19,11 @@ bool Player::isCloseRangeAttackSelected() const noexcept {
 std::unique_ptr<Entity> Player::clone() const {
     return std::make_unique<Player>(*this);
 }
+
+long Player::getScore() const noexcept {
+    return this->score;
+}
+
+SpellHand &Player::getSpellHand() noexcept {
+    return this->hand;
+}

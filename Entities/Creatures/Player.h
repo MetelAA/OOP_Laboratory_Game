@@ -8,25 +8,48 @@
 #include "Creature.h"
 #include "Attacks/LongRangeAttack.h"
 #include "Attacks/CloseRangeAttack.h"
+#include "Attacks/Spels/Hand/SpellHand.h"
 
 class Player : public Creature {
 public:
     Player(int xCoordinate, int yCoordinate, int healthPoint, bool isSlowedFlag,
-           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack, int stepRange) :
+           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack, int stepRange, int score,
+           SpellHand &hand) :
             Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isSlowedFlag, stepRange),
-            closeRangeAttack(closeRangeAttack),
-            longRangeAttack(longRangeAttack) {}
+            closeRangeAttack(closeRangeAttack), longRangeAttack(longRangeAttack), score(score), hand(hand) {}
 
-    virtual const CloseRangeAttack& getCloseRangeAttack() const noexcept final; //gets link with modify opportunities
-    virtual const LongRangeAttack& getLongRangeAttack() const noexcept final; //gets link with modify opportunities
+    Player(Player &&other) noexcept
+            : Creature(std::move(other)),
+              closeRangeAttack(std::move(other.closeRangeAttack)),
+              longRangeAttack(std::move(other.longRangeAttack)),
+              isCloseRangeAttackSelectedFlag(other.isCloseRangeAttackSelectedFlag),
+              score(other.score),
+              hand(std::move(other.hand)) {}
+
+    Player(const Player &other)
+            : Creature(other),
+              closeRangeAttack(other.closeRangeAttack),
+              longRangeAttack(other.longRangeAttack),
+              isCloseRangeAttackSelectedFlag(other.isCloseRangeAttackSelectedFlag),
+              score(other.score),
+              hand(other.hand) {}
+
+    virtual const CloseRangeAttack &getCloseRangeAttack() const noexcept final; //gets link with modify opportunities
+    virtual const LongRangeAttack &getLongRangeAttack() const noexcept final; //gets link with modify opportunities
     virtual bool isCloseRangeAttackSelected() const noexcept final;
 
+    virtual long getScore() const noexcept final;
+    virtual SpellHand& getSpellHand() noexcept final;
+
     std::unique_ptr<Entity> clone() const override;
+
 
 protected:
     CloseRangeAttack closeRangeAttack;
     LongRangeAttack longRangeAttack;
     bool isCloseRangeAttackSelectedFlag;
+    long score;
+    SpellHand hand;
 };
 
 

@@ -24,8 +24,8 @@ bool Field::canMoveToOrSpawnOn(int x, int y) const {
     this->isCellPassable(x, y);
 
     const Cell &fieldCell = this->cells[x][y];
-    if (fieldCell.hasEntityInCell() && fieldCell.getEntityInCell().getType() == EntityType::EnemyBuildingEnt) {
-        throw CellImpassableNotification("cell is occupied by compControlledCreature building");
+    if (fieldCell.hasEntityInCell()) {
+        throw CellImpassableNotification("cell is occupied by other entity");
     }
 
     return true;

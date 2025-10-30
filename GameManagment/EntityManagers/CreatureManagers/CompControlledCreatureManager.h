@@ -12,7 +12,8 @@
 
 class CompControlledCreatureManager : public CreatureManager{
 public:
-    CompControlledCreatureManager(Field &field, Creature *creature) : CreatureManager(field, creature), compControlledCreature(*dynamic_cast<CompControlledCreature*>(creature)) {}
+    CompControlledCreatureManager(Field &field, std::shared_ptr<CompControlledCreature>& compControlledCreature) : CreatureManager(field, compControlledCreature.get()),
+    compControlledCreature(compControlledCreature) {}
 
     void moveTo(Constants::dxdy dxdy) override;
 
@@ -21,7 +22,7 @@ public:
     virtual int getChanceToDetectHostile() noexcept final;
 
 protected:
-    CompControlledCreature compControlledCreature;
+    std::shared_ptr<CompControlledCreature> compControlledCreature;
 };
 
 

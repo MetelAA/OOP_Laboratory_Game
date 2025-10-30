@@ -8,7 +8,7 @@
 void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
     std::cout << "Ход, enemySpawnerBuilding: " << &this->manager << std::endl;
     if (this->manager.isTimeToSpawn()){
-        CompControlledCreatureManager spawnedEnemyManager = manager.spawnEnemy();
+        CompControlledCreatureManager spawnedEnemyManager = *manager.spawnEnemy();
         manager.resetSpawnCounter();
         EnemyController spawnedEnemyController = EnemyController(this->field, spawnedEnemyManager);
 

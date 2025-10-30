@@ -12,16 +12,18 @@
 
 class EnemySpawnerBuildingManager : public EntityManager{
 public:
-    EnemySpawnerBuildingManager(Field &field, Entity *entity, EnemySpawner &enemySpawner) : EntityManager(field, entity), building(*dynamic_cast<EnemySpawnerBuilding*>(entity)),
-                                                              enemySpawner(enemySpawner) {}
+    EnemySpawnerBuildingManager(Field &field, int stepCounter,
+                                std::shared_ptr<EnemySpawnerBuilding> &building, EnemySpawner &enemySpawner)
+            : EntityManager(field, building.get()), stepCounter(stepCounter), building(building), enemySpawner(enemySpawner) {}
 
     virtual bool isTimeToSpawn() noexcept final;
     virtual void resetSpawnCounter() noexcept final;
     virtual void incrementTimeToSpawnCounter() noexcept final;
-    virtual CompControlledCreatureManager spawnEnemy() final;
+    virtual CompControlledCreatureManager* spawnEnemy() final;
 
 protected:
-    EnemySpawnerBuilding building;
+    int stepCounter;
+    std::shared_ptr<EnemySpawnerBuilding> building;
     EnemySpawner &enemySpawner;
 };
 

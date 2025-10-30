@@ -17,7 +17,7 @@ class EnemySpawner {
 public:
     EnemySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
 
-    CompControlledCreature& createEnemy(int x, int y);
+    std::shared_ptr<CompControlledCreature> createEnemy(int x, int y);
 
 protected:
     CompControlledCreatureModel& enemyModel;

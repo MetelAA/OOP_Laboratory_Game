@@ -16,7 +16,7 @@ class AllySpawner {
 public:
     AllySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
 
-    CompControlledCreature& createAlly(int x, int y);
+    std::shared_ptr<CompControlledCreature> createAlly(int x, int y);
 
 protected:
     CompControlledCreatureModel& enemyModel;

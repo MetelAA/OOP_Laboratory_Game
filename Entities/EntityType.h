@@ -7,7 +7,7 @@
 
 
 enum class EntityType {
-    PlayerEnt, EnemyEnt, EnemyBuildingEnt, Ally
+    PlayerEnt, EnemyEnt, EnemySpawnerBuildingEnt, Ally, EnemyDefenceTower
 };
 
 
