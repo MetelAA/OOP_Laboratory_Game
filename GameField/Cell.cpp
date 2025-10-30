@@ -39,9 +39,6 @@ Entity & Cell::getEntityInCell() const noexcept {
     return *this->entityInCell;
 }
 
-void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent)  {
-    this->event = std::move(cellEvent);
-}
 
 bool Cell::hasCellEvent() const {
     return this->event.get() != nullptr;
@@ -63,6 +60,10 @@ void Cell::impactOnCreatureByCellEvent() const{
             this->event.reset(); //удаление ловушки после применения
             break;
     }
+}
+
+void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent) const {
+    this->event = std::move(cellEvent);
 }
 
 

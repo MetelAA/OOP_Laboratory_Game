@@ -36,6 +36,8 @@ public:
     int getHeight() const noexcept; //return data
     std::vector<std::vector<Cell>>& getFieldCells() noexcept; //returns instance with modify ability to can modify Cells in vectors
     const std::vector<std::vector<Cell>>& getFieldCells() const noexcept; //returns instance to read or use static Cell methods
+    bool isCoordsAvailable(int x, int y) const;
+    bool isCellPassable(int x, int y) const;
     bool canMoveToOrSpawnOn(int x, int y) const;
     bool canMoveToOrSpawnOnNoExcept(int x, int y) const noexcept;
     std::vector<Constants::XYPair> hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept;

@@ -4,16 +4,14 @@
 
 #ifndef LABAOOP2_AREADAMAGESPELL_H
 #define LABAOOP2_AREADAMAGESPELL_H
-#include "Spell.h"
+#include "SpellOnCoords.h"
 #include <map>
 #include <memory>
 
-class AreaDamageSpell : public Spell {
+class AreaDamageSpell : public SpellOnCoords {
 public:
-    AreaDamageSpell() : Spell(SpellType::AreaDamageSpell) {}
-    virtual int getDamage(int gradeLevel) const noexcept final;
-    virtual int getRange(int gradeLevel) const noexcept final;
-    virtual int getAreaRad(int gradeLevel) const noexcept final;
+    AreaDamageSpell() : SpellOnCoords(SpellType::AreaDamageSpell) {}
+    void castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const override;
 
 private:
     struct levelInfo{
@@ -21,10 +19,10 @@ private:
     };
     const std::map<int, levelInfo> levels = {{0, {1,   4, 2}},
                                              {1, {2,   4, 2}},
-                                             {2, {3,   4, 3}},
-                                             {3, {5, 6, 3}}
+                                             {2, {3,   4, 2}},
+                                             {3, {5, 6, 2}}
     };
-
+    const std::vector<Constants::dxdy> damageCoords = {{0, 0}, {1, 0}, {0, 1}, {1, 1}};
 };
 
 

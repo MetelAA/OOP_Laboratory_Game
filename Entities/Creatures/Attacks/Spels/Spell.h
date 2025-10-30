@@ -6,12 +6,14 @@
 #define LABAOOP2_SPELL_H
 
 #include "SpellType.h"
+#include "../../../../GameField/Field.h"
 
 class Spell {
 public:
     Spell(SpellType type) : type(type) {}
 
     virtual SpellType getSpellType() const noexcept final;
+    virtual ~Spell() = default;
 
 protected:
     SpellType type;

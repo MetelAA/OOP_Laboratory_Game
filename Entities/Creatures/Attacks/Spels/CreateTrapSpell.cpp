@@ -3,9 +3,19 @@
 //
 
 #include "CreateTrapSpell.h"
+#include "../../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
+#include "../../../../Exceptions/UniversalStringException.h"
 
-std::unique_ptr<TrapCellEvent> CreateTrapSpell::getTrapCellEvent(int gradeLevel) const {
+void CreateTrapSpell::castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const {
     int level = gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size()-1);
+
+    try{
+        field.isCoordsAvailable(to.x, to.y);
+        field.isCellPassable(to.x, to.y);
+    }catch (const UniversalStringException &e){ //тут два типа ошибок координатная и непроходимая, обе наследницы универсальной
+        throw CantCastSpellOnCellNotification("Не получится применить заклинание так как: " + std::string(e.what()));
+    }
+
     auto* trap = new TrapCellEvent(this->levels.at(level).damage);
-    return std::make_unique<TrapCellEvent>(*trap);
+    field.getFieldCells()[to.x][to.y].setCellEvent(std::make_unique<TrapCellEvent>(*trap));
 }

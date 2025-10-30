@@ -6,16 +6,15 @@
 #define LABAOOP2_DIRECTDAMAGESPELL_H
 
 #include <map>
-#include "Spell.h"
+#include "SpellOnCoords.h"
 
-class DirectDamageSpell : public Spell {
+class DirectDamageSpell : public SpellOnCoords {
 public:
-    DirectDamageSpell() : Spell(SpellType::DirectDamageSpell) {} //так как заклинание апгрейда накладывается на руку а не на другие заклинания, то фактически не имеет смысла иметь параметры в
+    DirectDamageSpell() : SpellOnCoords(SpellType::DirectDamageSpell) {} //так как заклинание апгрейда накладывается на руку а не на другие заклинания, то фактически не имеет смысла иметь параметры в
     //инстансе заклинания опред типа, тк все заклинания опред типа на одном уровне одинаковые. По сути инстанс это просто показатель наличия заклинания в руке. Хардкод оправдан, ну или можно поменять
     //на получение SpellModel которая формируется из конфиг файла и тд, но как будто оверхэд) Я уже боюсь представить то кол-во json-ов что у меня будет, не надо пж)
 
-    virtual int getDamage(int gradeLevel) const noexcept final;
-    virtual int getRange(int gradeLevel) const noexcept final;
+    void castSpell(int gradeLevel, const Field& field, Constants::XYPair from, Constants::XYPair to) const override;
 
 private:
     struct levelInfo{

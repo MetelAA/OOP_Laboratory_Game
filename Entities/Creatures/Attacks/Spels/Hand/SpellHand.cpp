@@ -3,7 +3,7 @@
 //
 
 #include "SpellHand.h"
-#include "../../../../../Exceptions/UnexpectedBehaviorException.h"
+//#include "../../../../../Exceptions/UnexpectedBehaviorException.h"
 
 const std::vector<std::unique_ptr<Spell>>& SpellHand::getSpells() const {
     return this->spells;

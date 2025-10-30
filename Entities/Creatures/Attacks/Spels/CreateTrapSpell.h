@@ -5,16 +5,15 @@
 #ifndef LABAOOP2_CREATETRAPSPELL_H
 #define LABAOOP2_CREATETRAPSPELL_H
 
-#include "Spell.h"
+#include "SpellOnCoords.h"
 #include "../../../../GameField/CellEvents/TrapCellEvent.h"
 #include <memory>
 #include <map>
 
-class CreateTrapSpell : public Spell {
-    CreateTrapSpell() : Spell(SpellType::CreateTrapSpell) {} //инфа почему так в диркет дамаге
-
-    virtual std::unique_ptr<TrapCellEvent> getTrapCellEvent(int gradeLevel) const final;
-
+class CreateTrapSpell : public SpellOnCoords {
+public:
+    CreateTrapSpell() : SpellOnCoords(SpellType::CreateTrapSpell) {} //инфа почему так в диркет дамаге
+    void castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const override;
 
 private:
     struct levelInfo{

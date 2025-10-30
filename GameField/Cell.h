@@ -86,7 +86,7 @@ public:
 
     virtual EntityType getEntityInCellType() const final;
 
-    virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) final;
+    virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) const final;
 
     virtual bool hasCellEvent() const final;
 
