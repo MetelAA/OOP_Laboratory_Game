@@ -5,7 +5,6 @@
 #include "SpellHand.h"
 //#include "../../../../../Exceptions/UnexpectedBehaviorException.h"
 #include "../SpellOnCoords.h"
-#include "../SpellWithoutCoords.h"
 #include <iostream>
 
 const std::vector<std::unique_ptr<Spell>>& SpellHand::getSpells() const {

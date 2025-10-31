@@ -89,10 +89,10 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.cpp">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.h">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.cpp">
@@ -162,9 +162,6 @@
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellWithoutCoords.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp">

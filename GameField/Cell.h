@@ -100,7 +100,7 @@ public:
 
 protected:
     CellType type;
-    std::shared_ptr<Entity>  entityInCell;
+    std::shared_ptr<Entity> entityInCell;
     mutable std::unique_ptr<CellEvent> event;
 };
 

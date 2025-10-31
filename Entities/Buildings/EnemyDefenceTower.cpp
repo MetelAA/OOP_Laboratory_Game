@@ -15,3 +15,7 @@ int EnemyDefenceTower::getAttackRadius() const noexcept {
 int EnemyDefenceTower::getAttackInterval() const noexcept {
     return this->attackInterval;
 }
+
+std::unique_ptr<Entity> EnemyDefenceTower::clone() const {
+    return std::make_unique<EnemyDefenceTower>(*this);
+}

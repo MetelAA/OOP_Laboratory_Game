@@ -152,29 +152,29 @@ Entities/Buildings/Building.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.s
 .PHONY : Entities/Buildings/Building.cpp.s
 
-Entities/Buildings/EnemyAttackTower.obj: Entities/Buildings/EnemyAttackTower.cpp.obj
-.PHONY : Entities/Buildings/EnemyAttackTower.obj
+Entities/Buildings/EnemyDefenceTower.obj: Entities/Buildings/EnemyDefenceTower.cpp.obj
+.PHONY : Entities/Buildings/EnemyDefenceTower.obj
 
 # target to build an object file
-Entities/Buildings/EnemyAttackTower.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj
-.PHONY : Entities/Buildings/EnemyAttackTower.cpp.obj
+Entities/Buildings/EnemyDefenceTower.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj
+.PHONY : Entities/Buildings/EnemyDefenceTower.cpp.obj
 
-Entities/Buildings/EnemyAttackTower.i: Entities/Buildings/EnemyAttackTower.cpp.i
-.PHONY : Entities/Buildings/EnemyAttackTower.i
+Entities/Buildings/EnemyDefenceTower.i: Entities/Buildings/EnemyDefenceTower.cpp.i
+.PHONY : Entities/Buildings/EnemyDefenceTower.i
 
 # target to preprocess a source file
-Entities/Buildings/EnemyAttackTower.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.i
-.PHONY : Entities/Buildings/EnemyAttackTower.cpp.i
+Entities/Buildings/EnemyDefenceTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.i
+.PHONY : Entities/Buildings/EnemyDefenceTower.cpp.i
 
-Entities/Buildings/EnemyAttackTower.s: Entities/Buildings/EnemyAttackTower.cpp.s
-.PHONY : Entities/Buildings/EnemyAttackTower.s
+Entities/Buildings/EnemyDefenceTower.s: Entities/Buildings/EnemyDefenceTower.cpp.s
+.PHONY : Entities/Buildings/EnemyDefenceTower.s
 
 # target to generate assembly for a file
-Entities/Buildings/EnemyAttackTower.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.s
-.PHONY : Entities/Buildings/EnemyAttackTower.cpp.s
+Entities/Buildings/EnemyDefenceTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.s
+.PHONY : Entities/Buildings/EnemyDefenceTower.cpp.s
 
 Entities/Buildings/EnemySpawnerBuilding.obj: Entities/Buildings/EnemySpawnerBuilding.cpp.obj
 .PHONY : Entities/Buildings/EnemySpawnerBuilding.obj
@@ -1100,9 +1100,9 @@ help:
 	@echo ... Entities/Buildings/Building.obj
 	@echo ... Entities/Buildings/Building.i
 	@echo ... Entities/Buildings/Building.s
-	@echo ... Entities/Buildings/EnemyAttackTower.obj
-	@echo ... Entities/Buildings/EnemyAttackTower.i
-	@echo ... Entities/Buildings/EnemyAttackTower.s
+	@echo ... Entities/Buildings/EnemyDefenceTower.obj
+	@echo ... Entities/Buildings/EnemyDefenceTower.i
+	@echo ... Entities/Buildings/EnemyDefenceTower.s
 	@echo ... Entities/Buildings/EnemySpawnerBuilding.obj
 	@echo ... Entities/Buildings/EnemySpawnerBuilding.i
 	@echo ... Entities/Buildings/EnemySpawnerBuilding.s

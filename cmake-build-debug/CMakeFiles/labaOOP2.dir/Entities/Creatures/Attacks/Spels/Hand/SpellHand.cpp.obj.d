@@ -168,7 +168,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Hand/SpellHand.cpp.obj:
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellWithoutCoords.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \

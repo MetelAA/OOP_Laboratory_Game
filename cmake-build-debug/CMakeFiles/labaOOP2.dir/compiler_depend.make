@@ -114,8 +114,8 @@ CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj: D:/clionProj/OOP_La
   C:/msys/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   C:/msys/mingw64/include/c++/15.2.0/pstl/execution_defs.h
 
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj: D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.cpp \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.h \
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj: D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.cpp \
+  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
   C:/msys/mingw64/include/c++/15.2.0/utility \
   C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
   C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
@@ -1483,7 +1483,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Hand/SpellHand.cpp.obj:
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellWithoutCoords.h \
   C:/msys/mingw64/include/c++/15.2.0/iostream \
   C:/msys/mingw64/include/c++/15.2.0/ostream \
   C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -4504,11 +4503,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.obj: D:/cl
 
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.cpp \
   D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.h \
-  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.h \
-  D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.h \
-  D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h \
+  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
@@ -4679,34 +4675,20 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cp
   D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
-  D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
-  D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
-  D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
-  D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
+  C:/msys/mingw64/include/c++/15.2.0/utility \
+  C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
-  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
-  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
-  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
-  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
-  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
-  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
-  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/AttackType.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Hand/SpellHand.h \
+  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h \
+  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
   D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
-  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+  D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
   C:/msys/mingw64/include/c++/15.2.0/iostream \
   C:/msys/mingw64/include/c++/15.2.0/ostream \
   C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -4730,8 +4712,7 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cp
   C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
   C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
   C:/msys/mingw64/include/c++/15.2.0/istream \
-  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
-  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h
+  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc
 
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.cpp \
   D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.h \
@@ -5388,7 +5369,7 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefen
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
-  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.h \
+  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
   C:/msys/mingw64/include/c++/15.2.0/utility \
   C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
@@ -5398,6 +5379,7 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefen
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
   D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
   D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
   D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h
 
 CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp \
@@ -6675,13 +6657,15 @@ C:/msys/mingw64/include/c++/15.2.0/bits/atomic_base.h:
 
 C:/msys/mingw64/include/c++/15.2.0/bits/atomic_lockfree_defines.h:
 
+D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.cpp:
+
 C:/msys/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h:
 
 C:/msys/mingw64/include/c++/15.2.0/pstl/execution_defs.h:
 
-D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.cpp:
+D:/clionProj/OOP_Laboratory_Game/GameField/CellType.h:
 
-D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.h:
+D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h:
 
 C:/msys/mingw64/include/c++/15.2.0/utility:
 
@@ -6728,8 +6712,6 @@ C:/msys/mingw64/include/c++/15.2.0/vector:
 C:/msys/mingw64/include/c++/15.2.0/bits/stl_vector.h:
 
 C:/msys/mingw64/include/c++/15.2.0/bits/vector.tcc:
-
-D:/clionProj/OOP_Laboratory_Game/GameField/CellType.h:
 
 D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/NoEntityInCellNotification.h:
 
@@ -6894,8 +6876,6 @@ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h:
 D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/CreateTrapSpell.cpp:
 
 D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Hand/SpellHand.h:
-
-D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellWithoutCoords.h:
 
 D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.cpp:
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj"
   "CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj.d"
-  "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj"
-  "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj.d"
+  "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj"
+  "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj.d"
   "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj"
   "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj.d"
   "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Attack.cpp.obj"

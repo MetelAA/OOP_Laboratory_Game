@@ -9,7 +9,7 @@ void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
 
     if (this->manager.isCoolDowned()){
         this->manager.standOnCoolDown();
-        
+
 
     }else{
         this->manager.doCoolDownStep();

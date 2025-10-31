@@ -18,8 +18,11 @@ public:
     virtual const DirectDamageSpell& getDamageSpell() const noexcept final;
     virtual int getAttackRadius() const noexcept final;
     virtual int getAttackInterval() const noexcept final;
+
+    std::unique_ptr<Entity> clone() const override;
+
 protected:
-    DirectDamageSpell spell;
+    DirectDamageSpell spell; //переделать по unip
     int attackRadius, attackInterval;
 };
 

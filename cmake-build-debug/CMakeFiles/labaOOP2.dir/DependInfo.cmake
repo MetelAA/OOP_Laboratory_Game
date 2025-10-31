@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.cpp" "CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj.d"
-  "D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.cpp" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj.d"
+  "D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.cpp" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.cpp" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemySpawnerBuilding.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.cpp" "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Attack.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Attack.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.cpp" "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/CloseRangeAttack.cpp.obj.d"

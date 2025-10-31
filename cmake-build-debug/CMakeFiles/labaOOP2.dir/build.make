@@ -586,19 +586,19 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.s: c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\Entities\Creatures\Attacks\Spels\SummoningSpell.cpp -o CMakeFiles\labaOOP2.dir\Entities\Creatures\Attacks\Spels\SummoningSpell.cpp.s
 
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj: D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyAttackTower.cpp
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj -MF CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyAttackTower.cpp.obj.d -o CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyAttackTower.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyAttackTower.cpp
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj: D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.cpp
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj -MF CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyDefenceTower.cpp.obj.d -o CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyDefenceTower.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyDefenceTower.cpp
 
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.i"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyAttackTower.cpp > CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyAttackTower.cpp.i
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyDefenceTower.cpp > CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyDefenceTower.cpp.i
 
-CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.s"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyAttackTower.cpp -o CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyAttackTower.cpp.s
+CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyDefenceTower.cpp -o CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyDefenceTower.cpp.s
 
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.cpp
@@ -667,7 +667,7 @@ labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/GameField/CellEvents/TrapCellEvent.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Factories/SpellFactory.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj"
 
@@ -711,7 +711,7 @@ labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameField/CellEvents/SlowingCellEvent.cpp.
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameField/CellEvents/TrapCellEvent.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/SpellFactory.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.obj
-labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyAttackTower.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/build.make
