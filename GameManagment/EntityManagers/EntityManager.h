@@ -12,7 +12,7 @@
 
 class EntityManager {
 public:
-    virtual bool getEntityStatus() const noexcept final{
+    virtual bool isAlive() const noexcept final{
         return this->entity->isAlive();
     }
     virtual Constants::XYPair getEntityCoords() const noexcept final{

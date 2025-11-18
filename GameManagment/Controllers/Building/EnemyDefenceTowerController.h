@@ -5,8 +5,8 @@
 #ifndef LABAOOP2_ENEMYDEFENCETOWERCONTROLLER_H
 #define LABAOOP2_ENEMYDEFENCETOWERCONTROLLER_H
 
-#include "../EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h"
-#include "../GameMaster.h"
+#include "../../EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h"
+#include "../../GameMaster.h"
 
 class EnemyDefenceTowerController {
 public:
@@ -19,8 +19,13 @@ private:
     const Field& field;
     EnemyDefenceTowerManager manager;
 
-    std::map<EntityType, bool> typesToAttack = {{EntityType::PlayerEnt, true}, {EntityType::Ally, true}};
-    std::vector<EntityType> priorityOfAttack = {EntityType::Ally, EntityType::PlayerEnt};
+    std::map<EntityType, int> typesToAttackWithPriority = {{EntityType::PlayerEnt, 1}, {EntityType::Ally, 2}};
+
+    struct CreatureWithDistance{
+        EntityType creatureType;
+        int distance;
+        Constants::XYPair coords;
+    };
 };
 
 

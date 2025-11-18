@@ -158,6 +158,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerMana
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.h \
+ C:/msys/mingw64/include/c++/15.2.0/utility \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
@@ -193,4 +195,5 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerMana
  C:/msys/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
  C:/msys/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
  C:/msys/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc
+ C:/msys/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/SlowingCellNotification.h

@@ -7,7 +7,7 @@
 #include "../../../../Exceptions/UniversalStringException.h"
 #include <iostream>
 
-void SummoningSpell::castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const {
+void SummoningSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
     std::cout << "Применяем заклинание призыва!" << std::endl;
     int allyCount = this->levels.at(gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size() - 1));
 

@@ -11,9 +11,11 @@
 #include "../Creatures/Attacks/Spels/DirectDamageSpell.h"
 class EnemyDefenceTower : public Building{
 public:
-    EnemyDefenceTower(int xCoordinate, int yCoordinate, int healthPoint, DirectDamageSpell spell,
-                      int attackRadius) : Building(xCoordinate, yCoordinate, healthPoint, EntityType::EnemyDefenceTower), spell(std::move(spell)),
-                                         attackRadius(attackRadius) {}
+    EnemyDefenceTower(int xCoordinate, int yCoordinate, int healthPoint,
+                      const DirectDamageSpell &spell, int attackRadius, int attackInterval) : Building(xCoordinate, yCoordinate, healthPoint, EntityType::EnemyDefenceTower),
+                                                                                              spell(spell),
+                                                                                              attackRadius(attackRadius),
+                                                                                              attackInterval(attackInterval) {}
 
     virtual const DirectDamageSpell& getDamageSpell() const noexcept final;
     virtual int getAttackRadius() const noexcept final;

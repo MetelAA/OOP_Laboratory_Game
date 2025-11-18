@@ -38,7 +38,7 @@ std::vector<Constants::XYPair> Field::hasNearEntityOfSomeTypes(std::map<EntityTy
         if ((x + pair.x) >= 0 && (x + pair.x) < this->width
             && (y + pair.y) >= 0 && (y + pair.y) < this->height) {
             if (this->cells[x + pair.x][y + pair.y].hasEntityInCell() &&
-                types.count(this->cells[x + pair.x][y + pair.y].getEntityInCell().getType()) > 0) {
+                types.count(this->cells[x + pair.x][y + pair.y].getEntityInCellType()) > 0) {
                 result.push_back({x + pair.x, y + pair.y});
             }
         }

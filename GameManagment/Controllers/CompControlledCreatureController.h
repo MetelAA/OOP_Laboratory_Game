@@ -24,8 +24,6 @@ private:
     CompControlledCreatureManager manager;
 
     void moveTo(std::stack<Constants::XYPair> trip, std::string headerCout);
-//    std::map<EntityType, bool> typesToAttack = {{EntityType::PlayerEnt, true}};
-//    std::vector<EntityType> priorityOfAttack = {EntityType::PlayerEnt};
 
     struct EntityCoordsWithNearestPositionToAttackFrom{
         Constants::XYPair attackFromCoordinates;

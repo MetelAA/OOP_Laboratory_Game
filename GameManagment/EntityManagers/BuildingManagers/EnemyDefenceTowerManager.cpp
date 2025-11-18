@@ -8,7 +8,7 @@ bool EnemyDefenceTowerManager::isCoolDowned() const noexcept {
     return this->counter == this->tower->getAttackInterval();
 }
 
-void EnemyDefenceTowerManager::standOnCoolDown() noexcept {
+void EnemyDefenceTowerManager::goToCoolDown() noexcept {
     this->counter = 0;
 }
 
@@ -22,7 +22,7 @@ int EnemyDefenceTowerManager::getAttackRadius() const noexcept {
 
 void EnemyDefenceTowerManager::attackCoordinates(Constants::XYPair coords) {
     try {
-        this->tower->getDamageSpell().castSpell(1, this->field, this->getEntityCoords(), coords);
+        this->tower->getDamageSpell().castSpell(0, this->field, this->getEntityCoords(), coords);
     }catch (UniversalStringException& e){
         throw UnexpectedBehaviorException("ошибка в EnemyDefenceTowerManager при касте заклинания, ошибка здесь вызывать не должна, что-то не досмотрел в controller!!!");
     }

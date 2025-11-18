@@ -14,7 +14,7 @@ public:
     //инстансе заклинания опред типа, тк все заклинания опред типа на одном уровне одинаковые. По сути инстанс это просто показатель наличия заклинания в руке. Хардкод оправдан, ну или можно поменять
     //на получение SpellModel которая формируется из конфиг файла и тд, но как будто оверхэд) Я уже боюсь представить то кол-во json-ов что у меня будет, не надо пж)
 
-    void castSpell(int gradeLevel, const Field& field, Constants::XYPair from, Constants::XYPair to) const override;
+    void castSpell(int gradeLevel, Field& field, Constants::XYPair from, Constants::XYPair to) const override;
 
     std::unique_ptr<Spell> clone() const override;
 
@@ -23,10 +23,11 @@ private:
         int damage, range;
     };
     const std::map<int, levelInfo> levels = {
-            {0, {2,   4}},
-            {1, {4,   4}},
-            {2, {6,   4}},
-            {3, {111, 111}}
+            {0, {1,   4}}, //0 - ослабленная вервсия заклинания для тестов
+            {1, {2,   4}},
+            {2, {4,   4}},
+            {3, {6,   5}},
+            {4, {111, 111}}
     };
 };
 

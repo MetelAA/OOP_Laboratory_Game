@@ -31,7 +31,7 @@ void SpellHand::useSpellWithoutAnyCoordsBinding(int position) {
     }
 }
 
-void SpellHand::useSpellWithAIMBinding(int position, const Field& field, Constants::XYPair from, Constants::XYPair to) {
+void SpellHand::useSpellWithAIMBinding(int position, Field& field, Constants::XYPair from, Constants::XYPair to) {
     this->checkSpellPositionAvailability(position);
     switch (this->spells.at(position).get()->getSpellType()) {
         case SpellType::DirectDamageSpell:
@@ -41,7 +41,7 @@ void SpellHand::useSpellWithAIMBinding(int position, const Field& field, Constan
         {
             SpellOnCoords* spell = dynamic_cast<SpellOnCoords*>(this->spells.at(position).get());
             spell->castSpell(this->gradeLevel, field, from, to);
-            this->gradeLevel = 0;
+            this->gradeLevel = 1;
         }
             break;
         case SpellType::BuffNextUsedSpell:

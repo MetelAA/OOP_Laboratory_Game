@@ -11,16 +11,21 @@
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
+#include "../GameManagment/GameMaster.h"
 
 class AllySpawner {
 public:
-    AllySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
+    AllySpawner(const CompControlledCreatureModel &allyModel, Field &field, GameMaster &gameMaster) : allyModel(allyModel),
+                                                                                                field(field),
+                                                                                                gameMaster(
+                                                                                                        gameMaster) {}
 
-    std::shared_ptr<CompControlledCreature> createAlly(int x, int y);
+    void createAlly(int x, int y);
 
 protected:
-    CompControlledCreatureModel& enemyModel;
+    const CompControlledCreatureModel allyModel;
     Field& field;
+    GameMaster& gameMaster;
 };
 
 

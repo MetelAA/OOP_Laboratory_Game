@@ -4,11 +4,11 @@
 
 #ifndef LABA1_ENEMYSPAWNERBUILDINGCONTROLLER_H
 #define LABA1_ENEMYSPAWNERBUILDINGCONTROLLER_H
-#include "../EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h"
+#include "../../EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h"
 #include <iostream>
 #include <utility>
-#include "../GameMaster.h"
-#include "../Controllers/EnemyController.h"
+#include "../../GameMaster.h"
+#include "../EnemyController.h"
 
 class EnemySpawnerBuildingController {
 public:

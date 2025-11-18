@@ -158,6 +158,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefen
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.h \
+ C:/msys/mingw64/include/c++/15.2.0/utility \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
@@ -165,8 +167,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefen
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
- C:/msys/mingw64/include/c++/15.2.0/utility \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h \

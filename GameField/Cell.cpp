@@ -20,7 +20,7 @@ void Cell::clearCell() noexcept {
     this->entityInCell = nullptr;
 }
 
-void Cell::damageEntityInCell(int damage) const{
+void Cell::damageEntityInCell(int damage) {
     if (this->hasEntityInCell()){
         this->entityInCell->changeHealthPoints((-1) * damage);
         return;
@@ -39,16 +39,15 @@ Entity & Cell::getEntityInCell() noexcept {
     return *this->entityInCell;
 }
 
-const Entity &Cell::getEntityInCell() const noexcept {
-    this->entityInCell;
-}
-
 
 bool Cell::hasCellEvent() const {
     return this->event.get() != nullptr;
 }
 
-void Cell::impactOnCreatureByCellEvent() const{
+void Cell::impactOnCreatureByCellEvent() {
+    if (!this->hasCellEvent()){
+        throw UnexpectedBehaviorException("Для вызова impactOnCreatureByCellEvent необходимо наличие cellEvent в клетке");
+    }
     if (!this->hasEntityInCell()){
         throw UnexpectedBehaviorException("На момент вызова impactOnCreatureByCellEvent сущность уже должна быть перемещена в клетку");
     }
@@ -66,7 +65,7 @@ void Cell::impactOnCreatureByCellEvent() const{
     }
 }
 
-void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent) const {
+void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent) {
     this->event = std::move(cellEvent);
 }
 

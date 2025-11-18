@@ -8,7 +8,7 @@
 #include <cmath>
 #include <iostream>
 
-void AreaDamageSpell::castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const {
+void AreaDamageSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
     std::cout << "Примеяем заклинание атаки по площади!" << std::endl;
     levelInfo level = this->levels.at(this->levels.size() < gradeLevel ? gradeLevel : (this->levels.size() - 1));
 

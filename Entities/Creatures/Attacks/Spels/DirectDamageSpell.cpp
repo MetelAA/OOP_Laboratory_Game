@@ -9,7 +9,7 @@
 #include <cmath>
 #include <iostream>
 
-void DirectDamageSpell::castSpell(int gradeLevel, const Field& field, Constants::XYPair from, Constants::XYPair to) const {
+void DirectDamageSpell::castSpell(int gradeLevel, Field& field, Constants::XYPair from, Constants::XYPair to) const {
     std::cout << "Применяем заклинание урона в точку" << std::endl;
     levelInfo level = this->levels.at(gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size() - 1));
 

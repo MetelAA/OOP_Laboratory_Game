@@ -560,6 +560,30 @@ Factories/AllySpawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Factories/AllySpawner.cpp.s
 .PHONY : Factories/AllySpawner.cpp.s
 
+Factories/EnemyDefenceTowerSpawner.obj: Factories/EnemyDefenceTowerSpawner.cpp.obj
+.PHONY : Factories/EnemyDefenceTowerSpawner.obj
+
+# target to build an object file
+Factories/EnemyDefenceTowerSpawner.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj
+.PHONY : Factories/EnemyDefenceTowerSpawner.cpp.obj
+
+Factories/EnemyDefenceTowerSpawner.i: Factories/EnemyDefenceTowerSpawner.cpp.i
+.PHONY : Factories/EnemyDefenceTowerSpawner.i
+
+# target to preprocess a source file
+Factories/EnemyDefenceTowerSpawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.i
+.PHONY : Factories/EnemyDefenceTowerSpawner.cpp.i
+
+Factories/EnemyDefenceTowerSpawner.s: Factories/EnemyDefenceTowerSpawner.cpp.s
+.PHONY : Factories/EnemyDefenceTowerSpawner.s
+
+# target to generate assembly for a file
+Factories/EnemyDefenceTowerSpawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.s
+.PHONY : Factories/EnemyDefenceTowerSpawner.cpp.s
+
 Factories/EnemySpawner.obj: Factories/EnemySpawner.cpp.obj
 .PHONY : Factories/EnemySpawner.obj
 
@@ -776,6 +800,54 @@ GameManagment/Controllers/AllyController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/AllyController.cpp.s
 .PHONY : GameManagment/Controllers/AllyController.cpp.s
 
+GameManagment/Controllers/Building/EnemyDefenceTowerController.obj: GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.obj
+
+# target to build an object file
+GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj
+
+GameManagment/Controllers/Building/EnemyDefenceTowerController.i: GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.i
+
+# target to preprocess a source file
+GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i
+
+GameManagment/Controllers/Building/EnemyDefenceTowerController.s: GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.s
+
+# target to generate assembly for a file
+GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s
+.PHONY : GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s
+
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.obj: GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.obj
+
+# target to build an object file
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj
+
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.i: GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.i
+
+# target to preprocess a source file
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i
+
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.s: GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.s
+
+# target to generate assembly for a file
+GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s
+.PHONY : GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s
+
 GameManagment/Controllers/CompControlledCreatureController.obj: GameManagment/Controllers/CompControlledCreatureController.cpp.obj
 .PHONY : GameManagment/Controllers/CompControlledCreatureController.obj
 
@@ -823,54 +895,6 @@ GameManagment/Controllers/EnemyController.s: GameManagment/Controllers/EnemyCont
 GameManagment/Controllers/EnemyController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.s
 .PHONY : GameManagment/Controllers/EnemyController.cpp.s
-
-GameManagment/Controllers/EnemyDefenceTowerController.obj: GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.obj
-
-# target to build an object file
-GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj
-
-GameManagment/Controllers/EnemyDefenceTowerController.i: GameManagment/Controllers/EnemyDefenceTowerController.cpp.i
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.i
-
-# target to preprocess a source file
-GameManagment/Controllers/EnemyDefenceTowerController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.i
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.cpp.i
-
-GameManagment/Controllers/EnemyDefenceTowerController.s: GameManagment/Controllers/EnemyDefenceTowerController.cpp.s
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.s
-
-# target to generate assembly for a file
-GameManagment/Controllers/EnemyDefenceTowerController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.s
-.PHONY : GameManagment/Controllers/EnemyDefenceTowerController.cpp.s
-
-GameManagment/Controllers/EnemySpawnerBuildingController.obj: GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.obj
-
-# target to build an object file
-GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj
-
-GameManagment/Controllers/EnemySpawnerBuildingController.i: GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.i
-
-# target to preprocess a source file
-GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i
-
-GameManagment/Controllers/EnemySpawnerBuildingController.s: GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.s
-
-# target to generate assembly for a file
-GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s
-.PHONY : GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s
 
 GameManagment/Controllers/PlayerController.obj: GameManagment/Controllers/PlayerController.cpp.obj
 .PHONY : GameManagment/Controllers/PlayerController.obj
@@ -1040,29 +1064,53 @@ GameManagment/GameMaster.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.s
 .PHONY : GameManagment/GameMaster.cpp.s
 
-GameManagment/GameSetup.obj: GameManagment/GameSetup.cpp.obj
-.PHONY : GameManagment/GameSetup.obj
+GameSetup/GameFieldGenerator.obj: GameSetup/GameFieldGenerator.cpp.obj
+.PHONY : GameSetup/GameFieldGenerator.obj
 
 # target to build an object file
-GameManagment/GameSetup.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj
-.PHONY : GameManagment/GameSetup.cpp.obj
+GameSetup/GameFieldGenerator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj
+.PHONY : GameSetup/GameFieldGenerator.cpp.obj
 
-GameManagment/GameSetup.i: GameManagment/GameSetup.cpp.i
-.PHONY : GameManagment/GameSetup.i
+GameSetup/GameFieldGenerator.i: GameSetup/GameFieldGenerator.cpp.i
+.PHONY : GameSetup/GameFieldGenerator.i
 
 # target to preprocess a source file
-GameManagment/GameSetup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.i
-.PHONY : GameManagment/GameSetup.cpp.i
+GameSetup/GameFieldGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.i
+.PHONY : GameSetup/GameFieldGenerator.cpp.i
 
-GameManagment/GameSetup.s: GameManagment/GameSetup.cpp.s
-.PHONY : GameManagment/GameSetup.s
+GameSetup/GameFieldGenerator.s: GameSetup/GameFieldGenerator.cpp.s
+.PHONY : GameSetup/GameFieldGenerator.s
 
 # target to generate assembly for a file
-GameManagment/GameSetup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.s
-.PHONY : GameManagment/GameSetup.cpp.s
+GameSetup/GameFieldGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.s
+.PHONY : GameSetup/GameFieldGenerator.cpp.s
+
+GameSetup/GameSetup.obj: GameSetup/GameSetup.cpp.obj
+.PHONY : GameSetup/GameSetup.obj
+
+# target to build an object file
+GameSetup/GameSetup.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj
+.PHONY : GameSetup/GameSetup.cpp.obj
+
+GameSetup/GameSetup.i: GameSetup/GameSetup.cpp.i
+.PHONY : GameSetup/GameSetup.i
+
+# target to preprocess a source file
+GameSetup/GameSetup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.i
+.PHONY : GameSetup/GameSetup.cpp.i
+
+GameSetup/GameSetup.s: GameSetup/GameSetup.cpp.s
+.PHONY : GameSetup/GameSetup.s
+
+# target to generate assembly for a file
+GameSetup/GameSetup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.s
+.PHONY : GameSetup/GameSetup.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -1151,6 +1199,9 @@ help:
 	@echo ... Factories/AllySpawner.obj
 	@echo ... Factories/AllySpawner.i
 	@echo ... Factories/AllySpawner.s
+	@echo ... Factories/EnemyDefenceTowerSpawner.obj
+	@echo ... Factories/EnemyDefenceTowerSpawner.i
+	@echo ... Factories/EnemyDefenceTowerSpawner.s
 	@echo ... Factories/EnemySpawner.obj
 	@echo ... Factories/EnemySpawner.i
 	@echo ... Factories/EnemySpawner.s
@@ -1178,18 +1229,18 @@ help:
 	@echo ... GameManagment/Controllers/AllyController.obj
 	@echo ... GameManagment/Controllers/AllyController.i
 	@echo ... GameManagment/Controllers/AllyController.s
+	@echo ... GameManagment/Controllers/Building/EnemyDefenceTowerController.obj
+	@echo ... GameManagment/Controllers/Building/EnemyDefenceTowerController.i
+	@echo ... GameManagment/Controllers/Building/EnemyDefenceTowerController.s
+	@echo ... GameManagment/Controllers/Building/EnemySpawnerBuildingController.obj
+	@echo ... GameManagment/Controllers/Building/EnemySpawnerBuildingController.i
+	@echo ... GameManagment/Controllers/Building/EnemySpawnerBuildingController.s
 	@echo ... GameManagment/Controllers/CompControlledCreatureController.obj
 	@echo ... GameManagment/Controllers/CompControlledCreatureController.i
 	@echo ... GameManagment/Controllers/CompControlledCreatureController.s
 	@echo ... GameManagment/Controllers/EnemyController.obj
 	@echo ... GameManagment/Controllers/EnemyController.i
 	@echo ... GameManagment/Controllers/EnemyController.s
-	@echo ... GameManagment/Controllers/EnemyDefenceTowerController.obj
-	@echo ... GameManagment/Controllers/EnemyDefenceTowerController.i
-	@echo ... GameManagment/Controllers/EnemyDefenceTowerController.s
-	@echo ... GameManagment/Controllers/EnemySpawnerBuildingController.obj
-	@echo ... GameManagment/Controllers/EnemySpawnerBuildingController.i
-	@echo ... GameManagment/Controllers/EnemySpawnerBuildingController.s
 	@echo ... GameManagment/Controllers/PlayerController.obj
 	@echo ... GameManagment/Controllers/PlayerController.i
 	@echo ... GameManagment/Controllers/PlayerController.s
@@ -1211,9 +1262,12 @@ help:
 	@echo ... GameManagment/GameMaster.obj
 	@echo ... GameManagment/GameMaster.i
 	@echo ... GameManagment/GameMaster.s
-	@echo ... GameManagment/GameSetup.obj
-	@echo ... GameManagment/GameSetup.i
-	@echo ... GameManagment/GameSetup.s
+	@echo ... GameSetup/GameFieldGenerator.obj
+	@echo ... GameSetup/GameFieldGenerator.i
+	@echo ... GameSetup/GameFieldGenerator.s
+	@echo ... GameSetup/GameSetup.obj
+	@echo ... GameSetup/GameSetup.i
+	@echo ... GameSetup/GameSetup.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

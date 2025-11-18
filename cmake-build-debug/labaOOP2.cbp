@@ -227,6 +227,12 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h">
 			<Option target="labaOOP2"/>
 		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemyDefenceTowerSpawner.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemyDefenceTowerSpawner.h">
+			<Option target="labaOOP2"/>
+		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
@@ -287,6 +293,18 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/AllyController.h">
 			<Option target="labaOOP2"/>
 		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemyDefenceTowerController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemySpawnerBuildingController.h">
+			<Option target="labaOOP2"/>
+		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/CompControlledCreatureController.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
@@ -297,18 +315,6 @@
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.h">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.cpp">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.h">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.cpp">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/PlayerController.cpp">
@@ -356,13 +362,28 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameSetup.cpp">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameSetup.h">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/EnemyDefenceTowerModel.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/EnemySpawnerBuildingModel.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/GameFieldModel.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/PlayerModel.h">

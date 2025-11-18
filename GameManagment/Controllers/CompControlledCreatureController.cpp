@@ -11,7 +11,7 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
 
     if (manager.isCreatureDisabled()){
         std::cout << "CompControlledCreature: " << headerCout << " disabled -> пропускает ход, тк замедлена с предыдущего хода" << std::endl;
-        this->manager.freeCreature();
+        this->manager.enableCreature();
         return;
     }
 
@@ -142,11 +142,5 @@ void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
         std::cout << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
         manager.moveTo(howToMove);
-        if (this->field.getFieldCells()[stepTo.x][stepTo.y].hasCellEvent()){
-            this->field.getFieldCells()[stepTo.x][stepTo.y].impactOnCreatureByCellEvent();
-            if (this->manager.isCreatureDisabled()){ //если ивент задизейблил нашу сущность, то проверяем и останавливаем дальнейшие ходы!
-                throw SlowingCellNotification("compControlledCreature on slowing cell!");
-            }
-        }
     }
 }

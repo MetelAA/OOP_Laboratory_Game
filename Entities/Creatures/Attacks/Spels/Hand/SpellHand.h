@@ -48,7 +48,7 @@ public:
     virtual void addSpell(std::unique_ptr<Spell> spell) noexcept final;
     virtual const std::vector<std::unique_ptr<Spell>>& getSpells() const final;
     virtual void useSpellWithoutAnyCoordsBinding(int position) final; //позиция от 0 до n-1, заклинание без привязки к чьему-либо местоположению
-    virtual void useSpellWithAIMBinding(int position, const Field& field, Constants::XYPair from, Constants::XYPair to) final; //позиция от 0 до n-1, использовать заклинание с привязкой к местоположению игрока и координатам цели (цель не факт что там есть)
+    virtual void useSpellWithAIMBinding(int position, Field& field, Constants::XYPair from, Constants::XYPair to) final; //позиция от 0 до n-1, использовать заклинание с привязкой к местоположению игрока и координатам цели (цель не факт что там есть)
 
 private:
     int gradeLevel;

@@ -12,8 +12,10 @@ class PlayerManager : public CreatureManager{
 public:
 
     void moveTo(Constants::dxdy dxdy) override;
-    void attack(Entity &attackWhom, AttackType type);
-
+    void attack(Constants::dxdy coords, AttackType type);
+    bool isCloseRangeAttackSelected() const noexcept;
+    int getLongRangeAttackRange() const noexcept;
+    void changeAttackType() noexcept;
 protected:
     std::shared_ptr<Player> player;
 };

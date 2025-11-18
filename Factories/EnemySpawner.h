@@ -4,6 +4,7 @@
 
 #ifndef LABA1_ENEMYSPAWNER_H
 #define LABA1_ENEMYSPAWNER_H
+
 #include "../model/CompControlledCreatureModel.h"
 #include "../Entities/Creatures/CompControlledCreature.h"
 #include "../GameField/Field.h"
@@ -11,17 +12,20 @@
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
+#include "../GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h"
+#include "../GameManagment/GameMaster.h"
 
 
 class EnemySpawner {
 public:
-    EnemySpawner(CompControlledCreatureModel &enemyModel, Field &field) : enemyModel(enemyModel), field(field) {}
+    EnemySpawner(const CompControlledCreatureModel &enemyModel, Field &field, GameMaster& gameMaster) : enemyModel(enemyModel), field(field), gameMaster(gameMaster) {}
 
-    std::shared_ptr<CompControlledCreature> createEnemy(int x, int y);
+    CompControlledCreatureManager* createEnemy(int x, int y);
 
 protected:
-    CompControlledCreatureModel& enemyModel;
+    const CompControlledCreatureModel enemyModel;
     Field& field;
+    GameMaster& gameMaster;
 };
 
 

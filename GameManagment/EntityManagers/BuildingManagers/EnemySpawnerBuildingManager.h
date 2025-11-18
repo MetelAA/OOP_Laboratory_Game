@@ -15,6 +15,8 @@ public:
     EnemySpawnerBuildingManager(Field &field, int stepCounter,
                                 std::shared_ptr<EnemySpawnerBuilding> &building, EnemySpawner &enemySpawner)
             : EntityManager(field, building.get()), stepCounter(stepCounter), building(building), enemySpawner(enemySpawner) {}
+    EnemySpawnerBuildingManager(Field &field, std::shared_ptr<EnemySpawnerBuilding> &building, EnemySpawner &enemySpawner)
+            : EntityManager(field, building.get()), stepCounter(0), building(building), enemySpawner(enemySpawner) {}
 
     virtual bool isTimeToSpawn() noexcept final;
     virtual void resetSpawnCounter() noexcept final;

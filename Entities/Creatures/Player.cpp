@@ -27,3 +27,7 @@ long Player::getScore() const noexcept {
 SpellHand &Player::getSpellHand() noexcept {
     return this->hand;
 }
+
+void Player::changeSelectedAttackType() noexcept {
+    this->isCloseRangeAttackSelectedFlag = !this->isCloseRangeAttackSelectedFlag;
+}

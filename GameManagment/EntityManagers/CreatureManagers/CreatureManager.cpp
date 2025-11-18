@@ -8,7 +8,7 @@ bool CreatureManager::isCreatureDisabled() const noexcept {
     return this->creature->isDisabled();
 }
 
-void CreatureManager::freeCreature() noexcept {
+void CreatureManager::enableCreature() noexcept {
     this->creature->setDisabledFlag(false);
 }
 

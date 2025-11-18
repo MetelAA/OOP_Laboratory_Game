@@ -11,6 +11,7 @@
 #include "CellEvents/CellEvent.h"
 #include "CellEvents/SlowingCellEvent.h"
 #include <memory>
+#include <utility>
 #include "CellEvents/TrapCellEvent.h"
 #include "../Exceptions/UnexpectedBehaviorException.h"
 
@@ -23,8 +24,8 @@ public:
         event = nullptr;
     }
 
-    Cell(CellType type, std::unique_ptr<Entity> entityInCell, std::unique_ptr<CellEvent> event) : type(type),
-                                                                                         entityInCell(std::move(entityInCell)),
+    Cell(CellType type, std::shared_ptr<Entity> entityInCell, std::unique_ptr<CellEvent> event) : type(type),
+                                                                                         entityInCell(entityInCell),
                                                                                          event(std::move(event)) {}
 
 
@@ -77,26 +78,31 @@ public:
 
 
 
-    virtual CellType getCellType() const noexcept final;
+
 
     virtual void addEntityInCell(std::shared_ptr<Entity> entity) noexcept final;
 
     virtual void clearCell() noexcept final;
 
+    virtual Entity& getEntityInCell() noexcept final;
+
+    virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) final;
+
+    virtual void impactOnCreatureByCellEvent() final; //к этому моменту creature уже должно быть перемещено в эту клетку
+
+    virtual void damageEntityInCell(int damage) final;
+
+
+
     virtual bool hasEntityInCell() const noexcept final;
 
-    virtual void damageEntityInCell(int damage) const final;
-
-    virtual Entity& getEntityInCell() noexcept final;
-    virtual const Entity& getEntityInCell() const noexcept final;
+    virtual CellType getCellType() const noexcept final;
 
     virtual EntityType getEntityInCellType() const final;
 
-    virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) const final;
-
     virtual bool hasCellEvent() const final;
 
-    virtual void impactOnCreatureByCellEvent() const final; //к этому моменту creature уже должно быть перемещено в эту клетку
+
 
 protected:
     CellType type;

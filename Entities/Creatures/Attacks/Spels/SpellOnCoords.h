@@ -10,7 +10,7 @@
 class SpellOnCoords : public Spell {
 public:
     explicit SpellOnCoords(SpellType type) : Spell(type) {}
-    virtual void castSpell(int gradeLevel, const Field& field, Constants::XYPair from, Constants::XYPair to) const = 0;
+    virtual void castSpell(int gradeLevel, Field& field, Constants::XYPair from, Constants::XYPair to) const = 0;
 };
 
 

@@ -91,7 +91,9 @@
 				90,
 				92,
 				94,
-				96
+				96,
+				98,
+				102
 			]
 		}
 	],
@@ -167,7 +169,9 @@
 				90,
 				92,
 				94,
-				96
+				96,
+				98,
+				102
 			]
 		},
 		{
@@ -231,7 +235,12 @@
 				91,
 				93,
 				95,
-				97
+				97,
+				99,
+				100,
+				101,
+				103,
+				104
 			]
 		}
 	],
@@ -301,12 +310,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GameManagment/GameSetup.cpp",
+			"path" : "GameSetup/GameSetup.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GameManagment/GameSetup.h",
+			"path" : "GameSetup/GameSetup.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -520,12 +529,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GameManagment/Controllers/EnemySpawnerBuildingController.cpp",
+			"path" : "GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GameManagment/Controllers/EnemySpawnerBuildingController.h",
+			"path" : "GameManagment/Controllers/Building/EnemySpawnerBuildingController.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -748,12 +757,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GameManagment/Controllers/EnemyDefenceTowerController.cpp",
+			"path" : "GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GameManagment/Controllers/EnemyDefenceTowerController.h",
+			"path" : "GameManagment/Controllers/Building/EnemyDefenceTowerController.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -765,6 +774,43 @@
 		{
 			"backtrace" : 1,
 			"path" : "GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Factories/EnemyDefenceTowerSpawner.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Factories/EnemyDefenceTowerSpawner.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/EnemyDefenceTowerModel.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/EnemySpawnerBuildingModel.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GameSetup/GameFieldGenerator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GameSetup/GameFieldGenerator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/GameFieldModel.h",
 			"sourceGroupIndex" : 1
 		}
 	],

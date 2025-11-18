@@ -162,6 +162,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.h \
+ C:/msys/mingw64/include/c++/15.2.0/utility \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
@@ -171,9 +173,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController
  D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.h \
@@ -219,9 +218,11 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
- C:/msys/mingw64/include/c++/15.2.0/utility \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/CompControlledCreatureController.h \

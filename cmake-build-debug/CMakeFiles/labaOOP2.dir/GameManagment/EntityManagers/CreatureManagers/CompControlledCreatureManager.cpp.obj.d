@@ -160,6 +160,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CompContro
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/SlowingCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/CellEvent.h \
+ C:/msys/mingw64/include/c++/15.2.0/utility \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_relops.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
@@ -204,4 +206,5 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CompContro
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
- C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/SlowingCellNotification.h

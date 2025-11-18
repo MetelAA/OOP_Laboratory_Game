@@ -7,7 +7,7 @@
 #include "../../../../Exceptions/UniversalStringException.h"
 #include <iostream>
 
-void CreateTrapSpell::castSpell(int gradeLevel, const Field &field, Constants::XYPair from, Constants::XYPair to) const {
+void CreateTrapSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
     std::cout << "Применяем заклинание создания ловушки джокушкера" << std::endl;
     int level = gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size()-1);
 

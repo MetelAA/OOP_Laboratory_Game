@@ -8,11 +8,11 @@
 void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
     std::cout << "Ход, enemySpawnerBuilding: " << &this->manager << std::endl;
     if (this->manager.isTimeToSpawn()){
-        CompControlledCreatureManager spawnedEnemyManager = *manager.spawnEnemy();
         manager.resetSpawnCounter();
-        EnemyController spawnedEnemyController = EnemyController(this->field, spawnedEnemyManager);
+        CompControlledCreatureManager* spawnedEnemyManager = manager.spawnEnemy();
+        EnemyController spawnedEnemyController = EnemyController(this->field, *spawnedEnemyManager);
 
-        //!!!!!!!!!!!!!!!!!!!!!! Добавлять копию(?) EnemyController в гей мастер!
+        //!!!!!!!!!!!!!!!!!!!!!! Добавлять копию EnemyController в гей мастер!
 
         std::cout << "enemySpawnerBuilding: " << &this->manager << " создал нового противника: " << &spawnedEnemyManager << std::endl;
     }else{

@@ -22,9 +22,9 @@ CompControlledCreatureManager* EnemySpawnerBuildingManager::spawnEnemy() {
     while (!dxdyCopy.empty()) {
         try{
             Constants::dxdy pair = chooseDxDy(dxdyCopy);
-            std::shared_ptr<CompControlledCreature> enemy = this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
-                                                   this->building->getYCoordinate() + pair.y);
-            return (new CompControlledCreatureManager(this->field, enemy));
+
+            return this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
+                                                  this->building->getYCoordinate() + pair.y);
         }catch (SpawnEntityException& ex){
             continue;
         }

@@ -4,16 +4,18 @@
 
 #include "AllySpawner.h"
 
-std::shared_ptr<CompControlledCreature> AllySpawner::createAlly(int x, int y) {
+void AllySpawner::createAlly(int x, int y) {
     try{
         this->field.canMoveToOrSpawnOn(x, y);
-        std::shared_ptr<CompControlledCreature> enemy = std::make_shared<CompControlledCreature>(CompControlledCreature(x, y, enemyModel.healthPoint, EntityType::Ally,
-                                                                   false, enemyModel.damage, enemyModel.stepCount, enemyModel.chanceToDetectHostile));
-        this->field.getFieldCells()[x][y].addEntityInCell(enemy);
+        std::shared_ptr<CompControlledCreature> ally = std::make_shared<CompControlledCreature>(CompControlledCreature(x, y, allyModel.healthPoint, EntityType::Ally,
+                                                                                                                       false, allyModel.damage, allyModel.stepCount, allyModel.chanceToDetectHostile));
+        this->field.getFieldCells()[x][y].addEntityInCell(ally);
         if(field.getFieldCells()[x][y].hasCellEvent()){
             field.getFieldCells()[x][y].impactOnCreatureByCellEvent();
         }
-        return enemy;
+
+        //Создать менеджер и контроллер и добавить в гейм мастер!
+
     }catch (CellImpassableNotification& ex){
         throw SpawnEntityException(std::string("Can't spawn compControlledCreature Ally because: ") + ex.what());
     }catch (CoordinateException& ex){

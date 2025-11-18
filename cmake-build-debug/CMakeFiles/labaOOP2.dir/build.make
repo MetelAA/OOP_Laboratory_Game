@@ -152,19 +152,19 @@ CMakeFiles/labaOOP2.dir/GameField/Cell.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameField/Cell.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameField\Cell.cpp -o CMakeFiles\labaOOP2.dir\GameField\Cell.cpp.s
 
-CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
-CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/GameSetup.cpp
-CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameManagment\GameSetup.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameManagment\GameSetup.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameManagment\GameSetup.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameSetup\GameSetup.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameSetup\GameSetup.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameSetup\GameSetup.cpp
 
-CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.i"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameManagment\GameSetup.cpp > CMakeFiles\labaOOP2.dir\GameManagment\GameSetup.cpp.i
+CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameSetup\GameSetup.cpp > CMakeFiles\labaOOP2.dir\GameSetup\GameSetup.cpp.i
 
-CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.s"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\GameSetup.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\GameSetup.cpp.s
+CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\GameSetup.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\GameSetup.cpp.s
 
 CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
 CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.cpp
@@ -348,19 +348,19 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemyController.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemyController.cpp.s
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemySpawnerBuildingController.cpp
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemySpawnerBuildingController.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemySpawnerBuildingController.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemySpawnerBuildingController.cpp
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.i"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemySpawnerBuildingController.cpp > CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemySpawnerBuildingController.cpp.i
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp > CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp.i
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.s"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemySpawnerBuildingController.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemySpawnerBuildingController.cpp.s
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemySpawnerBuildingController.cpp.s
 
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/PlayerController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
 CMakeFiles/labaOOP2.dir/GameManagment/Controllers/PlayerController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/PlayerController.cpp
@@ -600,19 +600,19 @@ CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\Entities\Buildings\EnemyDefenceTower.cpp -o CMakeFiles\labaOOP2.dir\Entities\Buildings\EnemyDefenceTower.cpp.s
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyDefenceTowerController.cpp
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemyDefenceTowerController.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemyDefenceTowerController.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemyDefenceTowerController.cpp
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.i"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemyDefenceTowerController.cpp > CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemyDefenceTowerController.cpp.i
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp > CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp.i
 
-CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.s"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\EnemyDefenceTowerController.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\EnemyDefenceTowerController.cpp.s
+CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\Controllers\Building\EnemyDefenceTowerController.cpp.s
 
 CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
 CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp
@@ -628,6 +628,34 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefen
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameManagment\EntityManagers\BuildingManagers\EnemyDefenceTowerManager.cpp -o CMakeFiles\labaOOP2.dir\GameManagment\EntityManagers\BuildingManagers\EnemyDefenceTowerManager.cpp.s
 
+CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj: D:/clionProj/OOP_Laboratory_Game/Factories/EnemyDefenceTowerSpawner.cpp
+CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj -MF CMakeFiles\labaOOP2.dir\Factories\EnemyDefenceTowerSpawner.cpp.obj.d -o CMakeFiles\labaOOP2.dir\Factories\EnemyDefenceTowerSpawner.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\Factories\EnemyDefenceTowerSpawner.cpp
+
+CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\Factories\EnemyDefenceTowerSpawner.cpp > CMakeFiles\labaOOP2.dir\Factories\EnemyDefenceTowerSpawner.cpp.i
+
+CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\Factories\EnemyDefenceTowerSpawner.cpp -o CMakeFiles\labaOOP2.dir\Factories\EnemyDefenceTowerSpawner.cpp.s
+
+CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameSetup\GameFieldGenerator.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameSetup\GameFieldGenerator.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameSetup\GameFieldGenerator.cpp
+
+CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameSetup\GameFieldGenerator.cpp > CMakeFiles\labaOOP2.dir\GameSetup\GameFieldGenerator.cpp.i
+
+CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\GameFieldGenerator.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\GameFieldGenerator.cpp.s
+
 # Object files for target labaOOP2
 labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/main.cpp.obj" \
@@ -636,7 +664,7 @@ labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/Entities/Creatures/CompControlledCreature.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameField/Field.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameField/Cell.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Entity.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj" \
@@ -650,7 +678,7 @@ labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/Controllers/PlayerController.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Spell.cpp.obj" \
@@ -668,8 +696,10 @@ labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/Factories/SpellFactory.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj"
+"CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj"
 
 # External object files for target labaOOP2
 labaOOP2_EXTERNAL_OBJECTS =
@@ -680,7 +710,7 @@ labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Creatures/Player.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Creatures/CompControlledCreature.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameField/Field.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameField/Cell.cpp.obj
-labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/GameSetup.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Entity.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Buildings/Building.cpp.obj
@@ -694,7 +724,7 @@ labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/EnemySpawner.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyController.cpp.obj
-labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemySpawnerBuildingController.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemySpawnerBuildingController.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/PlayerController.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Spell.cpp.obj
@@ -712,13 +742,15 @@ labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameField/CellEvents/TrapCellEvent.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/SpellFactory.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/SummoningSpell.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Entities/Buildings/EnemyDefenceTower.cpp.obj
-labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/EnemyDefenceTowerController.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerController.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/build.make
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/linklibs.rsp
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/objects1.rsp
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable labaOOP2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable labaOOP2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\labaOOP2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
