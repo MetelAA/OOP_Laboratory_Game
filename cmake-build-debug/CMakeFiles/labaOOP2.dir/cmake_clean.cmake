@@ -81,6 +81,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj.d"
   "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj"
   "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj.d"
+  "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj"
+  "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj.d"
   "CMakeFiles/labaOOP2.dir/main.cpp.obj"
   "CMakeFiles/labaOOP2.dir/main.cpp.obj.d"
   "labaOOP2.exe"

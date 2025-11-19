@@ -3,66 +3,81 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  D:\clionProj\OOP_Laboratory_Game\GameManagment\Controllers\CompControlledCreatureController.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
- C:/msys/mingw64/include/c++/15.2.0/memory \
- C:/msys/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
+ C:/msys/mingw64/include/c++/15.2.0/map \
+ C:/msys/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/msys/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/functexcept.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/exception_defines.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/version.h \
+ C:/msys/mingw64/include/c++/15.2.0/type_traits \
+ C:/msys/mingw64/include/c++/15.2.0/ext/type_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_pair.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/move.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/utility.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/concept_check.h \
+ C:/msys/mingw64/include/c++/15.2.0/debug/assertions.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/debug/debug.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
+ C:/msys/mingw64/include/c++/15.2.0/bit \
+ C:/msys/mingw64/include/c++/15.2.0/concepts \
  C:/msys/mingw64/include/c++/15.2.0/bits/allocator.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/new_allocator.h \
  C:/msys/mingw64/include/c++/15.2.0/new \
  C:/msys/mingw64/include/c++/15.2.0/bits/exception.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/version.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/functexcept.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/exception_defines.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/move.h \
- C:/msys/mingw64/include/c++/15.2.0/type_traits \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_construct.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/concept_check.h \
- C:/msys/mingw64/include/c++/15.2.0/debug/assertions.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_pair.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/utility.h \
- C:/msys/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/ext/type_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_iterator.h \
- C:/msys/mingw64/include/c++/15.2.0/debug/debug.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
- C:/msys/mingw64/include/c++/15.2.0/bit \
- C:/msys/mingw64/include/c++/15.2.0/concepts \
- C:/msys/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/align.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
- C:/msys/mingw64/include/c++/15.2.0/tuple \
- C:/msys/mingw64/include/c++/15.2.0/bits/invoke.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_function.h \
  C:/msys/mingw64/include/c++/15.2.0/backward/binders.h \
+ C:/msys/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_construct.h \
+ C:/msys/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys/mingw64/include/c++/15.2.0/initializer_list \
+ C:/msys/mingw64/include/c++/15.2.0/tuple \
+ C:/msys/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/invoke.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/range_access.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/erase_if.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/memory_resource.h \
+ C:/msys/mingw64/include/c++/15.2.0/cstddef \
+ C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/msys/mingw64/include/stddef.h C:/msys/mingw64/include/crtdefs.h \
+ C:/msys/mingw64/include/corecrt.h C:/msys/mingw64/include/_mingw.h \
+ C:/msys/mingw64/include/_mingw_mac.h \
+ C:/msys/mingw64/include/_mingw_secapi.h C:/msys/mingw64/include/vadefs.h \
+ C:/msys/mingw64/include/sdks/_mingw_ddk.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/memory \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/align.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/functional_hash.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
  C:/msys/mingw64/include/c++/15.2.0/iosfwd \
- C:/msys/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/stringfwd.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/postypes.h \
  C:/msys/mingw64/include/c++/15.2.0/cwchar \
- C:/msys/mingw64/include/wchar.h C:/msys/mingw64/include/corecrt.h \
- C:/msys/mingw64/include/_mingw.h C:/msys/mingw64/include/_mingw_mac.h \
- C:/msys/mingw64/include/_mingw_secapi.h C:/msys/mingw64/include/vadefs.h \
- C:/msys/mingw64/include/sdks/_mingw_ddk.h \
+ C:/msys/mingw64/include/wchar.h \
  C:/msys/mingw64/include/corecrt_stdio_config.h \
  C:/msys/mingw64/include/corecrt_wstdlib.h \
  C:/msys/mingw64/include/corecrt_wctype.h \
@@ -74,15 +89,11 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  C:/msys/mingw64/include/c++/15.2.0/typeinfo \
  C:/msys/mingw64/include/c++/15.2.0/bits/allocated_ptr.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/refwrap.h \
- C:/msys/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
  C:/msys/mingw64/include/c++/15.2.0/ext/atomicity.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
- C:/msys/mingw64/include/pthread.h \
- C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
- C:/msys/mingw64/include/stddef.h C:/msys/mingw64/include/crtdefs.h \
- C:/msys/mingw64/include/errno.h C:/msys/mingw64/include/sys/types.h \
- C:/msys/mingw64/include/process.h \
+ C:/msys/mingw64/include/pthread.h C:/msys/mingw64/include/errno.h \
+ C:/msys/mingw64/include/sys/types.h C:/msys/mingw64/include/process.h \
  C:/msys/mingw64/include/corecrt_startup.h \
  C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
  C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
@@ -117,8 +128,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  C:/msys/mingw64/include/ctype.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream_insert.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/range_access.h \
- C:/msys/mingw64/include/c++/15.2.0/initializer_list \
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_string.h \
  C:/msys/mingw64/include/c++/15.2.0/string_view \
  C:/msys/mingw64/include/c++/15.2.0/bits/string_view.tcc \
@@ -134,9 +143,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  C:/msys/mingw64/include/c++/15.2.0/cerrno \
  C:/msys/mingw64/include/c++/15.2.0/bits/charconv.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
- C:/msys/mingw64/include/c++/15.2.0/bits/memory_resource.h \
- C:/msys/mingw64/include/c++/15.2.0/cstddef \
- C:/msys/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
@@ -145,12 +151,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_vector.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/msys/mingw64/include/c++/15.2.0/map \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_tree.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/node_handle.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_map.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/erase_if.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellType.h \
@@ -183,6 +183,17 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/CompControlledCreatureControll
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \

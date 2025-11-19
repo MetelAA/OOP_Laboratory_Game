@@ -195,6 +195,10 @@ CMakeFiles/labaOOP2.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
@@ -220,7 +224,6 @@ CMakeFiles/labaOOP2.dir/Factories/EnemySpawnerBuildingSpawner.cpp.obj: \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \

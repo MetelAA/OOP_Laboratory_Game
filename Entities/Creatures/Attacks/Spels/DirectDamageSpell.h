@@ -18,6 +18,19 @@ public:
 
     std::unique_ptr<Spell> clone() const override;
 
+
+    DirectDamageSpell(const DirectDamageSpell& other)
+            : SpellOnCoords(other)  // копируем базовый класс
+    {
+    }
+
+    DirectDamageSpell& operator=(const DirectDamageSpell& other)
+    {
+        if (this != &other) {
+            SpellOnCoords::operator=(other);
+        }
+        return *this;
+    }
 private:
     struct levelInfo{
         int damage, range;

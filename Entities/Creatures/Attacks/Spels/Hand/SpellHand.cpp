@@ -5,6 +5,8 @@
 #include "SpellHand.h"
 //#include "../../../../../Exceptions/UnexpectedBehaviorException.h"
 #include "../SpellOnCoords.h"
+#include "../../../../../GameSetup/JsonParser.h"
+#include "../../../../../Factories/SpellFactory.h"
 #include <iostream>
 
 const std::vector<std::unique_ptr<Spell>>& SpellHand::getSpells() const {
@@ -56,4 +58,42 @@ bool SpellHand::checkSpellPositionAvailability(int position) const {
     }else{
         throw UnexpectedBehaviorException("Позиция заклинания выходит за рамки руки?? чтобы это не значило, я уже говорить разучился абоба!");
     }
+}
+
+const std::map<SpellType, std::string> enumTypeToStrType = {
+        {SpellType::DirectDamageSpell, "DirectDamageSpell"},
+        {SpellType::BuffNextUsedSpell, "BuffNextUsedSpell"},
+        {SpellType::AreaDamageSpell, "AreaDamageSpell"},
+        {SpellType::SummoningSpell, "SummoningSpell"},
+        {SpellType::CreateTrapSpell, "CreateTrapSpell"}
+};
+std::string SpellHand::serialize() noexcept {
+    std::string res = "{";
+    res += "gradeLevel:";
+    res+= std::to_string(this->gradeLevel) + ",";
+    res+="spells:[";
+    for (int i = 0; i < this->spells.size(); ++i) {
+        res += enumTypeToStrType.at(this->spells.at(i)->getSpellType());
+        if (i != this->spells.size() - 1)
+            res += ",";
+    }
+    res+= "]}";
+    return res;
+}
+
+const std::map<std::string, SpellType> strTypeToEnumType = {
+        {"DirectDamageSpell", SpellType::DirectDamageSpell},
+        {"BuffNextUsedSpell", SpellType::BuffNextUsedSpell},
+        {"AreaDamageSpell", SpellType::AreaDamageSpell},
+        {"SummoningSpell", SpellType::SummoningSpell},
+        {"CreateTrapSpell", SpellType::CreateTrapSpell}
+};
+SpellHand SpellHand::deserialize(std::map<std::string, std::string> json, SpellFactory& spellFactory) noexcept {
+    int gradeLevel = std::stoi(json.at("gradeLevel"));
+    std::vector<std::string> vec = JsonParser::parseJsonArray(json.at("spells"));
+    std::vector<std::unique_ptr<Spell>> spells;
+    for(const std::string& sp : vec){
+        spells.push_back(spellFactory.createSpell(strTypeToEnumType.at(sp)));
+    }
+    return SpellHand(gradeLevel, spells);
 }

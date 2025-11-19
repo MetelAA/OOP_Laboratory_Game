@@ -33,6 +33,7 @@ public:
     virtual bool isAlive() const noexcept final;
 
     virtual std::unique_ptr<Entity> clone() const = 0;
+    virtual std::string serialize() = 0;
 
     virtual ~Entity() = default;
 

@@ -137,4 +137,10 @@ CMakeFiles/labaOOP2.dir/GameField/CellEvents/SlowingCellEvent.cpp.obj: \
  C:/msys/mingw64/include/c++/15.2.0/bits/memory_resource.h \
  C:/msys/mingw64/include/c++/15.2.0/cstddef \
  C:/msys/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/map \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/erase_if.h

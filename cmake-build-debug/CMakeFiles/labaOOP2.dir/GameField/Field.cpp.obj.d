@@ -163,4 +163,6 @@ CMakeFiles/labaOOP2.dir/GameField/Field.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h

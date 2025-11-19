@@ -10,6 +10,8 @@
 #include <memory>
 #include "../../../../../Constants/Constants.h"
 #include "../../../../../GameField//Field.h"
+#include "../../../../../Factories/SpellFactory.h"
+
 class SpellHand {
 public:
     SpellHand() {}
@@ -50,6 +52,8 @@ public:
     virtual void useSpellWithoutAnyCoordsBinding(int position) final; //позиция от 0 до n-1, заклинание без привязки к чьему-либо местоположению
     virtual void useSpellWithAIMBinding(int position, Field& field, Constants::XYPair from, Constants::XYPair to) final; //позиция от 0 до n-1, использовать заклинание с привязкой к местоположению игрока и координатам цели (цель не факт что там есть)
 
+    virtual std::string serialize() noexcept final;
+    static SpellHand deserialize(std::map<std::string, std::string> json, SpellFactory& spellFactory) noexcept;
 private:
     int gradeLevel;
     std::vector<std::unique_ptr<Spell>> spells;

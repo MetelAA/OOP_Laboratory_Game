@@ -5,6 +5,7 @@
 #include "Field.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
+#include "../GameSetup/JsonParser.h"
 
 int Field::getWidth() const noexcept {
     return width;
@@ -99,3 +100,39 @@ bool Field::isCellPassable(int x, int y) const {
     return true;
 }
 
+std::string Field::serialize() {
+    std::string res = "{";
+    res += "width:";
+    res += std::to_string(this->width) + ",";
+    res += "height:";
+    res += std::to_string(this->height) + ",";
+    res += "cells:[";
+    for (int i = 0; i < cells.size(); ++i) {
+        for (int j = 0; j < cells[0].size(); ++j) {
+            res += cells[i][j].serialize();
+            if (i != cells.size()-1 || j != cells[0].size()-1){
+                res += ",";
+            }
+        }
+    }
+    res += "]}";
+    return res;
+}
+
+Field Field::deserialize(std::map<std::string, std::string>& json) {
+    int height = std::stoi(json.at("height"));
+    int width = std::stoi(json.at("width"));
+    std::vector<std::vector<Cell>> cells;
+    
+    std::vector<std::string> cellsStrs = JsonParser::parseJsonArray(json.at("cells"));
+    std::vector<Cell> tmp;
+    for (int i = 0; i < cellsStrs.size(); ++i) {
+        std::map<std::string, std::string> cellMap = JsonParser::parseJsonWithNestedObj(cellsStrs.at(i));
+        tmp.push_back(Cell::deserialize(cellMap));
+        if ((i+1) % width == 0 && i != 0){
+            cells.push_back(tmp);
+            tmp = std::vector<Cell>();
+        }
+    }
+    return Field(width, height, cells);
+}

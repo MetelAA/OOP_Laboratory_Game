@@ -5,6 +5,7 @@
 #ifndef LABA1_ENEMY_H
 #define LABA1_ENEMY_H
 
+#include <map>
 #include "Creature.h"
 
 class CompControlledCreature : public Creature {
@@ -19,6 +20,9 @@ public:
     virtual int getChanceToDetectHostile() noexcept final;
 
     std::unique_ptr<Entity> clone() const override;
+
+    std::string serialize() override;
+    static CompControlledCreature* deserialize(std::map<std::string, std::string> fields) noexcept;
 
 private:
 

@@ -181,6 +181,17 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerMana
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  C:/msys/mingw64/include/c++/15.2.0/cmath C:/msys/mingw64/include/math.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/specfun.h \
  C:/msys/mingw64/include/c++/15.2.0/limits \

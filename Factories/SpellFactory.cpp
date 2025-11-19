@@ -23,7 +23,7 @@ std::unique_ptr<Spell> SpellFactory::createSpell(SpellType type) {
         }
         case SpellType::SummoningSpell:
         {
-            auto* spell = new SummoningSpell(allySpawner);
+            auto* spell = new SummoningSpell(this->allySpawner);
             return std::make_unique<SummoningSpell>(*spell);
         }
         case SpellType::BuffNextUsedSpell:
@@ -37,8 +37,9 @@ std::unique_ptr<Spell> SpellFactory::createSpell(SpellType type) {
             return std::make_unique<CreateTrapSpell>(*spell);
         }
     }
+    throw UnexpectedBehaviorException("ERROR!!!!!");
 }
 
 std::unique_ptr<Spell> SpellFactory::createRandomSpell() {
-    createSpell(this->types.at(rand() % this->types.size()));
+    return createSpell(this->types.at(rand() % this->types.size()));
 }

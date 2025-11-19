@@ -3,6 +3,7 @@
 //
 
 #include "Player.h"
+#include "../../GameSetup/JsonParser.h"
 
 const LongRangeAttack& Player::getLongRangeAttack() const noexcept {
     return longRangeAttack;
@@ -30,4 +31,36 @@ SpellHand &Player::getSpellHand() noexcept {
 
 void Player::changeSelectedAttackType() noexcept {
     this->isCloseRangeAttackSelectedFlag = !this->isCloseRangeAttackSelectedFlag;
+}
+
+std::string Player::serialize() {
+    std::string result = "{";
+    result += "xCoordinate:" + std::to_string(this->xCoordinate) + ",";
+    result += "yCoordinate:" + std::to_string(this->yCoordinate) + ",";
+    result += "healthPoint:" + std::to_string(this->healthPoints) + ",";
+    result += "isSlowedFlag:" + std::string(this->isDisabledFlag ? "true" : "false") + ",";
+    result += "stepRange:" + std::to_string(this->stepRange) + ",";
+    result += "closeRangeAttack:" + this->closeRangeAttack.serialize() + ",";
+    result += "longRangeAttack:" + this->longRangeAttack.serialize() + ",";
+    result += "hand:" + this->hand.serialize() + ",";
+    result += "isCloseRangeAttackSelectedFlag:" + std::string(this->isCloseRangeAttackSelectedFlag ? "true" : "false") + ",";
+    result += "score:" + std::to_string(this->score);
+    result += "}";
+
+    return result;
+}
+
+Player* Player::deserialize(std::map<std::string, std::string> fields, SpellFactory& spellFactory) noexcept {
+    int x = std::stoi(fields["xCoordinate"]);
+    int y = std::stoi(fields["yCoordinate"]);
+    int health = std::stoi(fields["healthPoint"]);
+    bool isDisabled = fields["isDisabledFlag"] == "true";
+    int step = std::stoi(fields["stepRange"]);
+    bool isCloseRangeAttackSelectedFlag = fields["isCloseRangeAttackSelectedFlag"] == "true";
+    long score = std::stol(fields["score"]);
+    CloseRangeAttack closeRange = CloseRangeAttack::deserialize(JsonParser::parseJsonWithNestedObj(fields["closeRangeAttack"]));
+    LongRangeAttack longRange = LongRangeAttack::deserialize(JsonParser::parseJsonWithNestedObj(fields["longRangeAttack"]));
+    SpellHand hand = SpellHand::deserialize(JsonParser::parseJsonWithNestedObj(fields.at("hand")), spellFactory);
+
+    return new Player(x, y, health, isDisabled, step, closeRange, longRange, isCloseRangeAttackSelectedFlag, score, hand);
 }

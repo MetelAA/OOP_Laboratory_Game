@@ -45,6 +45,9 @@ public:
     std::vector<Constants::XYPair> hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x, int y) const noexcept;
     std::vector<Constants::XYPair> hasNearEntityOfSomeTypesWithAChance(std::map<EntityType, bool> types, int x, int y, int chance) const noexcept;
 
+    std::string serialize();
+    static Field deserialize(std::map<std::string, std::string>& json);
+
 protected:
     const int width, height;
     std::vector<std::vector<Cell>> cells;

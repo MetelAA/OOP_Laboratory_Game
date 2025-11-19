@@ -4,8 +4,7 @@
 
 #ifndef LABAOOP2_SPELLFACTORY_H
 #define LABAOOP2_SPELLFACTORY_H
-#include "../Entities/Creatures/Attacks/Spels/Spell.h"
-#include "../GameField/Field.h"
+#include"../Entities/Creatures/Attacks/Spels/Spell.h"
 #include "AllySpawner.h"
 
 class SpellFactory {

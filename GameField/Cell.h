@@ -15,6 +15,7 @@
 #include "CellEvents/TrapCellEvent.h"
 #include "../Exceptions/UnexpectedBehaviorException.h"
 
+class SpellFactory;
 
 
 class Cell {
@@ -102,7 +103,8 @@ public:
 
     virtual bool hasCellEvent() const final;
 
-
+    std::string serialize();
+    static Cell deserialize(std::map<std::string, std::string>& json);
 
 protected:
     CellType type;

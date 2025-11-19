@@ -374,6 +374,12 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.h">
 			<Option target="labaOOP2"/>
 		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.h">
+			<Option target="labaOOP2"/>
+		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h">
 			<Option target="labaOOP2"/>
 		</Unit>

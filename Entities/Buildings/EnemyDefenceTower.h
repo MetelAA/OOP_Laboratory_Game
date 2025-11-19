@@ -9,13 +9,15 @@
 
 #include "Building.h"
 #include "../Creatures/Attacks/Spels/DirectDamageSpell.h"
+#include "../../Factories/SpellFactory.h"
+
 class EnemyDefenceTower : public Building{
 public:
-    EnemyDefenceTower(int xCoordinate, int yCoordinate, int healthPoint,
-                      const DirectDamageSpell &spell, int attackRadius, int attackInterval) : Building(xCoordinate, yCoordinate, healthPoint, EntityType::EnemyDefenceTower),
-                                                                                              spell(spell),
+    EnemyDefenceTower(int xCoordinate, int yCoordinate, int healthPoint, int attackRadius, int attackInterval) : Building(xCoordinate, yCoordinate, healthPoint, EntityType::EnemyDefenceTower),
                                                                                               attackRadius(attackRadius),
-                                                                                              attackInterval(attackInterval) {}
+                                                                                              attackInterval(attackInterval) {
+        spell = DirectDamageSpell();
+    }
 
     virtual const DirectDamageSpell& getDamageSpell() const noexcept final;
     virtual int getAttackRadius() const noexcept final;
@@ -23,8 +25,11 @@ public:
 
     std::unique_ptr<Entity> clone() const override;
 
+    std::string serialize() override;
+    static EnemyDefenceTower* deserialize(std::map<std::string, std::string> json) noexcept;
+
 protected:
-    DirectDamageSpell spell; //переделать по unip
+    DirectDamageSpell spell;
     int attackRadius, attackInterval;
 };
 

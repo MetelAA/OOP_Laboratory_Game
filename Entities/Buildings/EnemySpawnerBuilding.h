@@ -16,6 +16,8 @@ public:
     virtual int getSpawnInterval() noexcept final;
 
     std::unique_ptr<Entity> clone() const override;
+    std::string serialize() override;
+    static EnemySpawnerBuilding* deserialize(std::map<std::string, std::string> json) noexcept;
 
 protected:
     int spawnInterval;

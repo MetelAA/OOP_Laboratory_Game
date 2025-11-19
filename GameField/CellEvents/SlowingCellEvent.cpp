@@ -11,3 +11,11 @@ void SlowingCellEvent::impactOnCreatureInCell(Creature &creature) {
 std::unique_ptr<CellEvent> SlowingCellEvent::clone() const {
     return std::make_unique<SlowingCellEvent>(*this);
 }
+
+std::string SlowingCellEvent::serialize() {
+    return "{}";
+}
+
+SlowingCellEvent* SlowingCellEvent::deserialize() noexcept {
+    return new SlowingCellEvent(CellEventType::SlowingEvent);
+}

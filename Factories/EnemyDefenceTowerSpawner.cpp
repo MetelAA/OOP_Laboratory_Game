@@ -11,7 +11,7 @@
 EnemyDefenceTowerManager* EnemyDefenceTowerSpawner::spawn(int x, int y) {
     try{
         this->field.canMoveToOrSpawnOn(x, y);
-        std::shared_ptr<EnemyDefenceTower> tower = std::make_shared<EnemyDefenceTower>(EnemyDefenceTower(x, y, this->model.healthPoint, DirectDamageSpell(), this->model.attackRadius, this->model.attackInterval));
+        std::shared_ptr<EnemyDefenceTower> tower = std::make_shared<EnemyDefenceTower>(EnemyDefenceTower(x, y, this->model.healthPoint, this->model.attackRadius, this->model.attackInterval));
         this->field.getFieldCells()[x][y].addEntityInCell(tower);
         return new EnemyDefenceTowerManager(this->field, tower);
     }catch (CellImpassableNotification& ex){

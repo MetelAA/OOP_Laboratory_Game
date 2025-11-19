@@ -3,6 +3,10 @@
 //
 
 #include "Cell.h"
+#include "../GameSetup/JsonParser.h"
+#include "../Entities/Creatures/Player.h"
+#include "../Entities/Buildings/EnemySpawnerBuilding.h"
+#include "../Entities/Buildings/EnemyDefenceTower.h"
 
 CellType Cell::getCellType() const noexcept{
     return type;
@@ -68,6 +72,100 @@ void Cell::impactOnCreatureByCellEvent() {
 void Cell::setCellEvent(std::unique_ptr<CellEvent> cellEvent) {
     this->event = std::move(cellEvent);
 }
+
+std::string Cell::serialize() {
+    std::string res  = "{";
+    res += "type:";
+    switch (this->type) {
+        case CellType::Default:
+            res += "Default,";
+            break;
+        case CellType::Impassable:
+            res += "Impassable,";
+            break;
+    }
+
+    res += "event:{";
+
+    if (this->event != nullptr){
+        res += "eventType:";
+        switch (this->event.get()->getType()) {
+            case CellEventType::SlowingEvent:
+                res += "SlowingEvent,";
+                break;
+            case CellEventType::TrapEvent:
+                res += "TrapEvent,";
+                break;
+        }
+        res += "eventValue:";
+        res += this->event->serialize() + "},";
+    }else{
+        res += "},";
+    }
+
+    res += "entityInCell:{";
+    if (this->entityInCell != nullptr && this->entityInCell->getType() != EntityType::PlayerEnt){
+        res += "entityType:" + JsonParser::enumEntityTypeToStringType(this->entityInCell->getType());
+        res += "entityValue:";
+        res += entityInCell->serialize() +"}";
+    }else{
+        res += "}";
+    }
+    res += "}";
+
+    return res;
+}
+
+const std::map<std::string, CellType> stringTypeToCellTypeEnum = {
+        { "Impassable", CellType::Impassable},
+        {"Default", CellType::Default}
+};
+const std::map<std::string, CellEventType> stringTypeToCellEventTypeEnum = {
+        { "SlowingEvent", CellEventType::SlowingEvent},
+        {"TrapEvent", CellEventType::TrapEvent}
+};
+
+Cell Cell::deserialize(std::map<std::string, std::string>& json) {
+    CellType type = stringTypeToCellTypeEnum.at(json.at("type"));
+    Entity* entity = nullptr;
+    CellEvent* event = nullptr;
+    if (json.at("event") != "{}") {
+        std::map<std::string, std::string> eventMap = JsonParser::parseJsonWithNestedObj(json.at("event"));
+        CellEventType eventType = stringTypeToCellEventTypeEnum.at(eventMap.at("eventType"));
+        switch (eventType) {
+            case CellEventType::SlowingEvent:
+                event = SlowingCellEvent::deserialize();
+                break;
+            case CellEventType::TrapEvent:
+                event = TrapCellEvent::deserialize( JsonParser::parseJsonWithNestedObj(eventMap.at("eventValue")));
+                break;
+        }
+    }
+
+    if (json.at("entityInCell") != "{}"){
+        std::map<std::string, std::string> entityMap = JsonParser::parseJsonWithNestedObj(json.at("entityInCell"));
+        EntityType entType = JsonParser::stringTypeToEnumEntityType(entityMap.at("entityType"));
+
+        std::map<std::string, std::string> entityValueMap = JsonParser::parseJsonWithNestedObj(entityMap.at("entityValue"));
+        switch (entType) {
+            case EntityType::PlayerEnt:
+                break;
+            case EntityType::EnemyEnt:
+            case EntityType::Ally:
+                entity = CompControlledCreature::deserialize(entityMap);
+                break;
+            case EntityType::EnemySpawnerBuildingEnt:
+                entity = EnemySpawnerBuilding::deserialize(entityMap);
+                break;
+            case EntityType::EnemyDefenceTower:
+                entity = EnemyDefenceTower::deserialize(entityMap);
+                break;
+        }
+    }
+    return Cell(type, std::shared_ptr<Entity>(entity),std::unique_ptr<CellEvent>(event));
+}
+
+
 
 
 

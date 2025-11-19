@@ -5,6 +5,8 @@
 #ifndef LABA1_PLAYER_H
 #define LABA1_PLAYER_H
 
+#include <utility>
+
 #include "Creature.h"
 #include "Attacks/LongRangeAttack.h"
 #include "Attacks/CloseRangeAttack.h"
@@ -12,11 +14,13 @@
 
 class Player : public Creature {
 public:
-    Player(int xCoordinate, int yCoordinate, int healthPoint, bool isSlowedFlag,
-           CloseRangeAttack &closeRangeAttack, LongRangeAttack &longRangeAttack, int stepRange, int score,
-           SpellHand &hand) :
-            Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isSlowedFlag, stepRange),
-            closeRangeAttack(closeRangeAttack), longRangeAttack(longRangeAttack), score(score), hand(hand) {}
+    Player(int xCoordinate, int yCoordinate, int healthPoint, bool isDisabledFlag, int stepRange,
+           CloseRangeAttack closeRangeAttack, LongRangeAttack longRangeAttack,
+           bool isCloseRangeAttackSelectedFlag, long score, SpellHand hand) : Creature(xCoordinate, yCoordinate, healthPoint, EntityType::PlayerEnt, isDisabledFlag,stepRange),
+                                                                                     closeRangeAttack(std::move(closeRangeAttack)),
+                                                                                     longRangeAttack(std::move(longRangeAttack)),
+                                                                                     isCloseRangeAttackSelectedFlag(isCloseRangeAttackSelectedFlag),
+                                                                                     score(score), hand(std::move(hand)) {}
 
     Player(Player &&other) noexcept
             : Creature(std::move(other)),
@@ -43,7 +47,8 @@ public:
     virtual SpellHand& getSpellHand() noexcept final;
 
     std::unique_ptr<Entity> clone() const override;
-
+    std::string serialize() override;
+    static Player* deserialize(std::map<std::string, std::string> json, SpellFactory& spellFactory) noexcept;
 
 protected:
     CloseRangeAttack closeRangeAttack;

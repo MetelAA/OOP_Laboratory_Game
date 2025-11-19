@@ -15,6 +15,7 @@ public:
     virtual ~CellEvent() = default;
     virtual std::unique_ptr<CellEvent> clone() const = 0;
     virtual void impactOnCreatureInCell(Creature& creature) = 0;
+    virtual std::string serialize() = 0;
 private:
     CellEventType type;
 };

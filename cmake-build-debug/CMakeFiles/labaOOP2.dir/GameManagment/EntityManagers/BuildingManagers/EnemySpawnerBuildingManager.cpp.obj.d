@@ -142,6 +142,13 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.h \
  D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ C:/msys/mingw64/include/c++/15.2.0/map \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/erase_if.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
@@ -154,7 +161,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  C:/msys/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/allocated_ptr.h \
- C:/msys/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
  C:/msys/mingw64/include/c++/15.2.0/ext/concurrence.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/atomic_base.h \
@@ -168,12 +174,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_vector.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/msys/mingw64/include/c++/15.2.0/map \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_tree.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/node_handle.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_map.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/erase_if.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/CellType.h \
@@ -215,8 +215,11 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \

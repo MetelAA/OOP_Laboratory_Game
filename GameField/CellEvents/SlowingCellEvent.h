@@ -6,6 +6,8 @@
 #define LABAOOP2_SLOWINGCELLEVENT_H
 
 #include "CellEvent.h"
+#include <map>
+#include <string>
 
 class SlowingCellEvent : public CellEvent{
 public:
@@ -14,6 +16,8 @@ public:
 
     std::unique_ptr<CellEvent> clone() const override;
 
+    std::string serialize() override;
+    static SlowingCellEvent* deserialize() noexcept;
 private:
 
 };

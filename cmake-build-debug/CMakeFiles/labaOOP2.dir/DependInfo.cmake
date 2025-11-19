@@ -49,6 +49,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.cpp" "CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj.d"
+  "D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/main.cpp" "CMakeFiles/labaOOP2.dir/main.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/main.cpp.obj.d"
   )
 
