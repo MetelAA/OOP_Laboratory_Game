@@ -401,12 +401,6 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/EnemySpawnerBuildingModel.h">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/GameFieldModel.h">
-			<Option target="labaOOP2"/>
-		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/PlayerModel.h">
-			<Option target="labaOOP2"/>
-		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/SpellsModels.h">
 			<Option target="labaOOP2"/>
 		</Unit>

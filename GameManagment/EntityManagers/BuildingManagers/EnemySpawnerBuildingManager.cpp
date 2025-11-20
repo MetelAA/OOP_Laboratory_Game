@@ -16,15 +16,18 @@ Constants::dxdy chooseDxDy(std::vector<Constants::dxdy> dxdys) {
     return pair;
 }
 
-CompControlledCreatureManager* EnemySpawnerBuildingManager::spawnEnemy() {
+void EnemySpawnerBuildingManager::spawnEnemy() {
+    std::cout << "EnemySpawnerBuildingManager: trying to spawn enemy";
     std::vector<Constants::dxdy> dxdyCopy = Constants::dxdys;
 
     while (!dxdyCopy.empty()) {
         try{
             Constants::dxdy pair = chooseDxDy(dxdyCopy);
 
-            return this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
+           this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
                                                   this->building->getYCoordinate() + pair.y);
+            std::cout << "EnemySpawnerBuildingManager: enemy spawned successfully";
+            return;
         }catch (SpawnEntityException& ex){
             continue;
         }

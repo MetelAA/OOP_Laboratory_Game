@@ -101,6 +101,8 @@ public:
 
     virtual EntityType getEntityInCellType() const final;
 
+    virtual CellEventType getCellEventType() const final;
+
     virtual bool hasCellEvent() const final;
 
     std::string serialize();

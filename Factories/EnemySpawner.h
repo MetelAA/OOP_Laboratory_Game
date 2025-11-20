@@ -20,7 +20,7 @@ class EnemySpawner {
 public:
     EnemySpawner(const CompControlledCreatureModel &enemyModel, Field &field, GameMaster& gameMaster) : enemyModel(enemyModel), field(field), gameMaster(gameMaster) {}
 
-    CompControlledCreatureManager* createEnemy(int x, int y);
+    void createEnemy(int x, int y);
 
 protected:
     const CompControlledCreatureModel enemyModel;

@@ -9,7 +9,7 @@
 class AllyController : public CompControlledCreatureController{
 public:
     AllyController(const Field &field, const CompControlledCreatureManager &manager): CompControlledCreatureController(field, manager) {}
-    void doMove();
+    void doMove(GameMaster& gameMaster);
 
 private:
     std::map<EntityType, bool> typesToAttack = {{EntityType::EnemyEnt, true}, {EntityType::EnemySpawnerBuildingEnt, true}};

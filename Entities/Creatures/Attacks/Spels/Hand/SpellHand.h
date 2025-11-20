@@ -16,8 +16,8 @@ class SpellHand {
 public:
     SpellHand() {}
 
-    SpellHand(int gradeLevel, std::vector<std::unique_ptr<Spell>> &spells) : gradeLevel(gradeLevel),
-                                                                                   spells(std::move(spells)) {}
+    SpellHand(int gradeLevel, std::vector<std::unique_ptr<Spell>>&& spells) : gradeLevel(gradeLevel),
+                                                                              spells(std::move(spells)) {}
 
     SpellHand(SpellHand&& other) noexcept: gradeLevel(other.gradeLevel), spells(std::move(other.spells)){}
     SpellHand(const SpellHand& other): gradeLevel(other.gradeLevel){

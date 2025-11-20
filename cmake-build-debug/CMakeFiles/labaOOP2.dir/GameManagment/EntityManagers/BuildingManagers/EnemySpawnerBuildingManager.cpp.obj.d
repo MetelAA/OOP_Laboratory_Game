@@ -191,6 +191,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
  D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
@@ -218,7 +220,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemySpawn
  D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
  D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \

@@ -165,31 +165,6 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerCont
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
- D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
- D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -214,9 +189,33 @@ CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDefenceTowerCont
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
  C:/msys/mingw64/include/c++/15.2.0/cmath C:/msys/mingw64/include/math.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/specfun.h \
- C:/msys/mingw64/include/c++/15.2.0/limits \
  C:/msys/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
  C:/msys/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
  C:/msys/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \

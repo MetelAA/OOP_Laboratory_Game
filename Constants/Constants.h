@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 #include "../Entities/Creatures/Attacks/Spels/SpellType.h"
+#include "../Entities/EntityType.h"
 #include <limits>
 
 class Constants {
@@ -52,26 +53,25 @@ public:
 
     template<typename T>
     static T getInput() {
-        T value;
-        while (true) {
-            std::cin >> value;
+        if constexpr (std::is_same_v<T, std::string>) {
+            std::string value;
+            getline(std::cin, value);
+            return value;
+        } else {
+            T value;
+            while (true) {
+                std::cin >> value;
 
-            if (std::cin.fail()) {
-                std::cout << "Error! Enter a correct value." << std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            } else {
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                return value;
+                if (std::cin.fail()) {
+                    std::cout << "Error! Enter a correct value." << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                } else {
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    return value;
+                }
             }
         }
-    }
-
-    template<>
-    static std::string getInput<std::string>() {
-        std::string value;
-        getline(std::cin, value);
-        return value;
     }
 };
 

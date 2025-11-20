@@ -5,6 +5,7 @@
 #include "EnemyDefenceTowerController.h"
 #include <iostream>
 #include <cmath>
+#include "../../GameMaster.h"
 
 void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
     std::cout << "Ход, EnemyDefenceTower: " << &this->manager << std::endl;
@@ -47,6 +48,7 @@ void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
 
             this->manager.attackCoordinates(priorityEnemy.coords);
             this->manager.goToCoolDown();
+            gameMaster.redraw();
         }else{
             std::cout << "EnemyDefenceTower: " << &this->manager << " no target to damage" << std::endl;
         }

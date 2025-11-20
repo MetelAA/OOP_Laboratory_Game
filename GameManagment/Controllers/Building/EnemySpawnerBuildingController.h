@@ -7,8 +7,8 @@
 #include "../../EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h"
 #include <iostream>
 #include <utility>
-#include "../../GameMaster.h"
 #include "../EnemyController.h"
+class GameMaster;
 
 class EnemySpawnerBuildingController {
 public:

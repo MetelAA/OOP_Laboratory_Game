@@ -21,7 +21,7 @@ public:
     virtual bool isTimeToSpawn() noexcept final;
     virtual void resetSpawnCounter() noexcept final;
     virtual void incrementTimeToSpawnCounter() noexcept final;
-    virtual CompControlledCreatureManager* spawnEnemy() final;
+    virtual void spawnEnemy() final;
 
 protected:
     int stepCounter;

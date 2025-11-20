@@ -165,9 +165,125 @@ CMakeFiles/labaOOP2.dir/Factories/AllySpawner.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ C:/msys/mingw64/include/c++/15.2.0/iostream \
+ C:/msys/mingw64/include/c++/15.2.0/ostream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
+ C:/msys/mingw64/include/c++/15.2.0/ios \
+ C:/msys/mingw64/include/c++/15.2.0/bits/ios_base.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/locale_classes.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/locale_classes.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/system_error \
+ C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/msys/mingw64/include/c++/15.2.0/stdexcept \
+ C:/msys/mingw64/include/c++/15.2.0/streambuf \
+ C:/msys/mingw64/include/c++/15.2.0/bits/streambuf.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/locale_facets.h \
+ C:/msys/mingw64/include/c++/15.2.0/cwctype \
+ C:/msys/mingw64/include/wctype.h \
+ C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/streambuf_iterator.h \
+ C:/msys/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/locale_facets.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/istream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
  D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/AttackType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Hand/SpellHand.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/AllyController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/CompControlledCreatureController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/SlowingCellNotification.h \
+ C:/msys/mingw64/include/c++/15.2.0/queue \
+ C:/msys/mingw64/include/c++/15.2.0/deque \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_deque.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/deque.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_heap.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_queue.h \
+ C:/msys/mingw64/include/c++/15.2.0/stack \
+ C:/msys/mingw64/include/c++/15.2.0/bits/stl_stack.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/AllyController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemySpawnerBuildingController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemySpawnerBuildingManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemySpawnerBuilding.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/EnemySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/Building.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/EnemyController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/Building/EnemyDefenceTowerController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Buildings/EnemyDefenceTower.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/DirectDamageSpell.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/Controllers/PlayerController.h \
+ D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/PlayerManager.h \
+ C:/msys/mingw64/include/c++/15.2.0/cmath C:/msys/mingw64/include/math.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/specfun.h \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Model/EnemyDefenceTowerModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/EnemySpawnerBuildingModel.h \
+ D:/clionProj/OOP_Laboratory_Game/GameRender/Renderer.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h

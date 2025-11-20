@@ -7,10 +7,10 @@
 
 void PlayerController::doMove() {
     std::cout << "Ход Player: " << &this->manager << std::endl;
-    if (this->manager.isCreatureDisabled()){
-        std::cout << "Player: " << &this->manager << " disabled -> пропусакет ход" << std::endl;
-    }
-
+//    if (this->manager.isCreatureDisabled()){
+//
+//    }
+    std::cout << "Player: " << &this->manager << " disabled -> пропусакет ход" << std::endl;
     
 
 }

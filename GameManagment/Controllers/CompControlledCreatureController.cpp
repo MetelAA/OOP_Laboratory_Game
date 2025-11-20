@@ -1,13 +1,16 @@
 //
 // Created by Artem on 23.10.2025.
 //
-
+#include <sstream>
 #include "CompControlledCreatureController.h"
+#include "../GameMaster.h"
 
-void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack) {
-    std::string headerCout = (std::string("type") + (manager.getEntityType() == EntityType::EnemyEnt ? "enemy " : "ally ")) + ", id: " + std::to_string((long long)&this->manager);
+void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster) {
+    std::stringstream ss;
+    ss << static_cast<const void*>(this);
+    std::string headerCout = (std::string("type: ") + (manager.getEntityType() == EntityType::EnemyEnt ? "enemy " : "ally ")) + ", id: " + ss.str();
 
-    std::cout << "Ход CompControlledCreature " << headerCout;
+    std::cout << "Ход CompControlledCreature " << headerCout << std::endl;
 
     if (manager.isCreatureDisabled()){
         std::cout << "CompControlledCreature: " << headerCout << " disabled -> пропускает ход, тк замедлена с предыдущего хода" << std::endl;
@@ -75,7 +78,7 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
             }
         }
         try {
-            moveTo(trip, headerCout);
+            moveTo(trip, headerCout, gameMaster);
         }catch (UniversalStringException& exp){
             std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
             return;
@@ -98,7 +101,7 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         }
 
         try {
-            moveTo(trip, headerCout);
+            moveTo(trip, headerCout, gameMaster);
         }catch (SlowingCellNotification& exp){
             std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
             return;
@@ -135,12 +138,13 @@ CompControlledCreatureController::chooseByPriority(std::vector<EntityCoordsWithN
     throw UnexpectedBehaviorException("unexpected behavior: chooseByPriority");
 }
 
-void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip, std::string headerCout) {
+void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMaster& gameMaster) {
     while(!trip.empty()){
         Constants::XYPair stepTo = trip.top();
         trip.pop();
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
         std::cout << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
         manager.moveTo(howToMove);
+        gameMaster.redraw();
     }
 }

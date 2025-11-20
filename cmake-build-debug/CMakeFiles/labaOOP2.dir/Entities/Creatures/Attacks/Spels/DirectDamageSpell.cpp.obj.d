@@ -165,26 +165,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/DirectDamageSpell.cpp.o
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CantCastSpellOnCellNotification.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
- C:/msys/mingw64/include/c++/15.2.0/cmath C:/msys/mingw64/include/math.h \
- C:/msys/mingw64/include/c++/15.2.0/bits/specfun.h \
- C:/msys/mingw64/include/c++/15.2.0/limits \
- C:/msys/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
- C:/msys/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
- C:/msys/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -208,4 +188,25 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/DirectDamageSpell.cpp.o
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
- C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CantCastSpellOnCellNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ C:/msys/mingw64/include/c++/15.2.0/cmath C:/msys/mingw64/include/math.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/specfun.h \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/msys/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc

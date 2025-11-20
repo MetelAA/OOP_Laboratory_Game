@@ -26,9 +26,11 @@ std::vector<std::string> JsonParser::parseJsonArray(const std::string &arr) {
             tmp += arr[i];
         }
     }
-    res.push_back(tmp);
+    if (!tmp.empty())
+        res.push_back(tmp);
     return res;
 }
+
 
 std::map<std::string, std::string> JsonParser::parseJsonWithNestedObj(const std::string &json) {
     std::map<std::string, std::string> res;

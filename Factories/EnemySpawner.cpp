@@ -3,11 +3,15 @@
 //
 
 #include "EnemySpawner.h"
+#include "../GameManagment/Controllers/CompControlledCreatureController.h"
+#include "../GameManagment/GameMaster.h"
+
+class CompControlledCreatureController;
 
 #include <memory>
 
 
-CompControlledCreatureManager* EnemySpawner::createEnemy(int x, int y) {
+void EnemySpawner::createEnemy(int x, int y) {
     try{
         this->field.canMoveToOrSpawnOn(x, y);
         std::shared_ptr<CompControlledCreature> enemy = std::make_shared<CompControlledCreature> ( x, y, enemyModel.healthPoint, EntityType::EnemyEnt,
@@ -16,8 +20,9 @@ CompControlledCreatureManager* EnemySpawner::createEnemy(int x, int y) {
         if(field.getFieldCells()[x][y].hasCellEvent()){
             field.getFieldCells()[x][y].impactOnCreatureByCellEvent();
         }
-
-        return new CompControlledCreatureManager(this->field, enemy);
+        CompControlledCreatureManager* manager = new CompControlledCreatureManager(this->field, enemy);
+        EnemyController controller(this->field, *manager);
+        this->gameMaster.addEnemyController(controller);
     }catch (CellImpassableNotification& ex){
         throw SpawnEntityException(std::string("Can't spawn compControlledCreature Enemy because: ") + ex.what());
     }catch (CoordinateException& ex){

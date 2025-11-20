@@ -20,6 +20,6 @@ std::string LongRangeAttack::serialize() noexcept {
 
 LongRangeAttack LongRangeAttack::deserialize(std::map<std::string, std::string> json) noexcept {
     int damage = std::stoi(json.at("damage"));
-    int range = std::stoi("range");
+    int range = std::stoi(json.at("range"));
     return LongRangeAttack(damage, range);
 }

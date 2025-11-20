@@ -3,6 +3,9 @@
 //
 
 #include "AllySpawner.h"
+#include "../GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h"
+#include "../GameManagment/Controllers/AllyController.h"
+#include "../GameManagment/GameMaster.h"
 
 void AllySpawner::createAlly(int x, int y) {
     try{
@@ -14,7 +17,9 @@ void AllySpawner::createAlly(int x, int y) {
             field.getFieldCells()[x][y].impactOnCreatureByCellEvent();
         }
 
-        //Создать менеджер и контроллер и добавить в гейм мастер!
+        CompControlledCreatureManager* manager = new CompControlledCreatureManager(this->field, ally);
+        AllyController controller(this->field, *manager);
+        this->gameMaster.addAllyController(controller);
 
     }catch (CellImpassableNotification& ex){
         throw SpawnEntityException(std::string("Can't spawn compControlledCreature Ally because: ") + ex.what());

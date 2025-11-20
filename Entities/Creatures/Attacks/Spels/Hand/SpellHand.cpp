@@ -95,5 +95,5 @@ SpellHand SpellHand::deserialize(std::map<std::string, std::string> json, SpellF
     for(const std::string& sp : vec){
         spells.push_back(spellFactory.createSpell(strTypeToEnumType.at(sp)));
     }
-    return SpellHand(gradeLevel, spells);
+    return SpellHand(gradeLevel, std::move(spells));
 }

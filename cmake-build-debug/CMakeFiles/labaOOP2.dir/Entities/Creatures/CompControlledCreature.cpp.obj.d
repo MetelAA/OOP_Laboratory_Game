@@ -142,7 +142,7 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/CompControlledCreature.cpp.obj: \
  C:/msys/mingw64/include/c++/15.2.0/bits/charconv.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
- D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.h \
+ D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.h \
  C:/msys/mingw64/include/c++/15.2.0/vector \
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_vector.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/stl_bvector.h \

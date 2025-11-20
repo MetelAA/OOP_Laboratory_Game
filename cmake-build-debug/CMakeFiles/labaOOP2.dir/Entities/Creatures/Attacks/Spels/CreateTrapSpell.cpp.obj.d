@@ -165,11 +165,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/CreateTrapSpell.cpp.obj
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CantCastSpellOnCellNotification.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -193,4 +188,11 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/CreateTrapSpell.cpp.obj
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
- C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/CellEvents/TrapCellEvent.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CantCastSpellOnCellNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h

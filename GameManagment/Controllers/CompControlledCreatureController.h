@@ -12,18 +12,19 @@
 #include <stack>
 #include <iostream>
 #include <utility>
+class GameMaster;
 
 class CompControlledCreatureController {
 public:
     CompControlledCreatureController(const Field &field,
                                      CompControlledCreatureManager manager): field(field), manager(std::move(manager)) {}
 
-    void computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack);
+    void computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster);
 private:
     const Field& field;
     CompControlledCreatureManager manager;
 
-    void moveTo(std::stack<Constants::XYPair> trip, std::string headerCout);
+    void moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMaster& gameMaster);
 
     struct EntityCoordsWithNearestPositionToAttackFrom{
         Constants::XYPair attackFromCoordinates;

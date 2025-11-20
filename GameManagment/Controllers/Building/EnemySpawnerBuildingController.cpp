@@ -4,19 +4,19 @@
 
 
 #include "EnemySpawnerBuildingController.h"
+#include "../../GameMaster.h"
 
 void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
-    std::cout << "Ход, enemySpawnerBuilding: " << &this->manager << std::endl;
+    std::cout << "Ход, enemySpawnerBuilding: " << this << std::endl;
     if (this->manager.isTimeToSpawn()){
+        std::cout << "enemySpawnerBuilding: " << this << " создаёт нового противнка" << std::endl;
         manager.resetSpawnCounter();
-        CompControlledCreatureManager* spawnedEnemyManager = manager.spawnEnemy();
-        EnemyController spawnedEnemyController = EnemyController(this->field, *spawnedEnemyManager);
-
-        //!!!!!!!!!!!!!!!!!!!!!! Добавлять копию EnemyController в гей мастер!
-
-        std::cout << "enemySpawnerBuilding: " << &this->manager << " создал нового противника: " << &spawnedEnemyManager << std::endl;
+        manager.spawnEnemy();
+        gameMaster.redraw();
+        std::cout << "enemySpawnerBuilding: " << this << " новый противник успешно создан" << std::endl;
     }else{
+        std::cout << "enemySpawnerBuilding: " << this << " назодиться на cooldown" << std::endl;
         manager.incrementTimeToSpawnCounter();
     }
-    std::cout << "enemySpawnerBuilding: " << &this->manager << "закончило ход" << std::endl;
+    std::cout << "enemySpawnerBuilding: " << this << "закончило ход" << std::endl;
 }

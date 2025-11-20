@@ -6,7 +6,7 @@
 #define LABAOOP2_ENEMYDEFENCETOWERCONTROLLER_H
 
 #include "../../EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h"
-#include "../../GameMaster.h"
+class GameMaster;
 
 class EnemyDefenceTowerController {
 public:

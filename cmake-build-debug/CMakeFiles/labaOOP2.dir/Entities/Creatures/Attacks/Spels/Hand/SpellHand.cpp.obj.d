@@ -164,26 +164,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Hand/SpellHand.cpp.obj:
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UnexpectedBehaviorException.h \
  D:/clionProj/OOP_Laboratory_Game/Exceptions/UniversalStringException.h \
  D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
- D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
- D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
- D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
- D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
- D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
- D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
- D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
- D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
  C:/msys/mingw64/include/c++/15.2.0/iostream \
  C:/msys/mingw64/include/c++/15.2.0/ostream \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -207,4 +187,25 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/Hand/SpellHand.cpp.obj:
  C:/msys/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
  C:/msys/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys/mingw64/include/c++/15.2.0/istream \
- C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ C:/msys/mingw64/include/c++/15.2.0/limits \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellOnCoords.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h

@@ -4,6 +4,6 @@
 
 #include "EnemyController.h"
 
-void EnemyController::doMove() {
-    this->computeAndDoMove(typesToAttack, priorityOfAttack);
+void EnemyController::doMove(GameMaster& gameMaster) {
+    this->computeAndDoMove(typesToAttack, priorityOfAttack, gameMaster);
 }

@@ -165,6 +165,10 @@ Cell Cell::deserialize(std::map<std::string, std::string>& json) {
     return Cell(type, std::shared_ptr<Entity>(entity),std::unique_ptr<CellEvent>(event));
 }
 
+CellEventType Cell::getCellEventType() const {
+    return this->event->getType();
+}
+
 
 
 
