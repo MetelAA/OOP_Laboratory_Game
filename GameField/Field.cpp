@@ -5,7 +5,7 @@
 #include "Field.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
-#include "../GameSetup/JsonParser.h"
+#include "../GameSetup/Utils/JsonParser.h"
 
 int Field::getWidth() const noexcept {
     return width;
@@ -119,7 +119,7 @@ std::string Field::serialize() {
     return res;
 }
 
-Field Field::deserialize(std::map<std::string, std::string>& json) {
+Field* Field::deserialize(std::map<std::string, std::string>& json) {
     int height = std::stoi(json.at("height"));
     int width = std::stoi(json.at("width"));
     std::vector<std::vector<Cell>> cells;
@@ -134,5 +134,5 @@ Field Field::deserialize(std::map<std::string, std::string>& json) {
             tmp = std::vector<Cell>();
         }
     }
-    return Field(width, height, cells);
+    return new Field(width, height, cells);
 }

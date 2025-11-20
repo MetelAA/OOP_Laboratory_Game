@@ -1064,6 +1064,30 @@ GameManagment/GameMaster.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.s
 .PHONY : GameManagment/GameMaster.cpp.s
 
+GameRender/Renderer.obj: GameRender/Renderer.cpp.obj
+.PHONY : GameRender/Renderer.obj
+
+# target to build an object file
+GameRender/Renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj
+.PHONY : GameRender/Renderer.cpp.obj
+
+GameRender/Renderer.i: GameRender/Renderer.cpp.i
+.PHONY : GameRender/Renderer.i
+
+# target to preprocess a source file
+GameRender/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.i
+.PHONY : GameRender/Renderer.cpp.i
+
+GameRender/Renderer.s: GameRender/Renderer.cpp.s
+.PHONY : GameRender/Renderer.s
+
+# target to generate assembly for a file
+GameRender/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.s
+.PHONY : GameRender/Renderer.cpp.s
+
 GameSetup/GameFieldGenerator.obj: GameSetup/GameFieldGenerator.cpp.obj
 .PHONY : GameSetup/GameFieldGenerator.obj
 
@@ -1112,29 +1136,53 @@ GameSetup/GameSetup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.s
 .PHONY : GameSetup/GameSetup.cpp.s
 
-GameSetup/JsonParser.obj: GameSetup/JsonParser.cpp.obj
-.PHONY : GameSetup/JsonParser.obj
+GameSetup/Utils/JsonParser.obj: GameSetup/Utils/JsonParser.cpp.obj
+.PHONY : GameSetup/Utils/JsonParser.obj
 
 # target to build an object file
-GameSetup/JsonParser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj
-.PHONY : GameSetup/JsonParser.cpp.obj
+GameSetup/Utils/JsonParser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj
+.PHONY : GameSetup/Utils/JsonParser.cpp.obj
 
-GameSetup/JsonParser.i: GameSetup/JsonParser.cpp.i
-.PHONY : GameSetup/JsonParser.i
+GameSetup/Utils/JsonParser.i: GameSetup/Utils/JsonParser.cpp.i
+.PHONY : GameSetup/Utils/JsonParser.i
 
 # target to preprocess a source file
-GameSetup/JsonParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.i
-.PHONY : GameSetup/JsonParser.cpp.i
+GameSetup/Utils/JsonParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.i
+.PHONY : GameSetup/Utils/JsonParser.cpp.i
 
-GameSetup/JsonParser.s: GameSetup/JsonParser.cpp.s
-.PHONY : GameSetup/JsonParser.s
+GameSetup/Utils/JsonParser.s: GameSetup/Utils/JsonParser.cpp.s
+.PHONY : GameSetup/Utils/JsonParser.s
 
 # target to generate assembly for a file
-GameSetup/JsonParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.s
-.PHONY : GameSetup/JsonParser.cpp.s
+GameSetup/Utils/JsonParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.s
+.PHONY : GameSetup/Utils/JsonParser.cpp.s
+
+GameSetup/Utils/ReadRightJson.obj: GameSetup/Utils/ReadRightJson.cpp.obj
+.PHONY : GameSetup/Utils/ReadRightJson.obj
+
+# target to build an object file
+GameSetup/Utils/ReadRightJson.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj
+.PHONY : GameSetup/Utils/ReadRightJson.cpp.obj
+
+GameSetup/Utils/ReadRightJson.i: GameSetup/Utils/ReadRightJson.cpp.i
+.PHONY : GameSetup/Utils/ReadRightJson.i
+
+# target to preprocess a source file
+GameSetup/Utils/ReadRightJson.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.i
+.PHONY : GameSetup/Utils/ReadRightJson.cpp.i
+
+GameSetup/Utils/ReadRightJson.s: GameSetup/Utils/ReadRightJson.cpp.s
+.PHONY : GameSetup/Utils/ReadRightJson.s
+
+# target to generate assembly for a file
+GameSetup/Utils/ReadRightJson.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labaOOP2.dir\build.make CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.s
+.PHONY : GameSetup/Utils/ReadRightJson.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -1286,15 +1334,21 @@ help:
 	@echo ... GameManagment/GameMaster.obj
 	@echo ... GameManagment/GameMaster.i
 	@echo ... GameManagment/GameMaster.s
+	@echo ... GameRender/Renderer.obj
+	@echo ... GameRender/Renderer.i
+	@echo ... GameRender/Renderer.s
 	@echo ... GameSetup/GameFieldGenerator.obj
 	@echo ... GameSetup/GameFieldGenerator.i
 	@echo ... GameSetup/GameFieldGenerator.s
 	@echo ... GameSetup/GameSetup.obj
 	@echo ... GameSetup/GameSetup.i
 	@echo ... GameSetup/GameSetup.s
-	@echo ... GameSetup/JsonParser.obj
-	@echo ... GameSetup/JsonParser.i
-	@echo ... GameSetup/JsonParser.s
+	@echo ... GameSetup/Utils/JsonParser.obj
+	@echo ... GameSetup/Utils/JsonParser.i
+	@echo ... GameSetup/Utils/JsonParser.s
+	@echo ... GameSetup/Utils/ReadRightJson.obj
+	@echo ... GameSetup/Utils/ReadRightJson.i
+	@echo ... GameSetup/Utils/ReadRightJson.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

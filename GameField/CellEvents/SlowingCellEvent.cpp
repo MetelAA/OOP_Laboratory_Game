@@ -17,5 +17,5 @@ std::string SlowingCellEvent::serialize() {
 }
 
 SlowingCellEvent* SlowingCellEvent::deserialize() noexcept {
-    return new SlowingCellEvent(CellEventType::SlowingEvent);
+    return new SlowingCellEvent();
 }

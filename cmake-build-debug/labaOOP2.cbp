@@ -362,6 +362,12 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.h">
 			<Option target="labaOOP2"/>
 		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameRender/Renderer.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameRender/Renderer.h">
+			<Option target="labaOOP2"/>
+		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
@@ -374,10 +380,16 @@
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.h">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.cpp">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.cpp">
 			<Option target="labaOOP2"/>
 		</Unit>
-		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.h">
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.h">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/ReadRightJson.cpp">
+			<Option target="labaOOP2"/>
+		</Unit>
+		<Unit filename="D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/ReadRightJson.h">
 			<Option target="labaOOP2"/>
 		</Unit>
 		<Unit filename="D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h">

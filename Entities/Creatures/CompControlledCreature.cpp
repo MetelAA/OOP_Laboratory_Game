@@ -3,7 +3,7 @@
 //
 
 #include "CompControlledCreature.h"
-#include "../../GameSetup/JsonParser.h"
+#include "../../GameSetup/Utils/JsonParser.h"
 
 int CompControlledCreature::getDamage() noexcept {
     return damage;
@@ -14,7 +14,7 @@ int CompControlledCreature::getChanceToDetectHostile() noexcept {
 }
 
 std::unique_ptr<Entity> CompControlledCreature::clone() const {
-    std::make_unique<CompControlledCreature>(*this);
+    return std::make_unique<CompControlledCreature>(*this);
 }
 
 std::string CompControlledCreature::serialize() {

@@ -7,7 +7,9 @@
 
 
 #include <vector>
+#include <iostream>
 #include "../Entities/Creatures/Attacks/Spels/SpellType.h"
+#include <limits>
 
 class Constants {
 public:
@@ -46,6 +48,30 @@ public:
             case EntityType::EnemyDefenceTower: return "EnemyDefenceTower";
             default:                           return "UnknownEntityType";
         }
+    }
+
+    template<typename T>
+    static T getInput() {
+        T value;
+        while (true) {
+            std::cin >> value;
+
+            if (std::cin.fail()) {
+                std::cout << "Error! Enter a correct value." << std::endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            } else {
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return value;
+            }
+        }
+    }
+
+    template<>
+    static std::string getInput<std::string>() {
+        std::string value;
+        getline(std::cin, value);
+        return value;
     }
 };
 

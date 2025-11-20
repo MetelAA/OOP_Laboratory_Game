@@ -11,7 +11,7 @@
 
 class SlowingCellEvent : public CellEvent{
 public:
-    explicit SlowingCellEvent(CellEventType type) : CellEvent(type) {}
+    explicit SlowingCellEvent() : CellEvent(CellEventType::SlowingEvent) {}
     void impactOnCreatureInCell(Creature &creature) override;
 
     std::unique_ptr<CellEvent> clone() const override;

@@ -47,9 +47,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp" "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/CreatureManager.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp" "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/CreatureManagers/PlayerManager.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameManagment/GameMaster.cpp" "CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj.d"
+  "D:/clionProj/OOP_Laboratory_Game/GameRender/Renderer.cpp" "CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameSetup/GameFieldGenerator.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/GameSetup.cpp.obj.d"
-  "D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj.d"
+  "D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj.d"
+  "D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/ReadRightJson.cpp" "CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj.d"
   "D:/clionProj/OOP_Laboratory_Game/main.cpp" "CMakeFiles/labaOOP2.dir/main.cpp.obj" "gcc" "CMakeFiles/labaOOP2.dir/main.cpp.obj.d"
   )
 

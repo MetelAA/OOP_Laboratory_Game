@@ -3,7 +3,7 @@
 //
 
 #include "Cell.h"
-#include "../GameSetup/JsonParser.h"
+#include "../GameSetup/Utils/JsonParser.h"
 #include "../Entities/Creatures/Player.h"
 #include "../Entities/Buildings/EnemySpawnerBuilding.h"
 #include "../Entities/Buildings/EnemyDefenceTower.h"
@@ -39,8 +39,8 @@ EntityType Cell::getEntityInCellType() const {
     throw NoEntityInCellNotification("В клетке нету сущности");
 }
 
-Entity & Cell::getEntityInCell() noexcept {
-    return *this->entityInCell;
+std::shared_ptr<Entity> Cell::getEntityInCell() noexcept {
+    return this->entityInCell;
 }
 
 
@@ -105,7 +105,7 @@ std::string Cell::serialize() {
 
     res += "entityInCell:{";
     if (this->entityInCell != nullptr && this->entityInCell->getType() != EntityType::PlayerEnt){
-        res += "entityType:" + JsonParser::enumEntityTypeToStringType(this->entityInCell->getType());
+        res += "entityType:" + JsonParser::enumEntityTypeToStringType(this->entityInCell->getType()) + ",";
         res += "entityValue:";
         res += entityInCell->serialize() +"}";
     }else{
@@ -152,13 +152,13 @@ Cell Cell::deserialize(std::map<std::string, std::string>& json) {
                 break;
             case EntityType::EnemyEnt:
             case EntityType::Ally:
-                entity = CompControlledCreature::deserialize(entityMap);
+                entity = CompControlledCreature::deserialize(entityValueMap);
                 break;
             case EntityType::EnemySpawnerBuildingEnt:
-                entity = EnemySpawnerBuilding::deserialize(entityMap);
+                entity = EnemySpawnerBuilding::deserialize(entityValueMap);
                 break;
             case EntityType::EnemyDefenceTower:
-                entity = EnemyDefenceTower::deserialize(entityMap);
+                entity = EnemyDefenceTower::deserialize(entityValueMap);
                 break;
         }
     }

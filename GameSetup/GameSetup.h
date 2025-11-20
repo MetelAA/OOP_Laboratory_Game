@@ -7,7 +7,8 @@
 
 
 class GameSetup {
-
+public:
+    static void start();
 };
 
 

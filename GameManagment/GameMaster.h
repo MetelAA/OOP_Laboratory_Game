@@ -6,8 +6,42 @@
 #define LABA1_GAMEMASTER_H
 
 
-class GameMaster {
+#include <string>
+#include "../GameField/Field.h"
+#include "../Entities/Creatures/Player.h"
+#include "Controllers/AllyController.h"
+#include "Controllers/EnemyController.h"
+#include "Controllers/Building/EnemySpawnerBuildingController.h"
+#include "Controllers/Building/EnemyDefenceTowerController.h"
+#include "Controllers/PlayerController.h"
+#include "../Model/EnemyDefenceTowerModel.h"
+#include "../Model/EnemySpawnerBuildingModel.h"
 
+class GameMaster {
+public:
+    GameMaster(){};
+
+    void start(const std::string& json);
+    void gameCycle();
+
+    virtual ~GameMaster();
+
+private:
+    int level;
+    Field* field;
+    std::shared_ptr<Player> player;
+
+    std::vector<EnemyController> enemyControllers;
+    std::vector<AllyController> allyControllers;
+    std::vector<EnemySpawnerBuildingController> enemySpawnerBuildingControllers;
+    std::vector<EnemyDefenceTowerController> defenceTowerControllers;
+    std::unique_ptr<PlayerController> playerController;
+    std::vector<std::shared_ptr<Entity>> entities;
+
+    const CompControlledCreatureModel enemyModel{3,3,3,70};
+    const CompControlledCreatureModel allyModel{3,3,3,70};
+//    const EnemyDefenceTowerModel defenceTowerModel{3,3,3};
+//    const EnemySpawnerBuildingModel spawnerBuildingModel{2,2};
 };
 
 

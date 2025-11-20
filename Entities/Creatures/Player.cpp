@@ -3,7 +3,7 @@
 //
 
 #include "Player.h"
-#include "../../GameSetup/JsonParser.h"
+#include "../../GameSetup/Utils/JsonParser.h"
 
 const LongRangeAttack& Player::getLongRangeAttack() const noexcept {
     return longRangeAttack;

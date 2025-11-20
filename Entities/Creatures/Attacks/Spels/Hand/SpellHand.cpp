@@ -5,7 +5,7 @@
 #include "SpellHand.h"
 //#include "../../../../../Exceptions/UnexpectedBehaviorException.h"
 #include "../SpellOnCoords.h"
-#include "../../../../../GameSetup/JsonParser.h"
+#include "../../../../../GameSetup/Utils/JsonParser.h"
 #include "../../../../../Factories/SpellFactory.h"
 #include <iostream>
 

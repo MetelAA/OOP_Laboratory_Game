@@ -85,7 +85,7 @@ public:
 
     virtual void clearCell() noexcept final;
 
-    virtual Entity& getEntityInCell() noexcept final;
+    virtual std::shared_ptr<Entity> getEntityInCell() noexcept final;
 
     virtual void setCellEvent(std::unique_ptr<CellEvent> cellEvent) final;
 

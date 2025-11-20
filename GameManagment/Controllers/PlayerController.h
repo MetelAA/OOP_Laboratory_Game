@@ -10,7 +10,7 @@
 
 class PlayerController {
 public:
-    PlayerController(PlayerManager manager, const Field &field) : manager(std::move(manager)), field(field) {}
+    PlayerController(const Field &field, PlayerManager manager) : manager(std::move(manager)), field(field) {}
 
     void doMove();
 

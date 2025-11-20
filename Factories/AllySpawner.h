@@ -11,7 +11,7 @@
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
-#include "../GameManagment/GameMaster.h"
+class GameMaster;
 
 class AllySpawner {
 public:

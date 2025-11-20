@@ -656,19 +656,47 @@ CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.s"
 	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\GameFieldGenerator.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\GameFieldGenerator.cpp.s
 
-CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
-CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameSetup/JsonParser.cpp
-CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameSetup\JsonParser.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameSetup\JsonParser.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameSetup\JsonParser.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameSetup\Utils\JsonParser.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameSetup\Utils\JsonParser.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\JsonParser.cpp
 
-CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.i"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameSetup\JsonParser.cpp > CMakeFiles\labaOOP2.dir\GameSetup\JsonParser.cpp.i
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\JsonParser.cpp > CMakeFiles\labaOOP2.dir\GameSetup\Utils\JsonParser.cpp.i
 
-CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.s"
-	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\JsonParser.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\JsonParser.cpp.s
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\JsonParser.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\Utils\JsonParser.cpp.s
+
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/ReadRightJson.cpp
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameSetup\Utils\ReadRightJson.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameSetup\Utils\ReadRightJson.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\ReadRightJson.cpp
+
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\ReadRightJson.cpp > CMakeFiles\labaOOP2.dir\GameSetup\Utils\ReadRightJson.cpp.i
+
+CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameSetup\Utils\ReadRightJson.cpp -o CMakeFiles\labaOOP2.dir\GameSetup\Utils\ReadRightJson.cpp.s
+
+CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj: CMakeFiles/labaOOP2.dir/flags.make
+CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj: D:/clionProj/OOP_Laboratory_Game/GameRender/Renderer.cpp
+CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj: CMakeFiles/labaOOP2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj -MF CMakeFiles\labaOOP2.dir\GameRender\Renderer.cpp.obj.d -o CMakeFiles\labaOOP2.dir\GameRender\Renderer.cpp.obj -c D:\clionProj\OOP_Laboratory_Game\GameRender\Renderer.cpp
+
+CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.i"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\clionProj\OOP_Laboratory_Game\GameRender\Renderer.cpp > CMakeFiles\labaOOP2.dir\GameRender\Renderer.cpp.i
+
+CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.s"
+	C:\msys\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\clionProj\OOP_Laboratory_Game\GameRender\Renderer.cpp -o CMakeFiles\labaOOP2.dir\GameRender\Renderer.cpp.s
 
 # Object files for target labaOOP2
 labaOOP2_OBJECTS = \
@@ -714,7 +742,9 @@ labaOOP2_OBJECTS = \
 "CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj" \
 "CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj" \
-"CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj"
+"CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj" \
+"CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj"
 
 # External object files for target labaOOP2
 labaOOP2_EXTERNAL_OBJECTS =
@@ -761,12 +791,14 @@ labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/Controllers/Building/EnemyDe
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/GameFieldGenerator.cpp.obj
-labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/JsonParser.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/Utils/JsonParser.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameSetup/Utils/ReadRightJson.cpp.obj
+labaOOP2.exe: CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/build.make
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/linklibs.rsp
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/objects1.rsp
 labaOOP2.exe: CMakeFiles/labaOOP2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable labaOOP2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\clionProj\OOP_Laboratory_Game\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX executable labaOOP2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\labaOOP2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

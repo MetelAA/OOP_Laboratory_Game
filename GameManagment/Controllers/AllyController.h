@@ -7,8 +7,8 @@
 #include "CompControlledCreatureController.h"
 
 class AllyController : public CompControlledCreatureController{
+public:
     AllyController(const Field &field, const CompControlledCreatureManager &manager): CompControlledCreatureController(field, manager) {}
-
     void doMove();
 
 private:

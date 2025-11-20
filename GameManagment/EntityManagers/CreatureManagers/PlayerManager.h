@@ -10,7 +10,8 @@
 
 class PlayerManager : public CreatureManager{
 public:
-
+    PlayerManager(Field &field, std::shared_ptr<Player>& player) : CreatureManager(field, player.get()),
+                                                                   player(player) {}
     void moveTo(Constants::dxdy dxdy) override;
     void attack(Constants::dxdy coords, AttackType type);
     bool isCloseRangeAttackSelected() const noexcept;

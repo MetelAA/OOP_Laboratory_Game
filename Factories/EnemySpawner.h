@@ -13,7 +13,7 @@
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
 #include "../GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h"
-#include "../GameManagment/GameMaster.h"
+class GameMaster;
 
 
 class EnemySpawner {
