@@ -11,6 +11,7 @@
 #include "../Entities/Creatures/Attacks/Spels/SpellType.h"
 #include "../Entities/EntityType.h"
 #include <limits>
+#include <sstream>
 
 class Constants {
 public:
@@ -53,22 +54,19 @@ public:
 
     template<typename T>
     static T getInput() {
-        if constexpr (std::is_same_v<T, std::string>) {
-            std::string value;
-            getline(std::cin, value);
-            return value;
-        } else {
-            T value;
-            while (true) {
-                std::cin >> value;
+        std::string line;
+        while (true) {
+            std::getline(std::cin, line);
 
-                if (std::cin.fail()) {
-                    std::cout << "Error! Enter a correct value." << std::endl;
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                } else {
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if constexpr (std::is_same_v<T, std::string>) {
+                return line;
+            } else {
+                std::istringstream iss(line);
+                T value;
+                if (iss >> value && iss.eof()) {
                     return value;
+                } else {
+                    std::cout << "Error! Enter a correct value." << std::endl;
                 }
             }
         }

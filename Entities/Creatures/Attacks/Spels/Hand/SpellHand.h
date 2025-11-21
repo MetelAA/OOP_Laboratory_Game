@@ -54,10 +54,13 @@ public:
 
     virtual std::string serialize() noexcept final;
     static SpellHand deserialize(std::map<std::string, std::string> json, SpellFactory& spellFactory) noexcept;
+
+
 private:
     int gradeLevel;
     std::vector<std::unique_ptr<Spell>> spells;
     virtual bool checkSpellPositionAvailability(int position) const final;
+
 
 };
 

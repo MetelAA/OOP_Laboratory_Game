@@ -55,7 +55,7 @@ void Cell::impactOnCreatureByCellEvent() {
     if (!this->hasEntityInCell()){
         throw UnexpectedBehaviorException("На момент вызова impactOnCreatureByCellEvent сущность уже должна быть перемещена в клетку");
     }
-    if (this->getEntityInCellType() != EntityType::EnemyEnt || this->getEntityInCellType() != EntityType::PlayerEnt || this->getEntityInCellType() != EntityType::Ally){
+    if (this->getEntityInCellType() != EntityType::EnemyEnt && this->getEntityInCellType() != EntityType::PlayerEnt && this->getEntityInCellType() != EntityType::Ally){
         throw UnexpectedBehaviorException("К клетке должен быть наследник класса Creature");
     }
     Creature* creature = dynamic_cast<Creature*>(this->entityInCell.get());

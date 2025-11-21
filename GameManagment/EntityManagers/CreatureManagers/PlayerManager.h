@@ -17,6 +17,11 @@ public:
     bool isCloseRangeAttackSelected() const noexcept;
     int getLongRangeAttackRange() const noexcept;
     void changeAttackType() noexcept;
+    std::string getAttackTypeStr() noexcept;
+    AttackType getAttackType() noexcept;
+    const std::vector<std::unique_ptr<Spell>>& getSpells() noexcept;
+    SpellHand& getSpellHand();
+
 protected:
     std::shared_ptr<Player> player;
 };

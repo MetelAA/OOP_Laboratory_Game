@@ -26,12 +26,11 @@ void AreaDamageSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair 
         try{
             int damageX = to.x + dxdy.x, damageY = to.y + dxdy.y;
             field.isCoordsAvailable(damageX, damageY);
-            std::cout << "Прилёт по x: " << damageX << " y: " << damageY;
+            std::cout << "Прилёт по x: " << damageX << " y: " << damageY << std::endl;
             if(field.getFieldCells()[damageX][damageY].hasEntityInCell()){
-                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[damageX][damageY].getEntityInCellType());
-                field.getFieldCells()[damageX][damageY].damageEntityInCell((-1) * level.damage);
+                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[damageX][damageY].getEntityInCellType()) << std::endl;
+                field.getFieldCells()[damageX][damageY].damageEntityInCell( level.damage);
             }
-            std::cout << std::endl;
         }catch (const CoordinateException &e){}
     }
 }

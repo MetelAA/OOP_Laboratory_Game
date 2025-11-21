@@ -5,6 +5,7 @@
 #include "GameSetup.h"
 #include "../Constants/Constants.h"
 #include "Utils/ReadRightJson.h"
+#include "../GameManagment/GameMaster.h"
 #include <iostream>
 bool chooseSetupType();
 
@@ -14,12 +15,29 @@ void GameSetup::start() {
     std::cout << "Game setup starts!" << std::endl;
     std::string json;
     if (chooseSetupType()){
-        json = ReadRightJson::read("save.txt");
+        try{
+            json = ReadRightJson::read("../save.txt");
+        }catch (const UnexpectedBehaviorException& ex) {
+            std::cout << "Can't open save file, file damaged or not exist" << std::endl;
+            start();
+        }
     }else{
-        json = ReadRightJson::read("level1.txt");
+        json = ReadRightJson::read("../level0.txt");
+    }
+    GameMaster gm;
+    if(gm.startGame(json)){
+        setupLevelN("../level1.txt");
+    }else{
+        start();
     }
 
-    
+}
+
+void GameSetup::setupLevelN(std::string fileName) {
+    std::string json;
+    json = ReadRightJson::read(fileName);
+    GameMaster gm;
+    gm.startGame(json);
 }
 
 bool chooseSetupType(){ //true - запуск с сохранения, false - запуск с нового уровня

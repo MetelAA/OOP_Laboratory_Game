@@ -16,18 +16,23 @@ void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
 
         int attackRadius = this->manager.getAttackRadius();
         int minSpottedRadius = INT_MAX;
-        for (int x = this->manager.getEntityCoords().x - attackRadius; x < this->manager.getEntityCoords().x + attackRadius; ++x) {
-            for (int y = this->manager.getEntityCoords().y - attackRadius; y < this->manager.getEntityCoords().y + attackRadius; ++y) {
-                try {
-                    this->field.isCoordsAvailable(x, y);
-                    if (this->field.getFieldCells()[x][y].hasEntityInCell() && this->typesToAttackWithPriority.count(this->field.getFieldCells()[x][y].getEntityInCellType()) > 0){
-                        int rad = std::max(abs(x - this->manager.getEntityCoords().x), abs(y - this->manager.getEntityCoords().y));
-                        minSpottedRadius = std::min(minSpottedRadius, rad);
-                        spottedEnemies.push_back(CreatureWithDistance{this->field.getFieldCells()[x][y].getEntityInCellType(), rad, {x, y}});
-                    }
-                }catch (...) {}
+        int startX, endX, startY, endY;
+        startX = this->manager.getEntityCoords().x - attackRadius >= 0 ? this->manager.getEntityCoords().x - attackRadius : 0;
+        endX = this->manager.getEntityCoords().x + attackRadius < this->field.getHeight() ? this->manager.getEntityCoords().x + attackRadius : this->field.getHeight()-1;
+        startY = this->manager.getEntityCoords().y - attackRadius >= 0 ? this->manager.getEntityCoords().y - attackRadius : 0;
+        endY = this->manager.getEntityCoords().y + attackRadius < this->field.getWidth() ? this->manager.getEntityCoords().y + attackRadius : this->field.getWidth()-1;
+
+        for (int x = startX; x < endX; ++x) {
+            for (int y = startY; y < endY; ++y) {
+                this->field.isCoordsAvailable(x, y);
+                if (this->field.getFieldCells()[x][y].hasEntityInCell() && this->typesToAttackWithPriority.count(this->field.getFieldCells()[x][y].getEntityInCellType()) > 0){
+                    int rad = std::max(abs(x - this->manager.getEntityCoords().x), abs(y - this->manager.getEntityCoords().y));
+                    minSpottedRadius = std::min(minSpottedRadius, rad);
+                    spottedEnemies.push_back(CreatureWithDistance{this->field.getFieldCells()[x][y].getEntityInCellType(), rad, {x, y}});
+                }
             }
         }
+
         {
             std::vector<CreatureWithDistance> tmp;
             for(const CreatureWithDistance& creature : spottedEnemies){
@@ -56,5 +61,9 @@ void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
         std::cout << "EnemyDefenceTower: " << &this->manager << " on cool down" << std::endl;
         this->manager.doCoolDownStep();
     }
-    std::cout << "EnemyDefenceTower: " << &this->manager << "закончило ход" << std::endl;
+    std::cout << "EnemyDefenceTower: " << &this->manager << " закончило ход" << std::endl;
+}
+
+bool EnemyDefenceTowerController::isAlive() {
+    return this->manager.isAlive();
 }

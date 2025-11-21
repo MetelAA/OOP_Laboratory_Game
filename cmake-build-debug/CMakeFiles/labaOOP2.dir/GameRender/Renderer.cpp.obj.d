@@ -190,6 +190,8 @@ CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
  C:/msys/mingw64/include/c++/15.2.0/limits \
+ C:/msys/mingw64/include/c++/15.2.0/sstream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/msys/mingw64/include/windows.h C:/msys/mingw64/include/sdkddkver.h \
  C:/msys/mingw64/include/excpt.h \
  C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
@@ -415,5 +417,25 @@ CMakeFiles/labaOOP2.dir/GameRender/Renderer.cpp.obj: \
  C:/msys/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc \
  C:/msys/mingw64/include/c++/15.2.0/bits/locale_conv.h \
  C:/msys/mingw64/include/c++/15.2.0/bits/quoted_string.h \
- C:/msys/mingw64/include/c++/15.2.0/sstream \
- C:/msys/mingw64/include/c++/15.2.0/bits/sstream.tcc
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Attack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/AttackType.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/CloseRangeAttack.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Hand/SpellHand.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Constants/Constants.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/SpellFactory.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/Spell.h \
+ D:/clionProj/OOP_Laboratory_Game/Factories/AllySpawner.h \
+ D:/clionProj/OOP_Laboratory_Game/Model/CompControlledCreatureModel.h \
+ D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/CompControlledCreature.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
+ D:/clionProj/OOP_Laboratory_Game/GameField/Cell.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/Notifications/CellImpassableNotification.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/CoordinateException.h \
+ D:/clionProj/OOP_Laboratory_Game/Exceptions/SpawnEntityException.h

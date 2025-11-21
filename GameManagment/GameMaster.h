@@ -22,25 +22,27 @@ class GameMaster {
 public:
     GameMaster() {};
 
-    void start(const std::string &json);
+    bool startGame(const std::string &json);
 
     void gameCycle();
 
     void redraw();
 
-    void addEnemyController(EnemyController &controller);
+    void addEnemyController(EnemyController *controller);
 
-    void addAllyController(AllyController &controller);
+    void addAllyController(AllyController *controller);
 
+    void save();
 private:
     int level;
     Field *field;
     std::shared_ptr<Player> player;
+    bool isSaved = false;
 
-    std::vector<EnemyController> enemyControllers;
-    std::vector<AllyController> allyControllers;
-    std::vector<EnemySpawnerBuildingController> enemySpawnerBuildingControllers;
-    std::vector<EnemyDefenceTowerController> defenceTowerControllers;
+    std::vector<std::shared_ptr<EnemyController>> enemyControllers;
+    std::vector<std::shared_ptr<AllyController>> allyControllers;
+    std::vector<std::shared_ptr<EnemySpawnerBuildingController>> enemySpawnerBuildingControllers;
+    std::vector<std::shared_ptr<EnemyDefenceTowerController>> defenceTowerControllers;
     std::unique_ptr<PlayerController> playerController;
 
     std::vector<std::shared_ptr<Entity>> entities;
@@ -51,13 +53,14 @@ private:
 
     Renderer *renderer;
 
-    const CompControlledCreatureModel enemyModel{3, 3, 3, 70};
-    const CompControlledCreatureModel allyModel{3, 3, 3, 70};
+    const CompControlledCreatureModel enemyModel{3, 2, 2, 70};
+    const CompControlledCreatureModel allyModel{3, 2, 2, 70};
 //    const EnemyDefenceTowerModel defenceTowerModel{3,3,3};
 //    const EnemySpawnerBuildingModel spawnerBuildingModel{2,2};
 
     void waiterToContinue();
     void checkEntitiesAfterMove();
+    void upgradeEntity();
 };
 
 

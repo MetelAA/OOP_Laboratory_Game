@@ -20,7 +20,7 @@ void PlayerManager::moveTo(Constants::dxdy dxdy) {
 
 void PlayerManager::attack(Constants::dxdy coords, AttackType type) { //должны гарантировать что мы в выбранной клетке есть сущность для атаки
     if (!this->field.getFieldCells()[coords.x][coords.y].hasEntityInCell())
-        throw UnexpectedBehaviorException("In selected coords to attack must be a target to attack! But it nihua netu");
+        throw UnexpectedBehaviorException("In selected coords to attack must be a target to attack! But it nihchego netu");
     switch (type) {
         case AttackType::CloseRange: {
             //в случае с выбранной атакой ближнего боя мы не проверяем условие на то, что противник реально рядом, эта проверка в контроллере
@@ -45,4 +45,20 @@ int PlayerManager::getLongRangeAttackRange() const noexcept {
 
 void PlayerManager::changeAttackType() noexcept {
     this->player->changeSelectedAttackType();
+}
+
+std::string PlayerManager::getAttackTypeStr() noexcept {
+    return this->player->isCloseRangeAttackSelected() ? "close range attack" : "long range attack";
+}
+
+AttackType PlayerManager::getAttackType() noexcept {
+    return this->player->isCloseRangeAttackSelected() ? AttackType::CloseRange : AttackType::LongRange;
+}
+
+const std::vector<std::unique_ptr<Spell>>& PlayerManager::getSpells() noexcept {
+    return this->player->getSpellHand().getSpells();
+}
+
+SpellHand &PlayerManager::getSpellHand() {
+    return this->player->getSpellHand();
 }

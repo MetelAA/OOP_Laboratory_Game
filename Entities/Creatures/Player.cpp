@@ -64,3 +64,15 @@ Player* Player::deserialize(std::map<std::string, std::string> fields, SpellFact
 
     return new Player(x, y, health, isDisabled, step, closeRange, longRange, isCloseRangeAttackSelectedFlag, score, hand);
 }
+
+void Player::setCloseRangeAttack(const CloseRangeAttack &closeRangeAttack) {
+    Player::closeRangeAttack = closeRangeAttack;
+}
+
+void Player::setLongRangeAttack(const LongRangeAttack &longRangeAttack) {
+    Player::longRangeAttack = longRangeAttack;
+}
+
+void Player::setScore(int score) noexcept {
+    this->score = score;
+}

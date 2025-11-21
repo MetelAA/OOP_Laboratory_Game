@@ -6,13 +6,15 @@
 #include "../../../Exceptions/Notifications/SlowingCellNotification.h"
 
 void CompControlledCreatureManager::moveTo(Constants::dxdy dxdy) {
-    this->field.getFieldCells()[this->compControlledCreature->getXCoordinate() + dxdy.x][this->compControlledCreature->getYCoordinate() + dxdy.y].addEntityInCell(this->compControlledCreature);
+    int nX = this->compControlledCreature->getXCoordinate() + dxdy.x;
+    int nY = this->compControlledCreature->getYCoordinate() + dxdy.y;
+    this->field.getFieldCells()[nX][nY].addEntityInCell(this->compControlledCreature);
     this->field.getFieldCells()[this->compControlledCreature->getXCoordinate()][this->compControlledCreature->getYCoordinate()].clearCell();
-    this->compControlledCreature->setXCoordinate(this->compControlledCreature->getXCoordinate() + dxdy.x);
-    this->compControlledCreature->setYCoordinate(this->compControlledCreature->getYCoordinate() + dxdy.y);
+    this->compControlledCreature->setXCoordinate(nX);
+    this->compControlledCreature->setYCoordinate(nY);
 
-    if (this->field.getFieldCells()[dxdy.x][dxdy.y].hasCellEvent()) {
-        this->field.getFieldCells()[dxdy.x][dxdy.y].impactOnCreatureByCellEvent();
+    if (this->field.getFieldCells()[nX][nY].hasCellEvent()) {
+        this->field.getFieldCells()[nX][nY].impactOnCreatureByCellEvent();
         if (this->isCreatureDisabled()) //если ивент задизейблил нашу сущность, то проверяем и останавливаем дальнейшие ходы!
             throw SlowingCellNotification("compControlledCreature on slowing cell!");
     }

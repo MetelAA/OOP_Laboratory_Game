@@ -7,3 +7,4 @@
 void EnemyController::doMove(GameMaster& gameMaster) {
     this->computeAndDoMove(typesToAttack, priorityOfAttack, gameMaster);
 }
+

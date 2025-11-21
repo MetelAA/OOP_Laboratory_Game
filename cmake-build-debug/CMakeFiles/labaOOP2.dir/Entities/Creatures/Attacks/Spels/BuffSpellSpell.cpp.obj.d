@@ -190,4 +190,6 @@ CMakeFiles/labaOOP2.dir/Entities/Creatures/Attacks/Spels/BuffSpellSpell.cpp.obj:
  C:/msys/mingw64/include/c++/15.2.0/bits/istream.tcc \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
- C:/msys/mingw64/include/c++/15.2.0/limits
+ C:/msys/mingw64/include/c++/15.2.0/limits \
+ C:/msys/mingw64/include/c++/15.2.0/sstream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/sstream.tcc

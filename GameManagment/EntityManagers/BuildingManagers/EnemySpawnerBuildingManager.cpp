@@ -17,7 +17,7 @@ Constants::dxdy chooseDxDy(std::vector<Constants::dxdy> dxdys) {
 }
 
 void EnemySpawnerBuildingManager::spawnEnemy() {
-    std::cout << "EnemySpawnerBuildingManager: trying to spawn enemy";
+    std::cout << "EnemySpawnerBuildingManager: trying to spawn enemy"<< std::endl;
     std::vector<Constants::dxdy> dxdyCopy = Constants::dxdys;
 
     while (!dxdyCopy.empty()) {
@@ -26,7 +26,7 @@ void EnemySpawnerBuildingManager::spawnEnemy() {
 
            this->enemySpawner.createEnemy(this->building->getXCoordinate() + pair.x,
                                                   this->building->getYCoordinate() + pair.y);
-            std::cout << "EnemySpawnerBuildingManager: enemy spawned successfully";
+            std::cout << "EnemySpawnerBuildingManager: enemy spawned successfully"<< std::endl;
             return;
         }catch (SpawnEntityException& ex){
             continue;

@@ -18,22 +18,26 @@ void DirectDamageSpell::castSpell(int gradeLevel, Field& field, Constants::XYPai
     }catch (const CoordinateException &e){
         throw CantCastSpellOnCellNotification("Не получится применить заклинание так как: " + std::string(e.what()));
     }
-    int distance = ceil(sqrt(pow((from.x - to.x), 2) + pow((from.y - to.y), 2)));
+    int distance = floor(sqrt(pow((from.x - to.x), 2) + pow((from.y - to.y), 2)));
     if (distance > level.range){
         throw CantCastSpellOnCellNotification("Не получиться применить заклинание, цель слишком далеко!");
     }
 
-    std::cout << "Прилёт в точку x: " << to.x << " y: " << to.y;
+    std::cout << "Прилёт в точку x: " << to.x << " y: " << to.y << std::endl;
     if (field.getFieldCells()[to.x][to.y].hasEntityInCell()){
         switch (field.getFieldCells()[to.x][to.y].getEntityInCellType()) {
             case EntityType::EnemyEnt:
             case EntityType::EnemySpawnerBuildingEnt:
+            case EntityType::EnemyDefenceTower:
+            case EntityType::PlayerEnt:
+            case EntityType::Ally:
             {
-                field.getFieldCells()[to.x][to.y].damageEntityInCell((-1) * level.damage);
-                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[to.x][to.y].getEntityInCellType());
+                field.getFieldCells()[to.x][to.y].damageEntityInCell(level.damage);
+                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[to.x][to.y].getEntityInCellType()) << std::endl;
             }
+                break;
             default:
-                throw CantCastSpellOnCellNotification("По координатам x: " + std::to_string(to.x) + " y: " + std::to_string(to.y) + " нету ничего вражеского");
+                throw CantCastSpellOnCellNotification("По координатам x: " + std::to_string(to.x) + " y: " + std::to_string(to.y) + " нету ничего хорошего (вообще ничего по логике?)");
         }
     }
 }

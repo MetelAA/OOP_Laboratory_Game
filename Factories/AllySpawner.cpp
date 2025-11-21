@@ -18,7 +18,7 @@ void AllySpawner::createAlly(int x, int y) {
         }
 
         CompControlledCreatureManager* manager = new CompControlledCreatureManager(this->field, ally);
-        AllyController controller(this->field, *manager);
+        AllyController* controller = new AllyController(this->field, *manager);
         this->gameMaster.addAllyController(controller);
 
     }catch (CellImpassableNotification& ex){

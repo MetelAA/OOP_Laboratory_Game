@@ -191,6 +191,8 @@ CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
  C:/msys/mingw64/include/c++/15.2.0/limits \
+ C:/msys/mingw64/include/c++/15.2.0/sstream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Player.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/LongRangeAttack.h \
@@ -280,4 +282,17 @@ CMakeFiles/labaOOP2.dir/GameManagment/GameMaster.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Entities/Entity.h \
  D:/clionProj/OOP_Laboratory_Game/GameField/Field.h \
  D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/JsonParser.h \
- D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h
+ D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
+ D:/clionProj/OOP_Laboratory_Game/GameSetup/Utils/ReadRightJson.h \
+ D:/clionProj/OOP_Laboratory_Game/GameSetup/GameSetup.h \
+ C:/msys/mingw64/include/c++/15.2.0/chrono \
+ C:/msys/mingw64/include/c++/15.2.0/bits/chrono.h \
+ C:/msys/mingw64/include/c++/15.2.0/ratio \
+ C:/msys/mingw64/include/c++/15.2.0/cstdint \
+ C:/msys/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/msys/mingw64/include/stdint.h \
+ C:/msys/mingw64/include/c++/15.2.0/ctime \
+ C:/msys/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
+ C:/msys/mingw64/include/c++/15.2.0/thread \
+ C:/msys/mingw64/include/c++/15.2.0/bits/std_thread.h \
+ C:/msys/mingw64/include/c++/15.2.0/bits/this_thread_sleep.h

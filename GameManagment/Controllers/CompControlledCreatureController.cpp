@@ -43,20 +43,29 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         }
 
         for (Constants::dxdy dxdy: Constants::dxdys) {
-            if (this->field.canMoveToOrSpawnOnNoExcept(tempCoords.x + dxdy.x, tempCoords.y + dxdy.y) &&
-                distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] == -1) {
+            if (this->field.canMoveToOrSpawnOnNoExcept(tempCoords.x + dxdy.x, tempCoords.y + dxdy.y) && distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] == -1) {
                 distances[tempCoords.x + dxdy.x][tempCoords.y + dxdy.y] = distances[tempCoords.x][tempCoords.y] + 1;
                 queue.push({tempCoords.x + dxdy.x, tempCoords.y + dxdy.y});
             }
         }
     }
 
+
+    for (int i = 0; i < distances.size(); ++i) {
+        for (int j = 0; j < distances[0].size(); ++j) {
+            std::cout << distances[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    std::string toShowInConsole;
+
     if (nearestHostileEntitiesCoordinates.empty()){
         int moveStepRange = rand() % (this->manager.getStepRange()); //если противник не нашёл взгялядом некаких целей, то он ходит на рандомную (от 0 до максимальной дальности) позицию
         std::vector<Constants::XYPair> availableCoordinates;
         for (int x = 0; x < distances.size(); ++x) { //добавляем все координаты до которых можем дойти исходя из дальности хода = moveStepRange
             for (int y = 0; y < distances[0].size(); ++y) {
-                if (distances[x][y] == moveStepRange && this->field.canMoveToOrSpawnOn(x, y)){
+                if (distances[x][y] == moveStepRange && this->field.canMoveToOrSpawnOnNoExcept(x, y)){
                     availableCoordinates.push_back({x, y});
                 }
             }
@@ -80,6 +89,7 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         try {
             moveTo(trip, headerCout, gameMaster);
         }catch (UniversalStringException& exp){
+            gameMaster.redraw();
             std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
             return;
         }
@@ -88,14 +98,19 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         bool canAttack = this->manager.getStepRange() >= distances[priorityEnemy.attackFromCoordinates.x][priorityEnemy.attackFromCoordinates.y];
         Constants::XYPair priorityEnemyAttackFromCoords = priorityEnemy.attackFromCoordinates;
 
-        while(priorityEnemyAttackFromCoords.x != manager.getEntityCoords().x && priorityEnemyAttackFromCoords.y != manager.getEntityCoords().y){
+        while(priorityEnemyAttackFromCoords.x != manager.getEntityCoords().x || priorityEnemyAttackFromCoords.y != manager.getEntityCoords().y){
             for(Constants::dxdy dxdy : Constants::dxdys){
-                if (distances[priorityEnemyAttackFromCoords.x + dxdy.x][priorityEnemyAttackFromCoords.y + dxdy.y] == (distances[priorityEnemyAttackFromCoords.x][priorityEnemyAttackFromCoords.y] - 1)){
+                int nX = priorityEnemyAttackFromCoords.x + dxdy.x;
+                int nY = priorityEnemyAttackFromCoords.y + dxdy.y;
+                if (nX < 0 || nX >= this->field.getHeight() || nY < 0 || nY >= this->field.getWidth())
+                    continue;
+                if (distances[nX][nY] == (distances[priorityEnemyAttackFromCoords.x][priorityEnemyAttackFromCoords.y] - 1)){
                     if (this->manager.getStepRange() >= distances[priorityEnemyAttackFromCoords.x][priorityEnemyAttackFromCoords.y]){
                         trip.push(priorityEnemyAttackFromCoords);
                     }
-                    priorityEnemyAttackFromCoords.x= priorityEnemyAttackFromCoords.x + dxdy.x;
-                    priorityEnemyAttackFromCoords.y = priorityEnemyAttackFromCoords.y + dxdy.y;
+                    priorityEnemyAttackFromCoords.x = nX;
+                    priorityEnemyAttackFromCoords.y = nY;
+                    break;
                 }
             }
         }
@@ -103,16 +118,21 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         try {
             moveTo(trip, headerCout, gameMaster);
         }catch (SlowingCellNotification& exp){
+            gameMaster.redraw();
             std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
             return;
         }
 
         if (canAttack) {
             manager.attack(priorityEnemy.entityCoordinates);
-            std::cout  << "CompControlledCreature " << headerCout <<  " аттакует сущность в клетке по координатам " + std::to_string(priorityEnemy.entityCoordinates.x) + " " + std::to_string(priorityEnemy.entityCoordinates.y);
+            toShowInConsole = "CompControlledCreature " + headerCout +  " аттакует сущность в клетке по координатам " + std::to_string(priorityEnemy.entityCoordinates.x) + " " + std::to_string(priorityEnemy.entityCoordinates.y);
         }
     }
-    std::cout << "CompControlledCreature " << headerCout <<  " штатно завершае ход";
+
+    gameMaster.redraw();
+    if (!toShowInConsole.empty())
+        std::cout << toShowInConsole << std::endl;
+    std::cout << "CompControlledCreature " << headerCout <<  " штатно завершае ход" << std::endl;
 }
 
 CompControlledCreatureController::EntityCoordsWithNearestPositionToAttackFrom
@@ -120,7 +140,7 @@ CompControlledCreatureController::chooseByPriority(std::vector<EntityCoordsWithN
     std::vector<EntityCoordsWithNearestPositionToAttackFrom> nearestEnemies;
     int minRange = INT_MAX;
     for (EntityCoordsWithNearestPositionToAttackFrom position : enemyWithNearestPositionToAttack) {
-        minRange = distances[position.attackFromCoordinates.x][position.attackFromCoordinates.y] ? distances[position.attackFromCoordinates.x][position.attackFromCoordinates.y] < minRange : minRange;
+        minRange = distances[position.attackFromCoordinates.x][position.attackFromCoordinates.y] < minRange ? distances[position.attackFromCoordinates.x][position.attackFromCoordinates.y] : minRange;
     }
     for (EntityCoordsWithNearestPositionToAttackFrom position : enemyWithNearestPositionToAttack) {
         if (distances[position.attackFromCoordinates.x][position.attackFromCoordinates.y] == minRange)
@@ -145,6 +165,12 @@ void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
         std::cout << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
         manager.moveTo(howToMove);
-        gameMaster.redraw();
+        if(!trip.empty()){
+            gameMaster.redraw();
+        }
     }
+}
+
+bool CompControlledCreatureController::isAlive() {
+    return this->manager.isAlive();
 }

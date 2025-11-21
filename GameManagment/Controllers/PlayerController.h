@@ -10,13 +10,17 @@
 
 class PlayerController {
 public:
-    PlayerController(const Field &field, PlayerManager manager) : manager(std::move(manager)), field(field) {}
+    PlayerController(Field &field, PlayerManager manager) : manager(std::move(manager)), field(field) {}
 
-    void doMove();
+    void doMove(GameMaster& gameMaster);
 
 protected:
     PlayerManager manager;
-    const Field& field;
+    Field& field;
+
+    void attackTypeSelect();
+    void attack();
+    void spellActivities();
 };
 
 

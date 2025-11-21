@@ -15,8 +15,12 @@ void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
         gameMaster.redraw();
         std::cout << "enemySpawnerBuilding: " << this << " новый противник успешно создан" << std::endl;
     }else{
-        std::cout << "enemySpawnerBuilding: " << this << " назодиться на cooldown" << std::endl;
+        std::cout << "enemySpawnerBuilding: " << this << " находиться на cooldown" << std::endl;
         manager.incrementTimeToSpawnCounter();
     }
-    std::cout << "enemySpawnerBuilding: " << this << "закончило ход" << std::endl;
+    std::cout << "enemySpawnerBuilding: " << this << " закончило ход" << std::endl;
+}
+
+bool EnemySpawnerBuildingController::isAlive() {
+    return this->manager.isAlive();
 }

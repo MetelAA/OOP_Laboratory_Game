@@ -190,6 +190,8 @@ CMakeFiles/labaOOP2.dir/Factories/EnemyDefenceTowerSpawner.cpp.obj: \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Attacks/Spels/SpellType.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/EntityType.h \
  C:/msys/mingw64/include/c++/15.2.0/limits \
+ C:/msys/mingw64/include/c++/15.2.0/sstream \
+ C:/msys/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h \
  D:/clionProj/OOP_Laboratory_Game/GameManagment/EntityManagers/EntityManager.h \
  D:/clionProj/OOP_Laboratory_Game/Entities/Creatures/Creature.h \

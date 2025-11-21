@@ -15,6 +15,7 @@ public:
     EnemySpawnerBuildingController(EnemySpawnerBuildingManager manager, const Field &field) : manager(std::move(manager)),
                                                                                                field(field) {}
     void doMove(GameMaster& gameMaster);
+    bool isAlive();
 
 protected:
     EnemySpawnerBuildingManager manager;

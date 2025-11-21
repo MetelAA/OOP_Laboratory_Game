@@ -34,10 +34,14 @@ bool Field::canMoveToOrSpawnOn(int x, int y) const {
 
 std::vector<Constants::XYPair> Field::hasNearEntityOfSomeTypes(std::map<EntityType, bool> types, int x,
                                                                int y) const noexcept { //возварщает координаты стоящих в радиусе атаки Entity определённых типов
+
+
     std::vector<Constants::XYPair> result;
     for (Constants::dxdy pair: Constants::dxdys) {
-        if ((x + pair.x) >= 0 && (x + pair.x) < this->width
-            && (y + pair.y) >= 0 && (y + pair.y) < this->height) {
+        int nX = x + pair.x;
+        int nY = y + pair.y;
+        if (nX >= 0 && nX < this->height
+            && nY >= 0 && nY < this->width) {
             if (this->cells[x + pair.x][y + pair.y].hasEntityInCell() &&
                 types.count(this->cells[x + pair.x][y + pair.y].getEntityInCellType()) > 0) {
                 result.push_back({x + pair.x, y + pair.y});
@@ -61,9 +65,10 @@ bool Field::canMoveToOrSpawnOnNoExcept(int x, int y) const noexcept {
 
 std::vector<Constants::XYPair>
 Field::hasNearEntityOfSomeTypesWithAChance(std::map<EntityType, bool> types, int x, int y, int chance) const noexcept {
+
     std::vector<Constants::XYPair> result = this->hasNearEntityOfSomeTypes(types, x, y);
     for (auto it = result.begin(); it != result.end();) {
-        if ((rand() % 101) < chance) {
+        if ((rand() % 101) > chance) {
             it = result.erase(it);
         } else {
             ++it;
@@ -74,17 +79,17 @@ Field::hasNearEntityOfSomeTypesWithAChance(std::map<EntityType, bool> types, int
 }
 
 bool Field::isCoordsAvailable(int x, int y) const {
-    if (x < 0 || x >= this->width) {
+    if (x < 0 || x >= this->height) {
         throw CoordinateException{"x coordinate must be between 0 and "
-                                  + std::to_string(this->width)
+                                  + std::to_string(this->height)
                                   + " but x is "
                                   + std::to_string(x)
                                   + '\n'};
     }
 
-    if (y < 0 || y >= this->height) {
+    if (y < 0 || y >= this->width) {
         throw CoordinateException{"y coordinate must be between 0 and "
-                                  + std::to_string(this->height)
+                                  + std::to_string(this->width)
                                   + " but y is "
                                   + std::to_string(y)
                                   + '\n'};
@@ -94,7 +99,7 @@ bool Field::isCoordsAvailable(int x, int y) const {
 
 bool Field::isCellPassable(int x, int y) const {
     const Cell &fieldCell = this->cells[x][y];
-    if (fieldCell.getCellType() != CellType::Impassable) {
+    if (fieldCell.getCellType() == CellType::Impassable) {
         throw CellImpassableNotification("cell is impassible, wall or something sht like that");
     }
     return true;

@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <iomanip>
 #include <cstdlib>
+#include "../Entities/Creatures/Player.h"
 
 void Renderer::prepareConsole() {
     SetConsoleOutputCP(65001);
@@ -30,7 +31,8 @@ void Renderer::draw() {
     chars[this->field.getHeight()-1][this->field.getWidth()-1] = EXIT;
     drawGridRounded(chars);
     displayEntitiesInfo();
-    displayLegend();
+    displayPlayerInfo();
+//    displayLegend();
 }
 
 void Renderer::drawGridRounded(const std::vector<std::vector<std::string>> &grid) {
@@ -127,5 +129,35 @@ void Renderer::displayEntitiesInfo() {
 }
 
 void Renderer::clearDisplay() {
-    system("cls");
+//    system("cls");
+
+}
+
+void Renderer::displayPlayerInfo() {
+// Получаем данные из объекта Player
+    int x = this->player->getXCoordinate();
+    int y = player->getYCoordinate();
+    int health = player->getHealthPoints();
+    bool isCloseRange = player->isCloseRangeAttackSelected();
+    long score = player->getScore();
+
+    const auto& closeAttack = player->getCloseRangeAttack();
+    const auto& longAttack = player->getLongRangeAttack();
+    const auto& spellHand = player->getSpellHand();
+
+
+    std::cout << "┌────────── PLAYER ──────────┐" << std::endl;
+    std::cout << "│ Param       Value          │" << std::endl;
+    std::cout << "├────────────────────────────┤" << std::endl;
+    std::cout << "│ x/y        " << std::setw(2) << x << "/" << std::setw(2) << y << "              │" << std::endl;
+    std::cout << "│ Health     " << std::setw(15) << std::right << health << " │" << std::endl;
+    std::cout << "│ Score      " << std::setw(15) << std::right << score << " │" << std::endl;
+    std::cout << "├─────── ATTACKS ────────────┤" << std::endl;
+    std::cout << "│ Close     " << std::setw(15) << std::right << closeAttack.getDamage() << " │" << std::endl;
+    std::cout << "│ Long      " << std::setw(15) << std::right << longAttack.getDamage() << " │" << std::endl;
+    std::cout << "│ Range     " << std::setw(15) << std::right << longAttack.getRange() << " │" << std::endl;
+    std::cout << "│ Active    " << std::setw(15) << std::left << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
+    std::cout << "├─────── SPELLS ─────────────┤" << std::endl;
+    std::cout << "│ Spells.C  " << std::setw(15) << std::right << spellHand.getSpells().size() << " │" << std::endl;
+    std::cout << "└────────────────────────────┘" << std::endl;
 }

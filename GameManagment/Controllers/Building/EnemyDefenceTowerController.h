@@ -13,7 +13,7 @@ public:
     EnemyDefenceTowerController(const Field &field, const EnemyDefenceTowerManager &manager) : field(field),
                                                                                                manager(manager) {}
     void doMove(GameMaster& gameMaster);
-
+    bool isAlive();
 
 private:
     const Field& field;

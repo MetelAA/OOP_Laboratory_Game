@@ -11,20 +11,24 @@
 #include "../Entities/Entity.h"
 #include "../GameField/Field.h"
 
+class Player;
 
 class Renderer {
 public:
-    Renderer(const Field &field, const std::vector<std::shared_ptr<Entity>> &entities) : field(field), entities(entities) {}
+    Renderer(const Field &field, const std::vector<std::shared_ptr<Entity>> &entities,
+             const std::shared_ptr<Player> &player) : field(field), entities(entities), player(player) {}
 
     void draw();
     void prepareConsole();
     void displayLegend();
     void displayEntitiesInfo();
     void clearDisplay();
+    void displayPlayerInfo();
 
 private:
     const Field& field;
     const std::vector<std::shared_ptr<Entity>>& entities;
+    const std::shared_ptr<Player> player;
 
     const std::string WALL = "■";        // Черный квадрат
     const std::string ENEMY = "●";       // Черный круг

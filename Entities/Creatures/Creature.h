@@ -25,6 +25,8 @@ public:
 
     virtual int getStepRange() const noexcept final;
 
+    void setStepRange(int stepRange);
+
 protected:
     bool isDisabledFlag;
     int stepRange;

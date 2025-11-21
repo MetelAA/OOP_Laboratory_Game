@@ -22,6 +22,10 @@ void Creature::setDisabledFlag(bool flag) noexcept {
     this->isDisabledFlag = flag;
 }
 
+void Creature::setStepRange(int stepRange) {
+    Creature::stepRange = stepRange;
+}
+
 
 
 

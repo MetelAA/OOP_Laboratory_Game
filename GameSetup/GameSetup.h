@@ -6,9 +6,12 @@
 #define LABA1_GAMESETUP_H
 
 
+#include <string>
+
 class GameSetup {
 public:
     static void start();
+    static void setupLevelN(std::string fileName);
 };
 
 

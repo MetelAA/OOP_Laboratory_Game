@@ -20,6 +20,8 @@ public:
                                      CompControlledCreatureManager manager): field(field), manager(std::move(manager)) {}
 
     void computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster);
+    bool isAlive();
+
 private:
     const Field& field;
     CompControlledCreatureManager manager;
