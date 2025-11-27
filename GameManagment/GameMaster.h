@@ -28,9 +28,9 @@ public:
 
     void redraw();
 
-    void addEnemyController(EnemyController *controller);
+    void addEnemyController(EnemyController *controller, std::shared_ptr<Entity> entity);
 
-    void addAllyController(AllyController *controller);
+    void addAllyController(AllyController *controller, std::shared_ptr<Entity> entity);
 
     void save();
 private:

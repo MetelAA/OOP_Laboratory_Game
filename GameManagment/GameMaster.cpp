@@ -213,12 +213,14 @@ void GameMaster::checkEntitiesAfterMove() {
         redraw();
 }
 
-void GameMaster::addAllyController(AllyController *controller) {
+void GameMaster::addAllyController(AllyController *controller, std::shared_ptr<Entity> ent) {
     this->allyControllers.push_back(std::shared_ptr<AllyController>(controller));
+    this->entities.push_back(ent);
 }
 
-void GameMaster::addEnemyController(EnemyController *controller) {
+void GameMaster::addEnemyController(EnemyController *controller, std::shared_ptr<Entity> entity) {
     this->enemyControllers.push_back(std::shared_ptr<EnemyController>(controller));
+    this->entities.push_back(entity);
 }
 
 void GameMaster::save() {
@@ -241,6 +243,7 @@ void GameMaster::save() {
 void GameMaster::upgradeEntity() {
     bool flag = true;
     while(flag){
+        std::cout << "Есть возможность улучшить игрока" << std::endl;
         std::cout << "Что вы хотите улучшить (требуется 1 очко), у вас: " << this->player->getScore() << ":\n1.Урон\n2.Дальность хода\n3.Здоровье\n(введите цифру от 1 до 3х или 0 чтобы отказаться от выбора)" << std::endl;
         int num = Constants::getInput<int>();
         switch(num){

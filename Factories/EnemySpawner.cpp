@@ -22,7 +22,7 @@ void EnemySpawner::createEnemy(int x, int y) {
         }
         CompControlledCreatureManager* manager = new CompControlledCreatureManager(this->field, enemy);
         EnemyController* controller = new EnemyController(this->field, *manager);
-        this->gameMaster.addEnemyController(controller);
+        this->gameMaster.addEnemyController(controller, enemy);
     }catch (CellImpassableNotification& ex){
         throw SpawnEntityException(std::string("Can't spawn compControlledCreature Enemy because: ") + ex.what());
     }catch (CoordinateException& ex){
