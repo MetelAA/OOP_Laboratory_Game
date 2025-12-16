@@ -7,19 +7,19 @@
 #include "../GameMaster.h"
 #include "../../Entities/Creatures/Attacks/Spels/BuffSpellSpell.h"
 
-void PlayerController::doMove(GameMaster& gameMaster) {
+bool PlayerController::doMove(GameMaster& gameMaster, PlayerAction* action) {
     std::cout << "Ход Player: " << &this->manager << std::endl;
     if (this->manager.isCreatureDisabled()){
         std::cout << "Player: " << &this->manager << " disabled -> disabled -> пропускает ход, тк замедлена с предыдущего хода" << std::endl;
         this->manager.enableCreature();
-        return;
+        return false;
     }
     std::cout << "Если хотите выйти и сохранить игру нажмиту \"c\"" << std::endl;
     std::string c;
     c = Constants::getInput<std::string>();
     if (c == "c"){
         gameMaster.save();
-        return;
+        return false;
     }
     while(true){
         std::cout << "Вы хотите переместиться? (y\\n): "<< std::endl;
@@ -68,7 +68,7 @@ void PlayerController::doMove(GameMaster& gameMaster) {
         std::cout << std::endl;
     }
     
-
+    return false;
 }
 
 void PlayerController::attackTypeSelect() {

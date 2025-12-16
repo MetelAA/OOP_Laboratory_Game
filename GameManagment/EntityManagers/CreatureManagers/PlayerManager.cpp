@@ -23,7 +23,7 @@ void PlayerManager::attack(Constants::dxdy coords, AttackType type) { //долж
         throw UnexpectedBehaviorException("In selected coords to attack must be a target to attack! But it nihchego netu");
     switch (type) {
         case AttackType::CloseRange: {
-            //в случае с выбранной атакой ближнего боя мы не проверяем условие на то, что противник реально рядом, эта проверка в контроллере
+            //в случае с выбранной атакой ближнего боя мы не проверяем условие на то, что противник реально рядом, эта проверка в контроллереSPELLSSPELLS
             this->field.getFieldCells()[coords.x][coords.y].damageEntityInCell(this->player->getCloseRangeAttack().getDamage());
         }
             break;

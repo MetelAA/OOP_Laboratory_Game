@@ -10,13 +10,14 @@
 #include <memory>
 #include "../Entities/Entity.h"
 #include "../GameField/Field.h"
+#include "../Entities/Creatures/PlayerView.h"
 
 class Player;
 
 class Renderer {
 public:
     Renderer(const Field &field, const std::vector<std::shared_ptr<Entity>> &entities,
-             const std::shared_ptr<Player> &player) : field(field), entities(entities), player(player) {}
+             PlayerView &player) : field(field), entities(entities), player(player) {}
 
     void draw();
     void prepareConsole();
@@ -29,7 +30,7 @@ public:
 private:
     const Field& field;
     const std::vector<std::shared_ptr<Entity>>& entities;
-    const std::shared_ptr<Player> player;
+    PlayerView player;
 
     const std::string WALL = "■";        // Черный квадрат
     const std::string ENEMY = "●";       // Черный круг

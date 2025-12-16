@@ -142,33 +142,41 @@ void Renderer::clearDisplay() {
 
 }
 
+auto formatNumber = [](int num) -> std::string {
+    std::ostringstream oss;
+    if (num < 10) oss << "  " << num;
+    else if (num < 100) oss << " " << num;
+    else oss << num;
+    return oss.str();
+};
+
 std::string Renderer::getStringWithPlayerInfo() {
     std::stringstream ss;
 
-    int x = this->player->getXCoordinate();
-    int y = player->getYCoordinate();
-    int health = player->getHealthPoints();
-    bool isCloseRange = player->isCloseRangeAttackSelected();
-    long score = player->getScore();
+    int x = this->player.getXCoordinate();
+    int y = player.getYCoordinate();
+    int health = player.getHealthPoints();
+    bool isCloseRange = player.isCloseRangeAttackSelected();
+    long score = player.getScore();
 
-    const auto &closeAttack = player->getCloseRangeAttack();
-    const auto &longAttack = player->getLongRangeAttack();
-    const auto &spellHand = player->getSpellHand();
+    const auto &closeAttack = player.getCloseRangeAttack();
+    const auto &longAttack = player.getLongRangeAttack();
+    const auto &spellHand = player.getSpellHand();
 
 
     ss << "┌────────── PLAYER ──────────┐" << std::endl;
     ss << "│ Param       Value          │" << std::endl;
     ss << "├────────────────────────────┤" << std::endl;
     ss << "│ x/y     " << std::setw(2) << x << "/" << std::setw(2) << y << "              │" << std::endl;
-    ss << "│ Health     " << std::setw(15) << std::right << health << " │" << std::endl;
-    ss << "│ Score      " << std::setw(15) << std::right << score << " │" << std::endl;
+    ss << "│ Health     " << formatNumber(health) << "            │" << std::endl;
+    ss << "│ Score      " << formatNumber(score) << "            │" << std::endl;
     ss << "├─────── ATTACKS ────────────┤" << std::endl;
-    ss << "│ Close     " << std::setw(15) << std::right << closeAttack.getDamage() << " │" << std::endl;
-    ss << "│ Long      " << std::setw(15) << std::right << longAttack.getDamage() << " │" << std::endl;
-    ss << "│ Range     " << std::setw(15) << std::right << longAttack.getRange() << " │" << std::endl;
-    ss << "│ Active    " << std::setw(15) << std::left << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
+    ss << "│ Close     " << formatNumber(closeAttack.getDamage()) << "            │" << std::endl;
+    ss << "│ Long      " << formatNumber(longAttack.getDamage()) << "            │" << std::endl;
+    ss << "│ Range     " << formatNumber(longAttack.getRange()) << "            │" << std::endl;
+    ss << "│ Active    " << std::left << std::setw(15) << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
     ss << "├─────── SPELLS ─────────────┤" << std::endl;
-    ss << "│ Spells.C  " << std::setw(15) << std::right << spellHand.getSpells().size() << " │" << std::endl;
+    ss << "│ Spells.C  " << formatNumber(spellHand.getSpells().size()) << "            │" << std::endl;
     ss << "└────────────────────────────┘" << std::endl;
 
     return ss.str();

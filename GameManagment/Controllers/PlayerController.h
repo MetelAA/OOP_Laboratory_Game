@@ -7,12 +7,16 @@
 #include <utility>
 
 #include "../EntityManagers/CreatureManagers/PlayerManager.h"
+#include "ExternalComandController/Actions/PlayerAction.h"
+#include "ExternalComandController/Actions/PlayerActionWithCoords.h"
+#include "ExternalComandController/Actions/PlayerActionUseSpell.h"
+
 
 class PlayerController {
 public:
     PlayerController(Field &field, PlayerManager manager) : manager(std::move(manager)), field(field) {}
 
-    void doMove(GameMaster& gameMaster);
+    bool doMove(GameMaster& gameMaster, PlayerAction* action);
 
 protected:
     PlayerManager manager;
