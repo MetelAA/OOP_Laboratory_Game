@@ -20,10 +20,11 @@ public:
 
     void draw();
     void prepareConsole();
-    void displayLegend();
-    void displayEntitiesInfo();
+    std::string getStringLegend();
+    std::string getStringWithGridRounded(const std::vector<std::vector<std::string>>& grid);
+    std::string getStringWithEntitiesInfo();
+    std::string getStringWithPlayerInfo();
     void clearDisplay();
-    void displayPlayerInfo();
 
 private:
     const Field& field;
@@ -57,8 +58,7 @@ private:
             {EntityType::EnemySpawnerBuildingEnt, "Spawner"}
     };
 
-    void drawGridRounded(const std::vector<std::vector<std::string>>& grid);
-
+    std::string connectStrings(const std::string& grid, const std::string& entitiesInfo, const std::string& playerInfo, const std::string& legend);
 };
 
 

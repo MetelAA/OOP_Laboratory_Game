@@ -16,92 +16,100 @@ void Renderer::prepareConsole() {
 }
 
 void Renderer::draw() {
-    std::vector<std::vector<std::string>> chars(this->field.getHeight(), std::vector<std::string>(this->field.getWidth(), " "));
+    std::vector<std::vector<std::string>> chars(this->field.getHeight(),
+                                                std::vector<std::string>(this->field.getWidth(), " "));
     for (int x = 0; x < this->field.getHeight(); ++x) {
         for (int y = 0; y < this->field.getWidth(); ++y) {
-            if(this->field.getFieldCells()[x][y].getCellType() == CellType::Impassable){
+            if (this->field.getFieldCells()[x][y].getCellType() == CellType::Impassable) {
                 chars[x][y] = Renderer::WALL;
-            }else if (this->field.getFieldCells()[x][y].hasEntityInCell()){
+            } else if (this->field.getFieldCells()[x][y].hasEntityInCell()) {
                 chars[x][y] = this->entityTypeToCharS.at(this->field.getFieldCells()[x][y].getEntityInCellType());
-            }else if(this->field.getFieldCells()[x][y].hasCellEvent()){
+            } else if (this->field.getFieldCells()[x][y].hasCellEvent()) {
                 chars[x][y] = this->cellEventTypeToCharS.at(this->field.getFieldCells()[x][y].getCellEventType());
             }
         }
     }
-    chars[this->field.getHeight()-1][this->field.getWidth()-1] = EXIT;
-    drawGridRounded(chars);
-    displayEntitiesInfo();
-    displayPlayerInfo();
-//    displayLegend();
+    chars[this->field.getHeight() - 1][this->field.getWidth() - 1] = EXIT;
+
+
+
+    std::string res = connectStrings(getStringWithGridRounded(chars), getStringWithEntitiesInfo(), getStringWithPlayerInfo(), getStringLegend());
+    std::cout << res;
 }
 
-void Renderer::drawGridRounded(const std::vector<std::vector<std::string>> &grid) {
-    if (grid.empty()) return;
+std::string Renderer::getStringWithGridRounded(const std::vector<std::vector<std::string>> &grid) {
+    std::stringstream ss;
+    if (grid.empty()) return "";
 
     int height = this->field.getHeight();
     int width = this->field.getWidth();
 
-    std::cout << "╭";
+    ss << "╭";
     for (int x = 0; x < width; ++x) {
-        std::cout << "───";
-        if (x < width - 1) std::cout << "┬";
+        ss << "───";
+        if (x < width - 1) ss << "┬";
     }
-    std::cout << "╮" << std::endl;
+    ss << "╮" << std::endl;
 
     for (int y = 0; y < height; ++y) {
-        std::cout << "│";
+        ss << "│";
         for (int x = 0; x < width; ++x) {
-            std::cout << " " << grid[y][x] << " ";
-            if (x < width - 1) std::cout << "│";
+            ss << " " << grid[y][x] << " ";
+            if (x < width - 1) ss << "│";
         }
-        std::cout << "│" << std::endl;
+        ss << "│" << std::endl;
 
         if (y < height - 1) {
-            std::cout << "├";
+            ss << "├";
             for (int x = 0; x < width; ++x) {
-                std::cout << "───";
-                if (x < width - 1) std::cout << "┼";
+                ss << "───";
+                if (x < width - 1) ss << "┼";
             }
-            std::cout << "┤" << std::endl;
+            ss << "┤" << std::endl;
         }
     }
 
-    std::cout << "╰";
+    ss << "╰";
     for (int x = 0; x < width; ++x) {
-        std::cout << "───";
-        if (x < width - 1) std::cout << "┴";
+        ss << "───";
+        if (x < width - 1) ss << "┴";
     }
-    std::cout << "╯" << std::endl;
+    ss << "╯" << std::endl;
+    return ss.str();
 }
 
-void Renderer::displayLegend() {
-    std::cout << "┌─────────────────────────────┐" << std::endl;
-    std::cout << "│          Легенда            │" << std::endl;
-    std::cout << "├─────────────┬───────────────┤" << std::endl;
-    std::cout << "│ " << "◎" << " - Игрок   │ " << "●" << " - Враг      │" << std::endl;
-    std::cout << "│ " << "■" << " - Стена   │ " << "▲" << " - Башня     │" << std::endl;
-    std::cout << "│ " << "♦" << " - Спавнер │ " << "A" << " - Союзник   │" << std::endl;
-    std::cout << "│ " << "→" << " - Выход   │ " << "×" << " - Ловушка   │" << std::endl;
-    std::cout << "└─────────────┴───────────────┘" << std::endl;
+std::string Renderer::getStringLegend() {
+    std::stringstream ss;
+    ss << "┌─────────────────────────────┐" << std::endl;
+    ss << "│          Легенда            │" << std::endl;
+    ss << "├─────────────┬───────────────┤" << std::endl;
+    ss << "│ " << "◎" << " - Игрок   │ " << "●" << " - Враг      │" << std::endl;
+    ss << "│ " << "■" << " - Стена   │ " << "▲" << " - Башня     │" << std::endl;
+    ss << "│ " << "♦" << " - Спавнер │ " << "A" << " - Союзник   │" << std::endl;
+    ss << "│ " << "→" << " - Выход   │ " << "×" << " - Ловушка   │" << std::endl;
+    ss << "└─────────────┴───────────────┘" << std::endl;
+    return ss.str();
 }
 
-void Renderer::displayEntitiesInfo() {
+std::string Renderer::getStringWithEntitiesInfo() {
+    std::stringstream ss;
+
     if (entities.empty()) {
-        std::cout << "No entities." << std::endl;
-        return;
+        ss << "No entities." << std::endl;
+        return ss.str();
     }
 
-    std::cout << "┌────────Сущности─────────┐" << std::endl;
+    ss << "┌────────Сущности─────────┐" << std::endl;
 
-    std::cout << "│" << std::setw(3) << std::right << "№  " << "│"
-              << std::setw(10) << std::left << "Type" << "│"
-              << std::setw(5) << std::left << "x/y" << "│"
-              << std::setw(4) << std::right << "HP" << "│" << std::endl;
+    ss << "│" << std::setw(3) << std::right << "№  " << "│"
+       << std::setw(10) << std::left << "Type" << "│"
+       << std::setw(5) << std::left << "x/y" << "│"
+       << std::setw(4) << std::right << "HP" << "│" << std::endl;
 
-    std::cout << "├───┼──────────┼─────┼────┤" << std::endl;
+    ss << "├───┼──────────┼─────┼────┤" << std::endl;
 
     for (size_t i = 0; i < entities.size(); ++i) {
-        const auto& entity = entities[i];
+        const auto &entity = entities[i];
         EntityType type = entity->getType();
         std::string typeStr = "Unknown";
 
@@ -115,17 +123,18 @@ void Renderer::displayEntitiesInfo() {
         int y = entity->getYCoordinate();
         int hp = entity->getHealthPoints();
 
-        std::string posStr = std::to_string(y+1) + "/" + std::to_string(x+1);
+        std::string posStr = std::to_string(y + 1) + "/" + std::to_string(x + 1);
         if (posStr.length() > 5) {
             posStr = posStr.substr(0, 5);
         }
 
-        std::cout << "│" << std::setw(3) << std::right << (i+1) << "│"
-                  << std::setw(10) << std::left << typeStr << "│"
-                  << std::setw(5) << std::left << posStr << "│"
-                  << std::setw(4) << std::right << hp << "│" << std::endl;
+        ss << "│" << std::setw(3) << std::right << (i + 1) << "│"
+           << std::setw(10) << std::left << typeStr << "│"
+           << std::setw(5) << std::left << posStr << "│"
+           << std::setw(4) << std::right << hp << "│" << std::endl;
     }
-    std::cout << "└───┴──────────┴─────┴────┘" << std::endl;
+    ss << "└───┴──────────┴─────┴────┘" << std::endl;
+    return ss.str();
 }
 
 void Renderer::clearDisplay() {
@@ -133,31 +142,129 @@ void Renderer::clearDisplay() {
 
 }
 
-void Renderer::displayPlayerInfo() {
-// Получаем данные из объекта Player
+std::string Renderer::getStringWithPlayerInfo() {
+    std::stringstream ss;
+
     int x = this->player->getXCoordinate();
     int y = player->getYCoordinate();
     int health = player->getHealthPoints();
     bool isCloseRange = player->isCloseRangeAttackSelected();
     long score = player->getScore();
 
-    const auto& closeAttack = player->getCloseRangeAttack();
-    const auto& longAttack = player->getLongRangeAttack();
-    const auto& spellHand = player->getSpellHand();
+    const auto &closeAttack = player->getCloseRangeAttack();
+    const auto &longAttack = player->getLongRangeAttack();
+    const auto &spellHand = player->getSpellHand();
 
 
-    std::cout << "┌────────── PLAYER ──────────┐" << std::endl;
-    std::cout << "│ Param       Value          │" << std::endl;
-    std::cout << "├────────────────────────────┤" << std::endl;
-    std::cout << "│ x/y        " << std::setw(2) << x << "/" << std::setw(2) << y << "              │" << std::endl;
-    std::cout << "│ Health     " << std::setw(15) << std::right << health << " │" << std::endl;
-    std::cout << "│ Score      " << std::setw(15) << std::right << score << " │" << std::endl;
-    std::cout << "├─────── ATTACKS ────────────┤" << std::endl;
-    std::cout << "│ Close     " << std::setw(15) << std::right << closeAttack.getDamage() << " │" << std::endl;
-    std::cout << "│ Long      " << std::setw(15) << std::right << longAttack.getDamage() << " │" << std::endl;
-    std::cout << "│ Range     " << std::setw(15) << std::right << longAttack.getRange() << " │" << std::endl;
-    std::cout << "│ Active    " << std::setw(15) << std::left << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
-    std::cout << "├─────── SPELLS ─────────────┤" << std::endl;
-    std::cout << "│ Spells.C  " << std::setw(15) << std::right << spellHand.getSpells().size() << " │" << std::endl;
-    std::cout << "└────────────────────────────┘" << std::endl;
+    ss << "┌────────── PLAYER ──────────┐" << std::endl;
+    ss << "│ Param       Value          │" << std::endl;
+    ss << "├────────────────────────────┤" << std::endl;
+    ss << "│ x/y     " << std::setw(2) << x << "/" << std::setw(2) << y << "              │" << std::endl;
+    ss << "│ Health     " << std::setw(15) << std::right << health << " │" << std::endl;
+    ss << "│ Score      " << std::setw(15) << std::right << score << " │" << std::endl;
+    ss << "├─────── ATTACKS ────────────┤" << std::endl;
+    ss << "│ Close     " << std::setw(15) << std::right << closeAttack.getDamage() << " │" << std::endl;
+    ss << "│ Long      " << std::setw(15) << std::right << longAttack.getDamage() << " │" << std::endl;
+    ss << "│ Range     " << std::setw(15) << std::right << longAttack.getRange() << " │" << std::endl;
+    ss << "│ Active    " << std::setw(15) << std::left << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
+    ss << "├─────── SPELLS ─────────────┤" << std::endl;
+    ss << "│ Spells.C  " << std::setw(15) << std::right << spellHand.getSpells().size() << " │" << std::endl;
+    ss << "└────────────────────────────┘" << std::endl;
+
+    return ss.str();
 }
+
+std::vector<std::string> getStringLinesVector(const std::string& s){
+    std::vector<std::string> res;
+    std::string temp;
+    for(char i : s){
+        if(i == '\n'){
+            res.push_back(temp);
+            temp = "";
+        }else{
+            temp += i;
+        }
+    }
+    return res;
+}
+
+
+std::string createEmptyStringSameLength(const std::string& input) {
+    std::string result;
+
+    for (size_t i = 0; i < input.length(); ) {
+        result += ' ';
+        unsigned char c = static_cast<unsigned char>(input[i]);
+
+        if (c < 128) {
+            i += 1;
+        } else if (c < 194) {
+            i += 1;
+        } else if (c < 224) {
+            i += 2;
+        } else if (c < 240) {
+            i += 3;
+        } else if (c < 248) {
+            i += 4;
+        } else {
+            i += 1;
+        }
+    }
+
+    return result;
+}
+
+std::string
+Renderer::connectStrings(const std::string &grid, const std::string &entitiesInfo, const std::string &playerInfo,
+                         const std::string &legend) {
+    std::vector<std::string> gridLines = getStringLinesVector(grid);
+    std::vector<std::string> entitiesInfoLines = getStringLinesVector(entitiesInfo);
+    std::vector<std::string> playerInfoLines = getStringLinesVector(playerInfo);
+    std::vector<std::string> legendLines = getStringLinesVector(legend);
+
+    std::string res;
+
+    std::string gridSpace = createEmptyStringSameLength(gridLines[0]);
+    std::string playerInfoSpace = createEmptyStringSameLength(playerInfoLines[0]);
+    
+
+    for(int i = 0; i < std::max(std::max(gridLines.size(), entitiesInfoLines.size()), playerInfoLines.size()); i++){
+        if(i < gridLines.size()){
+            res += gridLines[i];
+            res += "   ";
+        }
+
+        if(i < playerInfoLines.size()){
+            if(i >= gridLines.size()){
+                res += gridSpace;
+                res += "   ";
+            }
+            res += playerInfoLines[i];
+            res += "   ";
+        }
+
+        if(i < entitiesInfoLines.size()){
+            if(i >= gridLines.size()){
+                res += gridSpace;
+                res += "   ";
+            }
+            if(i >= playerInfoLines.size()){
+                res += playerInfoSpace;
+                res += "   ";
+            }
+            res += entitiesInfoLines[i];
+        }
+
+        res += '\n';
+
+    }
+    res += '\n';
+    for(const std::string& s : legendLines){
+        res += s;
+        res += "\n";
+    }
+
+
+    return res;
+}
+
