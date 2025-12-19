@@ -7,10 +7,10 @@
 
 class InputKeysModel{
 public:
-    char closeGameKey, confirmActionKey, dismissActionKey, attackKey, spellKey, skipMoveKey, continueKey;
+    char saveGameKey, confirmActionKey, dismissActionKey, attackKey, spellKey, skipMoveKey, continueKey;
 
     InputKeysModel(char closeGameKey, char confirmActionKey, char dismissActionKey, char attackKey, char spellKey,
-                   char skipMoveKey, char continueKey) : closeGameKey(closeGameKey), confirmActionKey(confirmActionKey),
+                   char skipMoveKey, char continueKey) : saveGameKey(closeGameKey), confirmActionKey(confirmActionKey),
                                                          dismissActionKey(dismissActionKey), attackKey(attackKey),
                                                          spellKey(spellKey), skipMoveKey(skipMoveKey),
                                                          continueKey(continueKey) {}

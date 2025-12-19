@@ -50,7 +50,7 @@ bool PlayerController::doMove(GameMaster& gameMaster, PlayerAction* action) {
 
 
     while(true){
-        std::cout << "Вы хотите атаковать, применить заклинание или пропустить ход? (a\\c\\s): "<< std::endl;
+        std::cout << << std::endl;
         std::string acs;
         acs = Constants::getInput<std::string>();
         if (acs == "a"){
@@ -73,7 +73,7 @@ bool PlayerController::doMove(GameMaster& gameMaster, PlayerAction* action) {
 
 void PlayerController::attackTypeSelect() {
     while(true){
-        std::cout << "Вы хотите сменить тип атаки(y\\n)?:"<< std::endl;
+        std::cout << std::endl;
         std::string yn;
         yn = Constants::getInput<std::string>();
         if (yn == "y"){
@@ -91,7 +91,7 @@ void PlayerController::attackTypeSelect() {
 
 void PlayerController::attack() {
     //также без проверок и тд....
-    std::cout << "Введите координаты которые хотите атаковать (сначала x потом y): "<< std::endl;
+    std::cout << " "<< std::endl;
     int x, y;
     //перепутано специально
     y = Constants::getInput<int>();

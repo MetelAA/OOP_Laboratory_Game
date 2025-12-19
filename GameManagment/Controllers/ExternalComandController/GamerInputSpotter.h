@@ -21,6 +21,9 @@ private:
     PlayerController& controller;
     InputKeysModel keysModel;
 
+    void changeAttackType(GameMaster& master, bool* isChanged);
+    void attackOnCoords(GameMaster& master);
+    void useSpell(GameMaster& master);
 };
 
 

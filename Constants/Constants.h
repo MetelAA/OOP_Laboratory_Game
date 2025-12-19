@@ -12,6 +12,7 @@
 #include "../Entities/EntityType.h"
 #include <limits>
 #include <sstream>
+#include <conio.h>
 
 class Constants {
 public:
@@ -53,7 +54,11 @@ public:
     }
 
     template<typename T>
-    static T getInput() {
+    static T getInput(const std::string& prompt = "") {
+        if (!prompt.empty()) {
+            std::cout << prompt;
+        }
+
         std::string line;
         while (true) {
             std::getline(std::cin, line);
@@ -66,11 +71,53 @@ public:
                 if (iss >> value && iss.eof()) {
                     return value;
                 } else {
-                    std::cout << "Error! Enter a correct value." << std::endl;
+                    std::cout << "Что-то пошло не так! Введите правильное значение: " << std::endl;
                 }
             }
         }
     }
+
+    static char getInputWithoutN(const std::string& prompt = ""){
+        if(!prompt.empty()){
+            std::cout << prompt;
+        }
+        while (true) {
+            char ch = _getch();
+            while (_kbhit()) {
+                _getch();
+            }
+            if (ch >= 32 && ch <= 126) {
+                std::cout << ch << std::endl;
+                return ch;
+            }
+            std::cout << "Что-то пошло не так! Введите нормальный символ: " << std::endl;
+        }
+    }
+
+    static std::pair<int, int> readToInts(const std::string& prompt = ""){
+        if(!prompt.empty()){
+            std::cout << prompt;
+        }
+
+        std::pair<int, int> result;
+
+        while (true) {
+            std::string line;
+            std::getline(std::cin, line);
+            std::istringstream iss(line);
+            if (iss >> result.first >> result.second) {
+                std::string remaining;
+                if (iss >> remaining) {
+                    std::cout << "Обнаружены лишние символы. Введите только два числа: ";
+                    continue;
+                }
+                return result;
+            }
+            std::cout << "Неверный ввод. Введите два целых числа через пробел: ";
+        }
+
+    }
+
 };
 
 
