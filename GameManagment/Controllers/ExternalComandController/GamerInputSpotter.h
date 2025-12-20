@@ -6,11 +6,10 @@
 #include "../../../Entities/Creatures/PlayerView.h"
 
 
-
 class GamerInputSpotter {
 public:
-    GamerInputSpotter(const PlayerView &player, PlayerController &controller, const InputKeysModel &keysModel) : player(
-            player), controller(controller), keysModel(keysModel) {}
+    GamerInputSpotter(const PlayerView &player, const std::shared_ptr<PlayerController> &controller,
+                      const InputKeysModel &keysModel) : player(player), controller(controller), keysModel(keysModel) {}
 
     void playerMove(GameMaster& master);
     void waitingForContinueCommand(GameMaster& master);
@@ -18,7 +17,7 @@ public:
 
 private:
     PlayerView player;
-    PlayerController& controller;
+    std::shared_ptr<PlayerController> controller;
     InputKeysModel keysModel;
 
     void changeAttackType(GameMaster& master, bool* isChanged);

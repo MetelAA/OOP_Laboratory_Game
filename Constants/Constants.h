@@ -22,6 +22,10 @@ public:
 
     struct dxdy{ //нужна чтобы в некоторый контекст можно было передать именно её
         int x, y;
+
+        bool operator==(const dxdy& other) const {
+            return x == other.x && y == other.y;
+        }
     };
     static inline const std::vector<Constants::dxdy> dxdys{{-1, 1},
                                                       {0,  1},
@@ -94,7 +98,7 @@ public:
         }
     }
 
-    static std::pair<int, int> readToInts(const std::string& prompt = ""){
+    static std::pair<int, int> readTwoInts(const std::string& prompt = ""){
         if(!prompt.empty()){
             std::cout << prompt;
         }

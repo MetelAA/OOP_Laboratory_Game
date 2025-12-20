@@ -8,23 +8,26 @@
 
 #include "../EntityManagers/CreatureManagers/PlayerManager.h"
 #include "ExternalComandController/Actions/PlayerAction.h"
+#include "../../Entities/Creatures/PlayerView.h"
 #include "ExternalComandController/Actions/PlayerActionWithCoords.h"
 #include "ExternalComandController/Actions/PlayerActionUseSpell.h"
+#include "ExternalComandController/Actions/PlayerUpgradeAction.h"
 
 
 class PlayerController {
 public:
-    PlayerController(Field &field, PlayerManager manager) : manager(std::move(manager)), field(field) {}
+    PlayerController(const PlayerManager &manager, Field &field, const PlayerView &playerView) : manager(manager),
+                                                                                                 field(field),
+                                                                                                 playerView(playerView) {}
 
     bool doMove(GameMaster& gameMaster, PlayerAction* action);
 
 protected:
     PlayerManager manager;
     Field& field;
+    PlayerView playerView;
 
-    void attackTypeSelect();
-    void attack();
-    void spellActivities();
+    bool canMoveOn(Constants::XYPair moveFrom, Constants::XYPair moveTo);
 };
 
 

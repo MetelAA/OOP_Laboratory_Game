@@ -18,7 +18,7 @@ void PlayerManager::moveTo(Constants::dxdy dxdy) {
     }
 }
 
-void PlayerManager::attack(Constants::dxdy coords, AttackType type) { //должны гарантировать что мы в выбранной клетке есть сущность для атаки
+void PlayerManager::attack(Constants::XYPair coords, AttackType type) { //должны гарантировать что мы в выбранной клетке есть сущность для атаки
     if (!this->field.getFieldCells()[coords.x][coords.y].hasEntityInCell())
         throw UnexpectedBehaviorException("In selected coords to attack must be a target to attack! But it nihchego netu");
     switch (type) {
@@ -35,30 +35,28 @@ void PlayerManager::attack(Constants::dxdy coords, AttackType type) { //долж
     }
 }
 
-bool PlayerManager::isCloseRangeAttackSelected() const noexcept {
-    return this->player->isCloseRangeAttackSelected();
-}
-
-int PlayerManager::getLongRangeAttackRange() const noexcept {
-    return this->player->getLongRangeAttack().getRange();
-}
-
 void PlayerManager::changeAttackType() noexcept {
     this->player->changeSelectedAttackType();
 }
 
-std::string PlayerManager::getAttackTypeStr() noexcept {
-    return this->player->isCloseRangeAttackSelected() ? "close range attack" : "long range attack";
-}
-
-AttackType PlayerManager::getAttackType() noexcept {
-    return this->player->isCloseRangeAttackSelected() ? AttackType::CloseRange : AttackType::LongRange;
-}
-
-const std::vector<std::unique_ptr<Spell>>& PlayerManager::getSpells() noexcept {
-    return this->player->getSpellHand().getSpells();
-}
-
-SpellHand &PlayerManager::getSpellHand() {
+SpellHand &PlayerManager::getSpellHand() noexcept {
     return this->player->getSpellHand();
+}
+
+void PlayerManager::upgradePlayer(UpgradesType type) {
+    switch (type) {
+        case UpgradesType::UpdateDamage:
+            this->player->setLongRangeAttack(LongRangeAttack(this->player->getLongRangeAttack().getDamage() + 1, this->player->getLongRangeAttack().getRange()+1));
+            this->player->setCloseRangeAttack(CloseRangeAttack(this->player->getCloseRangeAttack().getDamage() + 2));
+            this->player->setScore(this->player->getScore()-1);
+            break;
+        case UpgradesType::UpdateMovementDistance:
+            this->player->setStepRange(this->player->getStepRange()+1);
+            this->player->setScore(this->player->getScore()-1);
+            break;
+        case UpgradesType::UpdateHealth:
+            this->player->changeHealthPoints(2);
+            this->player->setScore(this->player->getScore()-1);
+            break;
+    }
 }

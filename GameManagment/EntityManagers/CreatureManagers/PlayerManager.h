@@ -6,21 +6,17 @@
 #define LABA1_PLAYERMANAGER_H
 #include "CreatureManager.h"
 #include "../../../Entities/Creatures/Player.h"
-#include <cmath>
+#include "../../Controllers/ExternalComandController/Actions/UpgradesType.h"
 
 class PlayerManager : public CreatureManager{
 public:
     PlayerManager(Field &field, std::shared_ptr<Player>& player) : CreatureManager(field, player.get()),
                                                                    player(player) {}
-    void moveTo(Constants::dxdy dxdy) override;
-    void attack(Constants::dxdy coords, AttackType type);
-    bool isCloseRangeAttackSelected() const noexcept;
-    int getLongRangeAttackRange() const noexcept;
+    void moveTo(Constants::dxdy withOffset) override;
+    void attack(Constants::XYPair coords, AttackType type);
     void changeAttackType() noexcept;
-    std::string getAttackTypeStr() noexcept;
-    AttackType getAttackType() noexcept;
-    const std::vector<std::unique_ptr<Spell>>& getSpells() noexcept;
-    SpellHand& getSpellHand();
+    SpellHand& getSpellHand() noexcept;
+    void upgradePlayer(UpgradesType type);
 
 protected:
     std::shared_ptr<Player> player;

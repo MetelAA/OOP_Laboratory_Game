@@ -6,11 +6,13 @@
 #define LABAOOP2_PLAYERACTIONWITHCOORDS_H
 
 #include "PlayerAction.h"
+#include "../../../../Constants/Constants.h"
 
 class PlayerActionWithCoords : public PlayerAction {
 public:
-    PlayerActionWithCoords(ActionType type, int x, int y) : PlayerAction(type), x(x), y(y) {}
-    int x, y;
+    PlayerActionWithCoords(ActionType type, const Constants::XYPair &xy) : PlayerAction(type), xy(xy) {}
+
+    Constants::XYPair xy;
 };
 
 

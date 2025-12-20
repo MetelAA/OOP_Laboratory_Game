@@ -12,7 +12,7 @@ class CreatureManager : public EntityManager{
 public:
     CreatureManager(Field &field, Creature *creature) : EntityManager(field, creature), creature(creature) {}
 
-    virtual void moveTo(Constants::dxdy toCoordinates) = 0;
+    virtual void moveTo(Constants::dxdy withOffset) = 0;
     virtual int getStepRange() const noexcept final;
     virtual bool isCreatureDisabled() const noexcept final;
     virtual void enableCreature() noexcept final;

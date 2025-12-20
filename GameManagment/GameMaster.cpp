@@ -8,6 +8,7 @@
 #include "../GameSetup/Utils/ReadRightJson.h"
 #include "../GameSetup/GameSetup.h"
 #include <chrono>
+#include <memory>
 #include <thread>
 
 bool GameMaster::startGame(const std::string& json) {
@@ -27,6 +28,7 @@ bool GameMaster::startGame(const std::string& json) {
     std::cout << "GameMaster startGame:  started to deserialize player" << std::endl;
     std::map<std::string, std::string> playerMap = JsonParser::parseJsonWithNestedObj(gameMap.at("player"));
     this->player = std::shared_ptr<Player>(Player::deserialize(playerMap, *spellFactory.get()));
+    this->playerView = std::make_shared<PlayerView>(*player);
     std::cout << "GameMaster startGame: player deserialized successfully" << std::endl;
 
     std::cout << "GameMaster startGame: detecting Entities in field to contrast their controllers and managers" << std::endl;
@@ -75,19 +77,26 @@ bool GameMaster::startGame(const std::string& json) {
     {
         std::cout << "GameMaster startGame: contrast PlayerController" << std::endl;
         PlayerManager manager(*this->field, player);
-        PlayerController* controller = new PlayerController(*this->field, manager);
-        this->playerController = std::unique_ptr<PlayerController>(controller);
+        this->playerController = std::make_shared<PlayerController>(manager, *this->field, *playerView);
 
+        //Заменить на чтение с файла!!!
+
+        InputKeysModel keysModel('c', 'y', 'n', 'a', 's', 'k', 'u');
+
+        //--------------------------------
+
+
+        this->gamerInputSpotter = std::make_unique<GamerInputSpotter>(*this->playerView, this->playerController, keysModel);
         player->getSpellHand().addSpell(this->spellFactory->createSpell(SpellType::DirectDamageSpell));
     }
     this->field->getFieldCells()[this->player->getXCoordinate()][this->player->getYCoordinate()].addEntityInCell(this->player);
     std::cout << "GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field" << std::endl;
 
-    renderer = new Renderer(*this->field, this->entities, this->player);
+    renderer = new Renderer(*this->field, this->entities, *playerView);
 
     renderer->prepareConsole();
     if (this->level == 1){
-        upgradeEntity();
+        gamerInputSpotter->upgradePlayer(*this);
     }
     renderer->draw();
     gameCycle();
@@ -106,9 +115,9 @@ bool GameMaster::startGame(const std::string& json) {
 
 void GameMaster::gameCycle() {
     std::cout << "GameMaster: playerController hod!" << std::endl;
-    this->playerController->doMove(*this);
+    gamerInputSpotter->playerMove(*this);
     checkEntitiesAfterMove();
-    waiterToContinue();
+    gamerInputSpotter->waitingForContinueCommand(*this);
     if (this->player->getXCoordinate() == (this->field->getHeight()-1) && this->player->getYCoordinate() == (this->field->getWidth()-1)){
         std::cout << "Уровень: " << this->level << " пройден!" << std::endl;
         this->level++;
@@ -122,28 +131,28 @@ void GameMaster::gameCycle() {
         std::cout << "GameMaster: AllyController hod!" << " ally id: " << (&alc) << std::endl;
         alc->doMove(*this);
         checkEntitiesAfterMove();
-        waiterToContinue();
+        gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyController> enc : this->enemyControllers){
         std::cout << "GameMaster: Enemy hod!" << " enemyController id: " << (&enc) << std::endl;
         enc->doMove(*this);
         checkEntitiesAfterMove();
-        waiterToContinue();
+        gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyDefenceTowerController> dfc : this->defenceTowerControllers){
         std::cout << "GameMaster: defenceTower hod!" << " defenceTowerController id: " << (&dfc) << std::endl;
         dfc->doMove(*this);
         checkEntitiesAfterMove();
-        waiterToContinue();
+        gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemySpawnerBuildingController> esc : this->enemySpawnerBuildingControllers){
         std::cout << "GameMaster: spawnerBuilding hod!" << " spawnerBuildingController id: " << (&esc) << std::endl;
         esc->doMove(*this);
         checkEntitiesAfterMove();
-        waiterToContinue();
+        gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
 
@@ -159,13 +168,6 @@ void GameMaster::redraw() {
     this->renderer->clearDisplay();
     this->renderer->draw();
     std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-}
-
-void GameMaster::waiterToContinue(){
-    std::cout << "Введите символ для продолжения!" << std::endl;
-    std::string c = Constants::getInput<std::string>();
-    std::cout << "────────────────────────────────────────────────────────────────────────" << std::endl;
-    std::cout << "────────────────────────────────────────────────────────────────────────" << std::endl;
 }
 
 void GameMaster::checkEntitiesAfterMove() {
@@ -223,7 +225,7 @@ void GameMaster::addEnemyController(EnemyController *controller, std::shared_ptr
     this->entities.push_back(entity);
 }
 
-void GameMaster::save() {
+void GameMaster::saveGame() {
     std::cout << "Сохраняем игру!" << std::endl;
     this->isSaved = true;
     std::string res;
@@ -233,42 +235,9 @@ void GameMaster::save() {
     res+="player:" + this->player->serialize() +"}";
 
     try{
-        ReadRightJson::write(res, "../save.txt");
+        ReadRightJson::write(res, "../saveGame.txt");
         std::cout << "Игра успешно сохранена" << std::endl;
     }catch (const UnexpectedBehaviorException& e){
-        std::cout << "Error when writing save" << std::endl;
-    }
-}
-
-void GameMaster::upgradeEntity() {
-    bool flag = true;
-    while(flag){
-        std::cout << "Есть возможность улучшить игрока" << std::endl;
-        std::cout << "Что вы хотите улучшить (требуется 1 очко), у вас: " << this->player->getScore() << ":\n1.Урон\n2.Дальность хода\n3.Здоровье\n(введите цифру от 1 до 3х или 0 чтобы отказаться от выбора)" << std::endl;
-        int num = Constants::getInput<int>();
-        switch(num){
-            case 0:
-                flag = false;
-            break;
-            case 1:
-                this->player->setLongRangeAttack(LongRangeAttack(this->player->getLongRangeAttack().getDamage() + 1, this->player->getLongRangeAttack().getRange()+1));
-                this->player->setCloseRangeAttack(CloseRangeAttack(this->player->getCloseRangeAttack().getDamage() + 2));
-                this->player->setScore(this->player->getScore()-1);
-                flag = false;
-            break;
-            case 2:
-                this->player->setStepRange(this->player->getStepRange()+1);
-                this->player->setScore(this->player->getScore()-1);
-                flag = false;
-            break;
-            case 3:
-                this->player->changeHealthPoints(2);
-                this->player->setScore(this->player->getScore()-1);
-                flag = false;
-            break;
-            default:
-                std::cout << "Введённая цифра не в диапазоне от одного до трёх!" << std::endl;
-                continue;
-        }
+        std::cout << "Error when writing saveGame" << std::endl;
     }
 }

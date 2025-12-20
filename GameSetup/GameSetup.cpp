@@ -16,9 +16,9 @@ void GameSetup::start() {
     std::string json;
     if (chooseSetupType()){
         try{
-            json = ReadRightJson::read("../save.txt");
+            json = ReadRightJson::read("../saveGame.txt");
         }catch (const UnexpectedBehaviorException& ex) {
-            std::cout << "Can't open save file, file damaged or not exist" << std::endl;
+            std::cout << "Can't open saveGame file, file damaged or not exist" << std::endl;
             start();
         }
     }else{

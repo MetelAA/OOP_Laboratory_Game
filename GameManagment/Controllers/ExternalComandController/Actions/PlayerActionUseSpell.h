@@ -9,8 +9,8 @@
 
 class PlayerActionUseSpell : public PlayerActionWithCoords {
 public:
-    PlayerActionUseSpell(ActionType type, int x, int y, int spellNum) : PlayerActionWithCoords(type, x, y),
-                                                                        spellNum(spellNum) {}
+    PlayerActionUseSpell(ActionType type, const Constants::XYPair &xy, int spellNum) : PlayerActionWithCoords(type, xy),
+                                                                                       spellNum(spellNum) {}
 
     int spellNum;
 };

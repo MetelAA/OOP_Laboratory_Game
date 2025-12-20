@@ -17,6 +17,7 @@
 #include "../Model/EnemyDefenceTowerModel.h"
 #include "../Model/EnemySpawnerBuildingModel.h"
 #include "../GameRender/Renderer.h"
+#include "Controllers/ExternalComandController/GamerInputSpotter.h"
 
 class GameMaster {
 public:
@@ -32,7 +33,7 @@ public:
 
     void addAllyController(AllyController *controller, std::shared_ptr<Entity> entity);
 
-    void save();
+    void saveGame();
 private:
     int level;
     Field *field;
@@ -43,14 +44,15 @@ private:
     std::vector<std::shared_ptr<AllyController>> allyControllers;
     std::vector<std::shared_ptr<EnemySpawnerBuildingController>> enemySpawnerBuildingControllers;
     std::vector<std::shared_ptr<EnemyDefenceTowerController>> defenceTowerControllers;
-    std::unique_ptr<PlayerController> playerController;
+    std::shared_ptr<PlayerController> playerController;
+    std::unique_ptr<GamerInputSpotter> gamerInputSpotter;
 
     std::vector<std::shared_ptr<Entity>> entities;
 
     std::unique_ptr<EnemySpawner> enemySpawner;
     std::unique_ptr<AllySpawner> allySpawner;
     std::unique_ptr<SpellFactory> spellFactory;
-
+    std::shared_ptr<PlayerView> playerView;
     Renderer *renderer;
 
     const CompControlledCreatureModel enemyModel{3, 2, 2, 70};
@@ -58,9 +60,7 @@ private:
 //    const EnemyDefenceTowerModel defenceTowerModel{3,3,3};
 //    const EnemySpawnerBuildingModel spawnerBuildingModel{2,2};
 
-    void waiterToContinue();
     void checkEntitiesAfterMove();
-    void upgradeEntity();
 };
 
 
