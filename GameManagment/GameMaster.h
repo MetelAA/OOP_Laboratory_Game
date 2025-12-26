@@ -19,6 +19,7 @@
 #include "../GameRender/ConsoleRenderer.h"
 #include "Controllers/ExternalComandController/GamerConsoleInputSpotter.h"
 #include "GameMasterBase.h"
+#include "../GameRender/GameVisualizer.h"
 
 template<typename InputHandler, typename DrawStrategy>
 class GameMaster : public GameMasterBase{

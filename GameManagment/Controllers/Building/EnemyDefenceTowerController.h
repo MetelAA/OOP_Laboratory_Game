@@ -7,7 +7,6 @@
 
 #include "../../EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h"
 #include "../ExternalComandController/InputSpotter.h"
-#include "../../../GameRender/Renderer.h"
 
 class GameMasterBase;
 
