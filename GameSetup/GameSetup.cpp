@@ -4,25 +4,30 @@
 
 #include "GameSetup.h"
 #include "../Constants/Constants.h"
-#include "Utils/ReadRightJson.h"
+#include "Utils/ReadWrightJson.h"
 #include "../GameManagment/GameMaster.h"
 #include <iostream>
+#include "../Logger/Logger.h"
 bool chooseSetupType();
 
 
 
 void GameSetup::start() {
-    std::cout << "Game setup starts!" << std::endl;
+    Logger::init(LogOutput::FILE, "../log.txt");
+
+    Logger::tech("Game setup starts!");
+
     std::string json;
     if (chooseSetupType()){
         try{
-            json = ReadRightJson::read("../saveGame.txt");
+            json = ReadWrightJson::read("../saveGame.txt");
         }catch (const UnexpectedBehaviorException& ex) {
             std::cout << "Can't open saveGame file, file damaged or not exist" << std::endl;
+            Logger::tech("Can't open saveGame file, file damaged or not exist!");
             start();
         }
     }else{
-        json = ReadRightJson::read("../level0.txt");
+        json = ReadWrightJson::read("../level0.txt");
     }
     GameMaster gm;
     if(gm.startGame(json)){
@@ -35,7 +40,7 @@ void GameSetup::start() {
 
 void GameSetup::setupLevelN(std::string fileName) {
     std::string json;
-    json = ReadRightJson::read(fileName);
+    json = ReadWrightJson::read(fileName);
     GameMaster gm;
     gm.startGame(json);
 }

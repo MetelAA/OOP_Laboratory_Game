@@ -2,26 +2,29 @@
 // Created by Artem on 20.11.2025.
 //
 
-#include "Renderer.h"
+#include "ConsoleRenderer.h"
 #include <iostream>
 #include <string>
 #include <windows.h>
 #include <iomanip>
 #include <cstdlib>
 #include "../Entities/Creatures/Player.h"
+#include "../Logger/Logger.h"
 
-void Renderer::prepareConsole() {
+void ConsoleRenderer::prepareConsole() {
     SetConsoleOutputCP(65001);
     SetConsoleCP(1251);
 }
 
-void Renderer::draw() {
+void ConsoleRenderer::draw() {
+
+    clearDisplay();
     std::vector<std::vector<std::string>> chars(this->field.getHeight(),
                                                 std::vector<std::string>(this->field.getWidth(), " "));
     for (int x = 0; x < this->field.getHeight(); ++x) {
         for (int y = 0; y < this->field.getWidth(); ++y) {
             if (this->field.getFieldCells()[x][y].getCellType() == CellType::Impassable) {
-                chars[x][y] = Renderer::WALL;
+                chars[x][y] = ConsoleRenderer::WALL;
             } else if (this->field.getFieldCells()[x][y].hasEntityInCell()) {
                 chars[x][y] = this->entityTypeToCharS.at(this->field.getFieldCells()[x][y].getEntityInCellType());
             } else if (this->field.getFieldCells()[x][y].hasCellEvent()) {
@@ -33,11 +36,11 @@ void Renderer::draw() {
 
 
 
-    std::string res = connectStrings(getStringWithGridRounded(chars), getStringWithEntitiesInfo(), getStringWithPlayerInfo(), getStringLegend());
+    std::string res = connectStrings(getStringWithGridRounded(chars), getStringWithEntitiesInfo(), getStringWithPlayerInfo(), getStringLegend(), getStringWithLastActions());
     std::cout << res;
 }
 
-std::string Renderer::getStringWithGridRounded(const std::vector<std::vector<std::string>> &grid) {
+std::string ConsoleRenderer::getStringWithGridRounded(const std::vector<std::vector<std::string>> &grid) {
     std::stringstream ss;
     if (grid.empty()) return "";
 
@@ -78,7 +81,7 @@ std::string Renderer::getStringWithGridRounded(const std::vector<std::vector<std
     return ss.str();
 }
 
-std::string Renderer::getStringLegend() {
+std::string ConsoleRenderer::getStringLegend() {
     std::stringstream ss;
     ss << "┌─────────────────────────────┐" << std::endl;
     ss << "│          Легенда            │" << std::endl;
@@ -91,7 +94,7 @@ std::string Renderer::getStringLegend() {
     return ss.str();
 }
 
-std::string Renderer::getStringWithEntitiesInfo() {
+std::string ConsoleRenderer::getStringWithEntitiesInfo() {
     std::stringstream ss;
 
     if (entities.empty()) {
@@ -137,9 +140,8 @@ std::string Renderer::getStringWithEntitiesInfo() {
     return ss.str();
 }
 
-void Renderer::clearDisplay() {
-//    system("cls");
-
+void ConsoleRenderer::clearDisplay() {
+    system("cls");
 }
 
 auto formatNumber = [](int num) -> std::string {
@@ -150,7 +152,9 @@ auto formatNumber = [](int num) -> std::string {
     return oss.str();
 };
 
-std::string Renderer::getStringWithPlayerInfo() {
+
+
+std::string ConsoleRenderer::getStringWithPlayerInfo() {
     std::stringstream ss;
 
     int x = this->player.getXCoordinate();
@@ -167,16 +171,16 @@ std::string Renderer::getStringWithPlayerInfo() {
     ss << "┌────────── PLAYER ──────────┐" << std::endl;
     ss << "│ Param       Value          │" << std::endl;
     ss << "├────────────────────────────┤" << std::endl;
-    ss << "│ x/y     " << std::setw(2) << x << "/" << std::setw(2) << y << "              │" << std::endl;
-    ss << "│ Health     " << formatNumber(health) << "            │" << std::endl;
-    ss << "│ Score      " << formatNumber(score) << "            │" << std::endl;
+    ss << "│ x/y         " << std::right << std::setw(2) << y+1 << "/" << x+1 << "           │" << std::endl;
+    ss << "│ Health      " << std::setw(10) << formatNumber(health) << "     │" << std::endl;
+    ss << "│ Score       " << std::setw(10) << formatNumber(score) << "     │" << std::endl;
     ss << "├─────── ATTACKS ────────────┤" << std::endl;
-    ss << "│ Close     " << formatNumber(closeAttack.getDamage()) << "            │" << std::endl;
-    ss << "│ Long      " << formatNumber(longAttack.getDamage()) << "            │" << std::endl;
-    ss << "│ Range     " << formatNumber(longAttack.getRange()) << "            │" << std::endl;
-    ss << "│ Active    " << std::left << std::setw(15) << (isCloseRange ? "CLOSE" : "LONG") << "│" << std::endl;
+    ss << "│ Close      " << std::setw(10) << formatNumber(closeAttack.getDamage()) << "      │" << std::endl;
+    ss << "│ Long       " << std::setw(10) << formatNumber(longAttack.getDamage()) << "      │" << std::endl;
+    ss << "│ Range      " << std::setw(10) << formatNumber(longAttack.getRange()) << "      │" << std::endl;
+    ss << "│ Active     " << std::left << std::setw(10) << (isCloseRange ? "CLOSE" : "LONG") << std::right << "      │" << std::endl;
     ss << "├─────── SPELLS ─────────────┤" << std::endl;
-    ss << "│ Spells.C  " << formatNumber(spellHand.getSpells().size()) << "            │" << std::endl;
+    ss << "│ Spells.C   " << std::setw(10) << formatNumber(spellHand.getSpells().size()) << "      │" << std::endl;
     ss << "└────────────────────────────┘" << std::endl;
 
     return ss.str();
@@ -223,12 +227,13 @@ std::string createEmptyStringSameLength(const std::string& input) {
 }
 
 std::string
-Renderer::connectStrings(const std::string &grid, const std::string &entitiesInfo, const std::string &playerInfo,
-                         const std::string &legend) {
+ConsoleRenderer::connectStrings(const std::string &grid, const std::string &entitiesInfo, const std::string &playerInfo,
+                                const std::string &legend, const std::string lastActions) {
     std::vector<std::string> gridLines = getStringLinesVector(grid);
     std::vector<std::string> entitiesInfoLines = getStringLinesVector(entitiesInfo);
     std::vector<std::string> playerInfoLines = getStringLinesVector(playerInfo);
     std::vector<std::string> legendLines = getStringLinesVector(legend);
+    std::vector<std::string> actionLines = getStringLinesVector(lastActions);
 
     std::string res;
 
@@ -267,12 +272,35 @@ Renderer::connectStrings(const std::string &grid, const std::string &entitiesInf
 
     }
     res += '\n';
-    for(const std::string& s : legendLines){
-        res += s;
+
+    std::string legendSize = createEmptyStringSameLength(legendLines[0]);
+    for(int i = 0; i < std::max(legendLines.size(), actionLines.size()); i++){
+        if(i < legendLines.size()){
+            res += legendLines.at(i) + "   ";
+        }else{
+            res += legendSize + "   ";
+        }
+
+        if(i < actionLines.size()){
+            res += actionLines.at(i);
+        }
         res += "\n";
     }
+
 
 
     return res;
 }
 
+std::string ConsoleRenderer::getStringWithLastActions() {
+    std::stringstream ss;
+
+    std::vector<std::string> sssss = Logger::getLastMessages();
+    ss << "┌─────────────────────────────────────── LAST ACTIONS ───────────────────────────────────────┐" << std::endl;
+    for(std::string s : Logger::getLastMessages()){
+        ss << s << std::endl;
+    }
+    ss << "└────────────────────────────────────────────────────────────────────────────────────────────┘" << std::endl;
+
+    return ss.str();
+}

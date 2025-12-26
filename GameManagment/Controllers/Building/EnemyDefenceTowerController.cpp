@@ -6,9 +6,17 @@
 #include <iostream>
 #include <cmath>
 #include "../../GameMaster.h"
+#include "../../../Logger/Logger.h"
 
 void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
-    std::cout << "Ход, EnemyDefenceTower: " << &this->manager << std::endl;
+    std::string headStr;
+    {
+        std::stringstream ss;
+        ss << &this->manager;
+        headStr = ss.str();
+    }
+
+    Logger::info("Ход, EnemyDefenceTower: " + headStr);
 
     if (this->manager.isCoolDowned()){
 
@@ -55,13 +63,14 @@ void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
             this->manager.goToCoolDown();
             gameMaster.redraw();
         }else{
-            std::cout << "EnemyDefenceTower: " << &this->manager << " no target to damage" << std::endl;
+            Logger::info("EnemyDefenceTower: " + headStr + " no target to damage");
         }
     }else{
-        std::cout << "EnemyDefenceTower: " << &this->manager << " on cool down" << std::endl;
+        Logger::info("EnemyDefenceTower: " + headStr + " on cool down");
         this->manager.doCoolDownStep();
     }
-    std::cout << "EnemyDefenceTower: " << &this->manager << " закончило ход" << std::endl;
+    Logger::tech("EnemyDefenceTower: " + headStr + " закончило ход");
+    gameMaster.redraw();
 }
 
 bool EnemyDefenceTowerController::isAlive() {

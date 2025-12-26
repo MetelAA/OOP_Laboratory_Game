@@ -7,6 +7,7 @@
 #include "../SpellOnCoords.h"
 #include "../../../../../GameSetup/Utils/JsonParser.h"
 #include "../../../../../Factories/SpellFactory.h"
+#include "../../../../../Logger/Logger.h"
 #include <iostream>
 
 const std::vector<std::unique_ptr<Spell>>& SpellHand::getSpells() const {
@@ -24,7 +25,11 @@ void SpellHand::useSpellWithoutAnyCoordsBinding(int position) {
             this->gradeLevel++;
             this->spells.at(position).release();
             this->spells.erase(this->spells.begin() + position);
-            std::cout << "Использовано заклинание улучшения, уровень следующего заклинания: " << (this->gradeLevel + 1) << std::endl;
+            {
+                std::stringstream ss;
+                ss << "Использовано заклинание улучшения, уровень следующего заклинания: " << (this->gradeLevel + 1) << std::endl;
+                Logger::info(ss.str());
+            }
         case SpellType::DirectDamageSpell:
         case SpellType::AreaDamageSpell:
         case SpellType::SummoningSpell:
@@ -44,6 +49,8 @@ void SpellHand::useSpellWithAIMBinding(int position, Field& field, Constants::XY
             SpellOnCoords* spell = dynamic_cast<SpellOnCoords*>(this->spells.at(position).get());
             spell->castSpell(this->gradeLevel, field, from, to);
             this->gradeLevel = 1;
+            this->spells.at(position).release();
+            this->spells.erase(this->spells.begin() + position);
         }
             break;
         case SpellType::BuffNextUsedSpell:
@@ -53,7 +60,7 @@ void SpellHand::useSpellWithAIMBinding(int position, Field& field, Constants::XY
 }
 
 bool SpellHand::checkSpellPositionAvailability(int position) const {
-    if (position < this->spells.size()){
+    if (position < this->spells.size() && position >= 0){
         return true;
     }else{
         throw UnexpectedBehaviorException("Позиция заклинания выходит за рамки руки?? чтобы это не значило, я уже говорить разучился абоба!");

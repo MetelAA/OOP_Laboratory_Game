@@ -84,7 +84,7 @@ bool Field::isCoordsAvailable(int x, int y) const {
                                   + std::to_string(this->height)
                                   + " but x is "
                                   + std::to_string(x)
-                                  + '\n'};
+                                  };
     }
 
     if (y < 0 || y >= this->width) {
@@ -92,7 +92,7 @@ bool Field::isCoordsAvailable(int x, int y) const {
                                   + std::to_string(this->width)
                                   + " but y is "
                                   + std::to_string(y)
-                                  + '\n'};
+                                  };
     }
     return true;
 }

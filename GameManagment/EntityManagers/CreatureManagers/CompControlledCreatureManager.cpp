@@ -24,7 +24,7 @@ void CompControlledCreatureManager::attack(Constants::XYPair coordinates) {
     try{
         this->field.getFieldCells()[coordinates.x][coordinates.y].damageEntityInCell(this->compControlledCreature->getDamage());
     }catch (NoEntityInCellNotification &e){
-        std::cout << "В клетке по координатам " + std::to_string(coordinates.x) + " " + std::to_string(coordinates.y) + " некого атаковать";
+        throw;
     }
 }
 

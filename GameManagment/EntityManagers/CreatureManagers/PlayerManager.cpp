@@ -4,6 +4,7 @@
 
 #include "PlayerManager.h"
 #include "../../../Exceptions/Notifications/SlowingCellNotification.h"
+#include "../../../Logger/Logger.h"
 
 void PlayerManager::moveTo(Constants::dxdy dxdy) {
     this->field.getFieldCells()[this->player->getXCoordinate() + dxdy.x][this->player->getYCoordinate() + dxdy.y].addEntityInCell(this->player);
@@ -11,8 +12,8 @@ void PlayerManager::moveTo(Constants::dxdy dxdy) {
     this->player->setXCoordinate(this->player->getXCoordinate() + dxdy.x);
     this->player->setYCoordinate(this->player->getYCoordinate() + dxdy.y);
 
-    if (this->field.getFieldCells()[dxdy.x][dxdy.y].hasCellEvent()){
-        this->field.getFieldCells()[dxdy.x][dxdy.y].impactOnCreatureByCellEvent();
+    if (this->field.getFieldCells()[this->player->getXCoordinate()][this->player->getYCoordinate()].hasCellEvent()){
+        this->field.getFieldCells()[this->player->getXCoordinate()][this->player->getYCoordinate()].impactOnCreatureByCellEvent();
         if (this->isCreatureDisabled())
             throw SlowingCellNotification("Player on slowing cell!");
     }

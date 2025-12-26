@@ -18,6 +18,9 @@ class Constants {
 public:
     struct XYPair{
         int x, y;
+        bool operator==(const XYPair& other) const {
+            return x == other.x && y == other.y;
+        }
     };
 
     struct dxdy{ //нужна чтобы в некоторый контекст можно было передать именно её

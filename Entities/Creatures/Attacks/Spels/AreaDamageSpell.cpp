@@ -5,11 +5,12 @@
 #include "AreaDamageSpell.h"
 #include "../../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
 #include "../../../../Exceptions/CoordinateException.h"
+#include "../../../../Logger/Logger.h"
 #include <cmath>
 #include <iostream>
 
 void AreaDamageSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
-    std::cout << "Примеяем заклинание атаки по площади!" << std::endl;
+    Logger::info("Примеяем заклинание атаки по площади!");
     levelInfo level = this->levels.at(this->levels.size() < gradeLevel ? gradeLevel : (this->levels.size() - 1));
 
     try{
@@ -26,9 +27,19 @@ void AreaDamageSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair 
         try{
             int damageX = to.x + dxdy.x, damageY = to.y + dxdy.y;
             field.isCoordsAvailable(damageX, damageY);
-            std::cout << "Прилёт по x: " << damageX << " y: " << damageY << std::endl;
+            {
+                std::stringstream ss;
+                ss << "Прилёт по x: " << damageY+1 << " y: " << damageX+1;
+                Logger::info(ss.str());
+            }
+
             if(field.getFieldCells()[damageX][damageY].hasEntityInCell()){
-                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[damageX][damageY].getEntityInCellType()) << std::endl;
+                {
+                    std::stringstream ss;
+                    ss << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[damageX][damageY].getEntityInCellType());
+                    Logger::info(ss.str());
+                }
+
                 field.getFieldCells()[damageX][damageY].damageEntityInCell( level.damage);
             }
         }catch (const CoordinateException &e){}

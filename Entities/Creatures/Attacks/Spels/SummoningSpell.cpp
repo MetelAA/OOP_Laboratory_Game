@@ -5,10 +5,11 @@
 #include "SummoningSpell.h"
 #include <vector>
 #include "../../../../Exceptions/UniversalStringException.h"
+#include "../../../../Logger/Logger.h"
 #include <iostream>
 
 void SummoningSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
-    std::cout << "Применяем заклинание призыва!" << std::endl;
+    Logger::info("Применяем заклинание призыва!");
     int allyCount = this->levels.at(gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size() - 1));
 
     std::vector<Constants::dxdy> dxdys = Constants::dxdys;
@@ -26,7 +27,7 @@ void SummoningSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair f
         }
     }
     if (allyCount != 0){
-        std::cout << "Не удалось заспавнить всех союхников в выбранных координатах, не хватает места!" << std::endl;
+        Logger::info("Не удалось заспавнить всех союхников в выбранных координатах, не хватает места!");
     }
 }
 

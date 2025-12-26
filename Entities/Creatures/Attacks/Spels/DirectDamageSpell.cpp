@@ -6,11 +6,12 @@
 #include "../../../EntityType.h"
 #include "../../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
 #include "../../../../Exceptions/CoordinateException.h"
+#include "../../../../Logger/Logger.h"
 #include <cmath>
 #include <iostream>
 
 void DirectDamageSpell::castSpell(int gradeLevel, Field& field, Constants::XYPair from, Constants::XYPair to) const {
-    std::cout << "Применяем заклинание урона в точку" << std::endl;
+    Logger::info("Применяем заклинание урона в точку");
     levelInfo level = this->levels.at(gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size() - 1));
 
     try{
@@ -23,7 +24,12 @@ void DirectDamageSpell::castSpell(int gradeLevel, Field& field, Constants::XYPai
         throw CantCastSpellOnCellNotification("Не получиться применить заклинание, цель слишком далеко!");
     }
 
-    std::cout << "Прилёт в точку x: " << to.x << " y: " << to.y << std::endl;
+    {
+        std::stringstream ss;
+        ss << "Прилёт в точку x: " << to.y+1 << " y: " << to.x+1;
+        Logger::info(ss.str());
+    }
+
     if (field.getFieldCells()[to.x][to.y].hasEntityInCell()){
         switch (field.getFieldCells()[to.x][to.y].getEntityInCellType()) {
             case EntityType::EnemyEnt:
@@ -33,7 +39,7 @@ void DirectDamageSpell::castSpell(int gradeLevel, Field& field, Constants::XYPai
             case EntityType::Ally:
             {
                 field.getFieldCells()[to.x][to.y].damageEntityInCell(level.damage);
-                std::cout << "В коориднатах из строки выше прилетело по: " << Constants::entityTypeToString(field.getFieldCells()[to.x][to.y].getEntityInCellType()) << std::endl;
+                Logger::info("В коориднатах из строки выше прилетело по: " + Constants::entityTypeToString(field.getFieldCells()[to.x][to.y].getEntityInCellType()) + " на " + std::to_string(level.damage) + "hp");
             }
                 break;
             default:

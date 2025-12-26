@@ -7,10 +7,12 @@
 #include "Actions/PlayerActionUseSpell.h"
 #include "Actions/PlayerUpgradeAction.h"
 #include "Actions/UpgradesType.h"
+#include "../../../Exceptions/Notifications/CantAttackOnCoordsNotification.h"
+#include "../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
 
 void GamerInputSpotter::playerMove(GameMaster &master) {
     std::string c;
-    c = Constants::getInputWithoutN("Если хотите выйти и сохранить игру нажмиту \"" + std::to_string(this->keysModel.saveGameKey) + "\"");
+    c = Constants::getInputWithoutN("Если хотите выйти и сохранить игру нажмиту \"" + std::string(1, this->keysModel.saveGameKey) + "\"");
     if(c[0] == this->keysModel.saveGameKey) {
         try{
             this->controller->doMove(master,  new PlayerAction(ActionType::SaveGame));
@@ -23,18 +25,18 @@ void GamerInputSpotter::playerMove(GameMaster &master) {
     bool flag = true;
     while(flag) {
         char yn;
-        yn = Constants::getInputWithoutN("Вы хотите переместиться? (" + std::to_string(this->keysModel.confirmActionKey) + "\\" + std::to_string(this->keysModel.dismissActionKey) +"): ");
+        yn = Constants::getInputWithoutN("Вы хотите переместиться? (" + std::string(1, this->keysModel.confirmActionKey) + "\\" + std::string(1, this->keysModel.dismissActionKey) +"): ");
         if(yn == this->keysModel.confirmActionKey) {
             std::pair<int, int> yx = Constants::readTwoInts(
                     "Введите координаты на которые хотите перейти (сначала x потом y): ");
             yx.first--;
             yx.second--;
             try{
-               this->controller->doMove(master, new PlayerActionWithCoords(ActionType::Move, {yx.second, yx.first}));
-               flag = false;
-               continue;
+                this->controller->doMove(master, new PlayerActionWithCoords(ActionType::Move, {yx.second, yx.first}));
+                flag = false;
+                continue;
             }catch(...){
-
+                throw;
             }
         }else if(yn == this->keysModel.dismissActionKey) {
             flag = false;
@@ -45,7 +47,7 @@ void GamerInputSpotter::playerMove(GameMaster &master) {
 
     flag = true;
     while(flag){
-        char acs = Constants::getInputWithoutN("Вы хотите атаковать, применить заклинание или пропустить ход? (" + std::to_string(this->keysModel.attackKey) + "\\" + std::to_string(this->keysModel.spellKey) + "\\" + this->keysModel.continueKey + "): ");
+        char acs = Constants::getInputWithoutN("Вы хотите атаковать, применить заклинание или пропустить ход? (" + std::string(1, this->keysModel.attackKey) + "\\" + std::string(1, this->keysModel.spellKey) + "\\" + std::string(1, this->keysModel.skipKey) + "): ");
         if (acs == this->keysModel.attackKey) {
             flag = false;
             bool isChanged = false;
@@ -55,7 +57,7 @@ void GamerInputSpotter::playerMove(GameMaster &master) {
         }else if (acs == this->keysModel.spellKey) {
             useSpell(master);
             flag = false;
-        }else if (acs == this->keysModel.continueKey) {
+        }else if (acs == this->keysModel.skipKey) {
             flag = false;
         }else {
             std::cout << "Вы ввели не правильное значение!" << std::endl;
@@ -66,7 +68,7 @@ void GamerInputSpotter::playerMove(GameMaster &master) {
 void GamerInputSpotter::changeAttackType(GameMaster &master, bool* isChanged) {
     bool flag = true;
     while(flag) {
-        char ny = Constants::getInputWithoutN("Вы хотите сменить тип атаки?" + std::to_string(this->keysModel.confirmActionKey) + "\\" + std::to_string(this->keysModel.dismissActionKey) +"): ");
+        char ny = Constants::getInputWithoutN("Вы хотите сменить тип атаки? (" + std::string(1, this->keysModel.confirmActionKey) + "\\" + std::string(1, this->keysModel.dismissActionKey) +"): ");
         if (ny == this->keysModel.confirmActionKey) {
             try{
                 this->controller->doMove(master, new PlayerAction(ActionType::ChangeAttackType));
@@ -74,7 +76,7 @@ void GamerInputSpotter::changeAttackType(GameMaster &master, bool* isChanged) {
                 *isChanged = true;
                 continue;
             }catch(...){
-
+                throw;
             }
         } else if (ny == this->keysModel.dismissActionKey) {
             flag = false;
@@ -91,12 +93,19 @@ void GamerInputSpotter::attackOnCoords(GameMaster &master) {
         std::pair<int, int> yx = Constants::readTwoInts("Введите координаты которые хотите атаковать (сначала x потом y): ");
         yx.first--;
         yx.second--;
+        if(yx.first == -2 && yx.second == -2){
+            flag = false;
+            std::cout << "Атака отменена!" << std::endl;
+            continue;
+        }
         try{
             this->controller->doMove(master, new PlayerActionWithCoords(ActionType::Attack, {yx.second, yx.first}));
             flag = false;
             continue;
-        }catch(...){
-
+        }catch(const CantAttackOnCoordsNotification& e){
+            std::cout << e.what() << ". Если хотите отменить атаку ввидите -1 -1 в координаты" << std::endl;
+        }catch (const CoordinateException& e){
+            std::cout << e.what() << ". Если хотите отменить атаку ввидите -1 -1 в координаты" << std::endl;
         }
     }
 
@@ -150,11 +159,11 @@ void GamerInputSpotter::useSpell(GameMaster &master) {
                     this->controller->doMove(master, new PlayerActionUseSpell(ActionType::UseSpell, {yx.second, yx.first}, spellPos));
                     flag = false;
                     continue;
-                }catch (...){
-
+                }catch (const CantCastSpellOnCellNotification& e){
+                    std::cout << e.what() << ". Если хотите отменить применение ввидите -1 -1 в координаты" << std::endl;
                 }
             }
-            break;
+                break;
             case SpellType::BuffNextUsedSpell: {
                 try {
                     this->controller->doMove(master, new PlayerActionUseSpell(ActionType::UseSpell, {1, -1}, spellPos));
@@ -164,7 +173,7 @@ void GamerInputSpotter::useSpell(GameMaster &master) {
 
                 }
             }
-            break;
+                break;
         }
     }
 
@@ -174,7 +183,7 @@ void GamerInputSpotter::useSpell(GameMaster &master) {
 void GamerInputSpotter::waitingForContinueCommand(GameMaster &master) {
     bool flag = true;
     while(flag) {
-        char cont = Constants::getInputWithoutN("Нажмите " + std::to_string(this->keysModel.continueKey) + " для продолжения: ");
+        char cont = Constants::getInputWithoutN("Нажмите " + std::string(1, this->keysModel.continueKey) + " для продолжения: ");
         if (cont == this->keysModel.continueKey) {
             flag = false;
             try{

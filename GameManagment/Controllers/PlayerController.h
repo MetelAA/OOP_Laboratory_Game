@@ -20,14 +20,15 @@ public:
                                                                                                  field(field),
                                                                                                  playerView(playerView) {}
 
-    bool doMove(GameMaster& gameMaster, PlayerAction* action);
+    void doMove(GameMaster& gameMaster, PlayerAction* action);
 
 protected:
     PlayerManager manager;
     Field& field;
     PlayerView playerView;
 
-    bool canMoveOn(Constants::XYPair moveFrom, Constants::XYPair moveTo);
+    bool canMoveOn(std::vector<std::vector<int>>& distances, Constants::XYPair moveFrom, Constants::XYPair moveTo);
+    void moveTo(std::vector<std::vector<int>>& distances, Constants::XYPair moveFrom, Constants::XYPair moveTo, GameMaster& gameMaster);
 };
 
 

@@ -16,7 +16,7 @@
 #include "Controllers/PlayerController.h"
 #include "../Model/EnemyDefenceTowerModel.h"
 #include "../Model/EnemySpawnerBuildingModel.h"
-#include "../GameRender/Renderer.h"
+#include "../GameRender/ConsoleRenderer.h"
 #include "Controllers/ExternalComandController/GamerInputSpotter.h"
 
 class GameMaster {
@@ -53,7 +53,7 @@ private:
     std::unique_ptr<AllySpawner> allySpawner;
     std::unique_ptr<SpellFactory> spellFactory;
     std::shared_ptr<PlayerView> playerView;
-    Renderer *renderer;
+    ConsoleRenderer *renderer;
 
     const CompControlledCreatureModel enemyModel{3, 2, 2, 70};
     const CompControlledCreatureModel allyModel{3, 2, 2, 70};

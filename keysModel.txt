@@ -1,0 +1,1 @@
+{saveGameKey:99,confirmActionKey:121,dismissActionKey:110,attackKey:97,spellKey:115,skipKey:107,continueKey:118}

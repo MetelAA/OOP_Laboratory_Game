@@ -5,20 +5,30 @@
 
 #include "EnemySpawnerBuildingController.h"
 #include "../../GameMaster.h"
+#include "../../../Logger/Logger.h"
 
 void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
-    std::cout << "Ход, enemySpawnerBuilding: " << this << std::endl;
+    std::string headStr;
+    {
+        std::stringstream ss;
+        ss << &this->manager;
+        headStr = "id: " + ss.str() + ": ";
+    }
+
+
+    Logger::info("Ход, enemySpawnerBuilding: " + headStr);
     if (this->manager.isTimeToSpawn()){
-        std::cout << "enemySpawnerBuilding: " << this << " создаёт нового противнка" << std::endl;
+        Logger::info("enemySpawnerBuilding: " + headStr + " создаёт нового противнка");
         manager.resetSpawnCounter();
         manager.spawnEnemy();
         gameMaster.redraw();
-        std::cout << "enemySpawnerBuilding: " << this << " новый противник успешно создан" << std::endl;
+        Logger::tech("enemySpawnerBuilding: " + headStr + " новый противник успешно создан");
     }else{
-        std::cout << "enemySpawnerBuilding: " << this << " находиться на cooldown" << std::endl;
+        Logger::info("enemySpawnerBuilding: " + headStr + " находиться на cooldown");
         manager.incrementTimeToSpawnCounter();
     }
-    std::cout << "enemySpawnerBuilding: " << this << " закончило ход" << std::endl;
+    Logger::tech("enemySpawnerBuilding: " + headStr + " закончило ход");
+    gameMaster.redraw();
 }
 
 bool EnemySpawnerBuildingController::isAlive() {

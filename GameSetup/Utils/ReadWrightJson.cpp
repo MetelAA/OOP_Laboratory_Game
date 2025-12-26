@@ -2,12 +2,12 @@
 // Created by Artem on 20.11.2025.
 //
 
-#include "ReadRightJson.h"
+#include "ReadWrightJson.h"
 #include "../../Exceptions/UnexpectedBehaviorException.h"
 #include <fstream>
 #include <sstream>
 
-std::string ReadRightJson::read(const std::string& fileName) {
+std::string ReadWrightJson::read(const std::string& fileName) {
     std::ifstream ifs(fileName);
     if (!ifs.is_open()){
         throw UnexpectedBehaviorException("ReadRightJson: UnexpectedBehavior, can't open file");
@@ -22,7 +22,7 @@ std::string ReadRightJson::read(const std::string& fileName) {
     return buffer.str();
 }
 
-void ReadRightJson::write(const std::string& json, const std::string& fileName) {
+void ReadWrightJson::write(const std::string& json, const std::string& fileName) {
     std::ofstream ofs(fileName);
     if (!ofs.is_open() || ofs.fail()){
         throw UnexpectedBehaviorException("ReadRightJson: UnexpectedBehavior, can't open file");

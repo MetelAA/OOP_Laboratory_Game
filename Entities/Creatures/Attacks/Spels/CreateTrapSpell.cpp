@@ -5,10 +5,11 @@
 #include "CreateTrapSpell.h"
 #include "../../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
 #include "../../../../Exceptions/UniversalStringException.h"
+#include "../../../../Logger/Logger.h"
 #include <iostream>
 
 void CreateTrapSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair from, Constants::XYPair to) const {
-    std::cout << "Применяем заклинание создания ловушки джокушкера" << std::endl;
+    Logger::info("Применяем заклинание создания ловушки джокушкера");
     int level = gradeLevel < this->levels.size() ? gradeLevel : (this->levels.size()-1);
 
     try{
@@ -20,7 +21,11 @@ void CreateTrapSpell::castSpell(int gradeLevel, Field &field, Constants::XYPair 
 
     auto* trap = new TrapCellEvent(this->levels.at(level).damage);
     field.getFieldCells()[to.x][to.y].setCellEvent(std::make_unique<TrapCellEvent>(*trap));
-    std::cout << "Создали ловушку по координатам x: " << to.x << " y: " << to.y << std::endl;
+    {
+        std::stringstream ss;
+        ss << "Создали ловушку по координатам x: " << to.y+1 << " y: " << to.x+1;
+        Logger::info(ss.str());
+    }
 }
 
 std::unique_ptr<Spell> CreateTrapSpell::clone() const {

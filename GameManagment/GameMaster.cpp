@@ -4,34 +4,37 @@
 
 #include "GameMaster.h"
 #include "../GameSetup/Utils/JsonParser.h"
-#include "../GameRender/Renderer.h"
-#include "../GameSetup/Utils/ReadRightJson.h"
+#include "../GameRender/ConsoleRenderer.h"
+#include "../GameSetup/Utils/ReadWrightJson.h"
 #include "../GameSetup/GameSetup.h"
 #include <chrono>
 #include <memory>
 #include <thread>
+#include "../Logger/Logger.h"
+
 
 bool GameMaster::startGame(const std::string& json) {
-    std::cout << "GameMaster startGame: started" << std::endl;
+    Logger::tech("GameMaster startGame: started");
     std::map<std::string, std::string> gameMap = JsonParser::parseJsonWithNestedObj(json);
     this->level = std::stoi(gameMap.at("level"));
-    std::cout << "GameMaster startGame: started to deserialize field" << std::endl;
+    Logger::tech("GameMaster startGame: started to deserialize field");
     std::map<std::string, std::string> fieldMap = JsonParser::parseJsonWithNestedObj(gameMap.at("field"));
     this->field = Field::deserialize(fieldMap);
-    std::cout << "GameMaster startGame: field deserialized successfully" << std::endl;
+    Logger::tech("GameMaster startGame: field deserialized successfully");
 
-    std::cout << "GameMaster startGame: creating factories" << std::endl;
+    Logger::tech("GameMaster startGame: creating factories");
     this->enemySpawner = std::unique_ptr<EnemySpawner>(new EnemySpawner(this->enemyModel, *this->field, *this));
     this->allySpawner = std::unique_ptr<AllySpawner>(new AllySpawner(this->allyModel, *this->field, *this));
     this->spellFactory = std::unique_ptr<SpellFactory>(new SpellFactory(*allySpawner.get()));
-    std::cout << "GameMaster startGame: factories created" << std::endl;
-    std::cout << "GameMaster startGame:  started to deserialize player" << std::endl;
+    Logger::tech("GameMaster startGame: factories created");
+    Logger::tech("GameMaster startGame:  started to deserialize player");
     std::map<std::string, std::string> playerMap = JsonParser::parseJsonWithNestedObj(gameMap.at("player"));
     this->player = std::shared_ptr<Player>(Player::deserialize(playerMap, *spellFactory.get()));
     this->playerView = std::make_shared<PlayerView>(*player);
-    std::cout << "GameMaster startGame: player deserialized successfully" << std::endl;
+    Logger::tech("GameMaster startGame: player deserialized successfully");
 
-    std::cout << "GameMaster startGame: detecting Entities in field to contrast their controllers and managers" << std::endl;
+
+    Logger::tech("GameMaster startGame: detecting Entities in field to contrast their controllers and managers");
     for (int x = 0; x < this->field->getHeight(); ++x) {
         for (int y = 0; y < this->field->getWidth(); ++y) {
             if (this->field->getFieldCells()[x][y].hasEntityInCell()){
@@ -72,17 +75,20 @@ bool GameMaster::startGame(const std::string& json) {
             }
         }
     }
-    std::cout << "GameMaster startGame: contrasted successfully" << std::endl;
+    Logger::tech("GameMaster startGame: contrasted successfully");
 
     {
-        std::cout << "GameMaster startGame: contrast PlayerController" << std::endl;
+        Logger::tech("GameMaster startGame: contrast PlayerController");
         PlayerManager manager(*this->field, player);
         this->playerController = std::make_shared<PlayerController>(manager, *this->field, *playerView);
 
         //Заменить на чтение с файла!!!
 
-        InputKeysModel keysModel('c', 'y', 'n', 'a', 's', 'k', 'u');
+//        InputKeysModel keysModel('c', 'y', 'n', 'a', 's', 'k', 'u');
 
+//        ReadWrightJson::write(keysModel.serialize(), "../keysModel.txt");
+        std::map<std::string, std::string> inputKeysJson = JsonParser::parseJsonWithNestedObj(ReadWrightJson::read("../keysModel.txt"));
+        InputKeysModel keysModel = *InputKeysModel::deserialize(inputKeysJson);
         //--------------------------------
 
 
@@ -90,9 +96,9 @@ bool GameMaster::startGame(const std::string& json) {
         player->getSpellHand().addSpell(this->spellFactory->createSpell(SpellType::DirectDamageSpell));
     }
     this->field->getFieldCells()[this->player->getXCoordinate()][this->player->getYCoordinate()].addEntityInCell(this->player);
-    std::cout << "GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field" << std::endl;
+    Logger::tech("GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field");
 
-    renderer = new Renderer(*this->field, this->entities, *playerView);
+    renderer = new ConsoleRenderer(*this->field, this->entities, *playerView);
 
     renderer->prepareConsole();
     if (this->level == 1){
@@ -114,7 +120,7 @@ bool GameMaster::startGame(const std::string& json) {
 }
 
 void GameMaster::gameCycle() {
-    std::cout << "GameMaster: playerController hod!" << std::endl;
+    Logger::tech("GameMaster: playerController hod!");
     gamerInputSpotter->playerMove(*this);
     checkEntitiesAfterMove();
     gamerInputSpotter->waitingForContinueCommand(*this);
@@ -128,28 +134,36 @@ void GameMaster::gameCycle() {
         return;
 
     for(std::shared_ptr<AllyController> alc : this->allyControllers){
-        std::cout << "GameMaster: AllyController hod!" << " ally id: " << (&alc) << std::endl;
+        std::stringstream ss;
+        ss << "GameMaster: AllyController hod!" << " ally id: " << (&alc);
+        Logger::tech(ss.str());
         alc->doMove(*this);
         checkEntitiesAfterMove();
         gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyController> enc : this->enemyControllers){
-        std::cout << "GameMaster: Enemy hod!" << " enemyController id: " << (&enc) << std::endl;
+        std::stringstream ss;
+        ss << "GameMaster: Enemy hod!" << " enemyController id: " << (&enc);
+        Logger::tech(ss.str());
         enc->doMove(*this);
         checkEntitiesAfterMove();
         gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyDefenceTowerController> dfc : this->defenceTowerControllers){
-        std::cout << "GameMaster: defenceTower hod!" << " defenceTowerController id: " << (&dfc) << std::endl;
+        std::stringstream ss;
+        ss << "GameMaster: defenceTower hod!" << " defenceTowerController id: " << (&dfc);
+        Logger::tech(ss.str());
         dfc->doMove(*this);
         checkEntitiesAfterMove();
         gamerInputSpotter->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemySpawnerBuildingController> esc : this->enemySpawnerBuildingControllers){
-        std::cout << "GameMaster: spawnerBuilding hod!" << " spawnerBuildingController id: " << (&esc) << std::endl;
+        std::stringstream ss;
+        ss << "GameMaster: spawnerBuilding hod!" << " spawnerBuildingController id: " << (&esc);
+        Logger::tech(ss.str());
         esc->doMove(*this);
         checkEntitiesAfterMove();
         gamerInputSpotter->waitingForContinueCommand(*this);
@@ -235,7 +249,7 @@ void GameMaster::saveGame() {
     res+="player:" + this->player->serialize() +"}";
 
     try{
-        ReadRightJson::write(res, "../saveGame.txt");
+        ReadWrightJson::write(res, "../saveGame.txt");
         std::cout << "Игра успешно сохранена" << std::endl;
     }catch (const UnexpectedBehaviorException& e){
         std::cout << "Error when writing saveGame" << std::endl;

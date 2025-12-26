@@ -4,17 +4,22 @@
 #include <sstream>
 #include "CompControlledCreatureController.h"
 #include "../GameMaster.h"
+#include "../../Logger/Logger.h"
 
 void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster) {
-    std::stringstream ss;
-    ss << static_cast<const void*>(this);
-    std::string headerCout = (std::string("type: ") + (manager.getEntityType() == EntityType::EnemyEnt ? "enemy " : "ally ")) + ", id: " + ss.str();
+    std::string headerCout;
+    {
+        std::stringstream ss;
+        ss << static_cast<const void*>(this);
+        headerCout = (std::string("type: ") + (manager.getEntityType() == EntityType::EnemyEnt ? "enemy " : "ally ")) + ", id: " + ss.str();
+    }
 
-    std::cout << "Ход CompControlledCreature " << headerCout << std::endl;
+    Logger::tech("Ход CompControlledCreature: " + headerCout);
 
     if (manager.isCreatureDisabled()){
-        std::cout << "CompControlledCreature: " << headerCout << " disabled -> пропускает ход, тк замедлена с предыдущего хода" << std::endl;
+        Logger::info("CompControlledCreature: " + headerCout + " disabled");
         this->manager.enableCreature();
+        gameMaster.redraw();
         return;
     }
 
@@ -51,12 +56,12 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
     }
 
 
-    for (int i = 0; i < distances.size(); ++i) {
-        for (int j = 0; j < distances[0].size(); ++j) {
-            std::cout << distances[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
+//    for (int i = 0; i < distances.size(); ++i) {
+//        for (int j = 0; j < distances[0].size(); ++j) {
+//            std::cout << distances[i][j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
 
     std::string toShowInConsole;
 
@@ -72,7 +77,7 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         }
 
         if (availableCoordinates.empty()){
-            std::cout << "CompControlledCreature " << headerCout << " некого не нашла, ходить тоже не хочет, короче ход здесь постоит(, завершает ход!" << std::endl;
+            Logger::info("CompControlledCreature " + headerCout + " некого не нашла, ходить тоже не хочет, завершает ход!");
             return;
         }
 
@@ -89,8 +94,8 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
         try {
             moveTo(trip, headerCout, gameMaster);
         }catch (UniversalStringException& exp){
+            Logger::info("CompControlledCreature " + headerCout + " попало на замедляющую клетку, завершает ход!");
             gameMaster.redraw();
-            std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
             return;
         }
     }else{
@@ -119,20 +124,22 @@ void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, boo
             moveTo(trip, headerCout, gameMaster);
         }catch (SlowingCellNotification& exp){
             gameMaster.redraw();
-            std::cout << "CompControlledCreature " << headerCout << " попало на замедляющую клетку, завершает ход!" << std::endl;
+            Logger::info("CompControlledCreature " + headerCout + " попало на замедляющую клетку, завершает ход!");
+            gameMaster.redraw();
             return;
         }
 
         if (canAttack) {
             manager.attack(priorityEnemy.entityCoordinates);
-            toShowInConsole = "CompControlledCreature " + headerCout +  " аттакует сущность в клетке по координатам " + std::to_string(priorityEnemy.entityCoordinates.x) + " " + std::to_string(priorityEnemy.entityCoordinates.y);
+            toShowInConsole = "CompControlledCreature " + headerCout +  " аттакует сущность по координатам " + std::to_string(priorityEnemy.entityCoordinates.x) + " " + std::to_string(priorityEnemy.entityCoordinates.y);
         }
     }
 
-    gameMaster.redraw();
+
     if (!toShowInConsole.empty())
-        std::cout << toShowInConsole << std::endl;
-    std::cout << "CompControlledCreature " << headerCout <<  " штатно завершае ход" << std::endl;
+        Logger::info(toShowInConsole);
+    Logger::tech("CompControlledCreature " + headerCout + " штатно завершае ход");
+    gameMaster.redraw();
 }
 
 CompControlledCreatureController::EntityCoordsWithNearestPositionToAttackFrom
@@ -163,7 +170,9 @@ void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip
         Constants::XYPair stepTo = trip.top();
         trip.pop();
         Constants::dxdy howToMove = {stepTo.x - manager.getEntityCoords().x, stepTo.y - manager.getEntityCoords().y};
-        std::cout << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y << std::endl;
+        std::stringstream ss;
+        ss << "CompControlledCreature " << headerCout <<  " перемещается в x: " << stepTo.x << " y: " << stepTo.y;
+        Logger::info(ss.str());
         manager.moveTo(howToMove);
         if(!trip.empty()){
             gameMaster.redraw();
