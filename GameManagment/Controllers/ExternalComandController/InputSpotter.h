@@ -17,7 +17,6 @@ public:
                  const InputKeysModel &keysModel)
             : spotter(player, controller, keysModel) {}
 
-    // Методы просто делегируют вызовы
     template<typename GameType>
     void playerMove(GameType& game) {
         spotter.playerMove(game);
