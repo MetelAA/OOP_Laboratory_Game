@@ -4,10 +4,10 @@
 
 
 #include "EnemySpawnerBuildingController.h"
-#include "../../GameMaster.h"
+#include "../../GameMasterBase.h"
 #include "../../../Logger/Logger.h"
 
-void EnemySpawnerBuildingController::doMove(GameMaster& gameMaster) {
+void EnemySpawnerBuildingController::doMove(GameMasterBase& gameMaster) {
     std::string headStr;
     {
         std::stringstream ss;

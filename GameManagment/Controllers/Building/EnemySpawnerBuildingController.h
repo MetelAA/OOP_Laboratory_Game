@@ -8,13 +8,14 @@
 #include <iostream>
 #include <utility>
 #include "../EnemyController.h"
-class GameMaster;
+
+class GameMasterBase;
 
 class EnemySpawnerBuildingController {
 public:
     EnemySpawnerBuildingController(EnemySpawnerBuildingManager manager, const Field &field) : manager(std::move(manager)),
                                                                                                field(field) {}
-    void doMove(GameMaster& gameMaster);
+    void doMove(GameMasterBase& gameMaster);
     bool isAlive();
 
 protected:

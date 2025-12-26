@@ -4,7 +4,7 @@
 
 #include "EnemyController.h"
 
-void EnemyController::doMove(GameMaster& gameMaster) {
+void EnemyController::doMove(GameMasterBase& gameMaster) {
     this->computeAndDoMove(typesToAttack, priorityOfAttack, gameMaster);
 }
 

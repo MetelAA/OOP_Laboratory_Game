@@ -3,10 +3,10 @@
 //
 #include <sstream>
 #include "CompControlledCreatureController.h"
-#include "../GameMaster.h"
+#include "../GameMasterBase.h"
 #include "../../Logger/Logger.h"
 
-void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster) {
+void CompControlledCreatureController::computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMasterBase& gameMaster) {
     std::string headerCout;
     {
         std::stringstream ss;
@@ -165,7 +165,7 @@ CompControlledCreatureController::chooseByPriority(std::vector<EntityCoordsWithN
     throw UnexpectedBehaviorException("unexpected behavior: chooseByPriority");
 }
 
-void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMaster& gameMaster) {
+void CompControlledCreatureController::moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMasterBase& gameMaster) {
     while(!trip.empty()){
         Constants::XYPair stepTo = trip.top();
         trip.pop();

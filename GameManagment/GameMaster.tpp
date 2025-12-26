@@ -2,7 +2,6 @@
 // Created by Artem on 24.09.2025.
 //
 
-#include "GameMaster.h"
 #include "../GameSetup/Utils/JsonParser.h"
 #include "../GameRender/ConsoleRenderer.h"
 #include "../GameSetup/Utils/ReadWrightJson.h"
@@ -12,8 +11,8 @@
 #include <thread>
 #include "../Logger/Logger.h"
 
-
-bool GameMaster::startGame(const std::string& json) {
+template<typename InputHandler, typename DrawStrategy>
+bool GameMaster<InputHandler, DrawStrategy>::startGame(const std::string& json, const std::string& keysJson) {
     Logger::tech("GameMaster startGame: started");
     std::map<std::string, std::string> gameMap = JsonParser::parseJsonWithNestedObj(json);
     this->level = std::stoi(gameMap.at("level"));
@@ -87,24 +86,26 @@ bool GameMaster::startGame(const std::string& json) {
 //        InputKeysModel keysModel('c', 'y', 'n', 'a', 's', 'k', 'u');
 
 //        ReadWrightJson::write(keysModel.serialize(), "../keysModel.txt");
-        std::map<std::string, std::string> inputKeysJson = JsonParser::parseJsonWithNestedObj(ReadWrightJson::read("../keysModel.txt"));
+        std::map<std::string, std::string> inputKeysJson = JsonParser::parseJsonWithNestedObj(keysJson);
         InputKeysModel keysModel = *InputKeysModel::deserialize(inputKeysJson);
         //--------------------------------
 
 
-        this->gamerInputSpotter = std::make_unique<GamerInputSpotter>(*this->playerView, this->playerController, keysModel);
+        this->inputHandler = std::make_unique<InputHandler>(
+                *this->playerView, this->playerController, keysModel);
         player->getSpellHand().addSpell(this->spellFactory->createSpell(SpellType::DirectDamageSpell));
     }
     this->field->getFieldCells()[this->player->getXCoordinate()][this->player->getYCoordinate()].addEntityInCell(this->player);
     Logger::tech("GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field");
 
-    renderer = new ConsoleRenderer(*this->field, this->entities, *playerView);
+    this->visualizer = new GameVisualizer<DrawStrategy>(
+            *this->field, this->entities, *this->playerView);
 
-    renderer->prepareConsole();
+    this->visualizer->prepareDisplay();
     if (this->level == 1){
-        gamerInputSpotter->upgradePlayer(*this);
+        inputHandler->upgradePlayer(*this);
     }
-    renderer->draw();
+    this->redraw();
     gameCycle();
 
     if (this->isSaved){
@@ -119,11 +120,12 @@ bool GameMaster::startGame(const std::string& json) {
     return true;
 }
 
-void GameMaster::gameCycle() {
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::gameCycle() {
     Logger::tech("GameMaster: playerController hod!");
-    gamerInputSpotter->playerMove(*this);
+    inputHandler->playerMove(*this);
     checkEntitiesAfterMove();
-    gamerInputSpotter->waitingForContinueCommand(*this);
+    inputHandler->waitingForContinueCommand(*this);
     if (this->player->getXCoordinate() == (this->field->getHeight()-1) && this->player->getYCoordinate() == (this->field->getWidth()-1)){
         std::cout << "Уровень: " << this->level << " пройден!" << std::endl;
         this->level++;
@@ -139,7 +141,7 @@ void GameMaster::gameCycle() {
         Logger::tech(ss.str());
         alc->doMove(*this);
         checkEntitiesAfterMove();
-        gamerInputSpotter->waitingForContinueCommand(*this);
+        inputHandler->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyController> enc : this->enemyControllers){
@@ -148,7 +150,7 @@ void GameMaster::gameCycle() {
         Logger::tech(ss.str());
         enc->doMove(*this);
         checkEntitiesAfterMove();
-        gamerInputSpotter->waitingForContinueCommand(*this);
+        inputHandler->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemyDefenceTowerController> dfc : this->defenceTowerControllers){
@@ -157,7 +159,7 @@ void GameMaster::gameCycle() {
         Logger::tech(ss.str());
         dfc->doMove(*this);
         checkEntitiesAfterMove();
-        gamerInputSpotter->waitingForContinueCommand(*this);
+        inputHandler->waitingForContinueCommand(*this);
     }
 
     for(std::shared_ptr<EnemySpawnerBuildingController> esc : this->enemySpawnerBuildingControllers){
@@ -166,7 +168,7 @@ void GameMaster::gameCycle() {
         Logger::tech(ss.str());
         esc->doMove(*this);
         checkEntitiesAfterMove();
-        gamerInputSpotter->waitingForContinueCommand(*this);
+        inputHandler->waitingForContinueCommand(*this);
     }
 
 
@@ -178,13 +180,15 @@ void GameMaster::gameCycle() {
     gameCycle();
 }
 
-void GameMaster::redraw() {
-    this->renderer->clearDisplay();
-    this->renderer->draw();
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::redraw() {
+    this->visualizer->clear();
+    this->visualizer->update();
     std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 }
 
-void GameMaster::checkEntitiesAfterMove() {
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::checkEntitiesAfterMove() {
     bool hasDeleted = false;
     for(auto it = this->entities.begin(); it != this->entities.end(); ){
         if (!(*it)->isAlive()) {
@@ -229,17 +233,20 @@ void GameMaster::checkEntitiesAfterMove() {
         redraw();
 }
 
-void GameMaster::addAllyController(AllyController *controller, std::shared_ptr<Entity> ent) {
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::addAllyController(AllyController *controller, std::shared_ptr<Entity> ent) {
     this->allyControllers.push_back(std::shared_ptr<AllyController>(controller));
     this->entities.push_back(ent);
 }
 
-void GameMaster::addEnemyController(EnemyController *controller, std::shared_ptr<Entity> entity) {
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::addEnemyController(EnemyController *controller, std::shared_ptr<Entity> entity) {
     this->enemyControllers.push_back(std::shared_ptr<EnemyController>(controller));
     this->entities.push_back(entity);
 }
 
-void GameMaster::saveGame() {
+template<typename InputHandler, typename DrawStrategy>
+void GameMaster<InputHandler, DrawStrategy>::saveGame() {
     std::cout << "Сохраняем игру!" << std::endl;
     this->isSaved = true;
     std::string res;

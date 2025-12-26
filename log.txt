@@ -894,3 +894,83 @@
 [INFO] CompControlledCreature type: enemy , id: 0x2552421b170 перемещается в x: 0 y: 6
 [INFO] CompControlledCreature type: enemy , id: 0x2552421b170 перемещается в x: 0 y: 5
 [TECH] CompControlledCreature type: enemy , id: 0x2552421b170 штатно завершае ход
+[TECH] Logger initialized
+[TECH] Game setup starts!
+[TECH] GameMaster startGame: started
+[TECH] GameMaster startGame: started to deserialize field
+[TECH] GameMaster startGame: field deserialized successfully
+[TECH] GameMaster startGame: creating factories
+[TECH] GameMaster startGame: factories created
+[TECH] GameMaster startGame:  started to deserialize player
+[TECH] GameMaster startGame: player deserialized successfully
+[TECH] GameMaster startGame: detecting Entities in field to contrast their controllers and managers
+[TECH] GameMaster startGame: contrasted successfully
+[TECH] GameMaster startGame: contrast PlayerController
+[TECH] GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field
+[TECH] GameMaster: playerController hod!
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: Enemy hod! enemyController id: 0x3d55ffee70
+[TECH] Ход CompControlledCreature: type: enemy , id: 0x1f1cabab170
+[INFO] CompControlledCreature type: enemy , id: 0x1f1cabab170 перемещается в x: 0 y: 6
+[INFO] CompControlledCreature type: enemy , id: 0x1f1cabab170 перемещается в x: 0 y: 5
+[TECH] CompControlledCreature type: enemy , id: 0x1f1cabab170 штатно завершае ход
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: Enemy hod! enemyController id: 0x3d55ffee70
+[TECH] Ход CompControlledCreature: type: enemy , id: 0x1f1caba79b0
+[INFO] CompControlledCreature type: enemy , id: 0x1f1caba79b0 перемещается в x: 3 y: 2
+[INFO] CompControlledCreature type: enemy , id: 0x1f1caba79b0 перемещается в x: 2 y: 1
+[INFO] CompControlledCreature type: enemy , id: 0x1f1caba79b0 попало на замедляющую клетку, завершает ход!
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: defenceTower hod! defenceTowerController id: 0x3d55ffee50
+[INFO] Ход, EnemyDefenceTower: 0x1f1cabaae08
+[INFO] EnemyDefenceTower: 0x1f1cabaae08 on cool down
+[TECH] EnemyDefenceTower: 0x1f1cabaae08 закончило ход
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: playerController hod!
+[TECH] Logger initialized
+[TECH] Game setup starts!
+[TECH] GameMaster startGame: started
+[TECH] GameMaster startGame: started to deserialize field
+[TECH] GameMaster startGame: field deserialized successfully
+[TECH] GameMaster startGame: creating factories
+[TECH] GameMaster startGame: factories created
+[TECH] GameMaster startGame:  started to deserialize player
+[TECH] GameMaster startGame: player deserialized successfully
+[TECH] GameMaster startGame: detecting Entities in field to contrast their controllers and managers
+[TECH] GameMaster startGame: contrasted successfully
+[TECH] GameMaster startGame: contrast PlayerController
+[TECH] GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field
+[TECH] GameMaster: playerController hod!
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: Enemy hod! enemyController id: 0x1e26dfeeb0
+[TECH] Ход CompControlledCreature: type: enemy , id: 0x1822a557a80
+[INFO] CompControlledCreature type: enemy , id: 0x1822a557a80 перемещается в x: 0 y: 6
+[INFO] CompControlledCreature type: enemy , id: 0x1822a557a80 перемещается в x: 0 y: 5
+[TECH] CompControlledCreature type: enemy , id: 0x1822a557a80 штатно завершае ход
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: Enemy hod! enemyController id: 0x1e26dfeeb0
+[TECH] Ход CompControlledCreature: type: enemy , id: 0x1822a559740
+[INFO] CompControlledCreature type: enemy , id: 0x1822a559740 перемещается в x: 3 y: 2
+[INFO] CompControlledCreature type: enemy , id: 0x1822a559740 перемещается в x: 2 y: 1
+[INFO] CompControlledCreature type: enemy , id: 0x1822a559740 попало на замедляющую клетку, завершает ход!
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: defenceTower hod! defenceTowerController id: 0x1e26dfee90
+[INFO] Ход, EnemyDefenceTower: 0x1822a55af58
+[INFO] EnemyDefenceTower: 0x1822a55af58 on cool down
+[TECH] EnemyDefenceTower: 0x1822a55af58 закончило ход
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] GameMaster: playerController hod!
+[TECH] Действие пропущено по желанию пользователя!
+[TECH] Game setup starts!
+[TECH] GameMaster startGame: started
+[TECH] GameMaster startGame: started to deserialize field
+[TECH] GameMaster startGame: field deserialized successfully
+[TECH] GameMaster startGame: creating factories
+[TECH] GameMaster startGame: factories created
+[TECH] GameMaster startGame:  started to deserialize player
+[TECH] GameMaster startGame: player deserialized successfully
+[TECH] GameMaster startGame: detecting Entities in field to contrast their controllers and managers
+[TECH] GameMaster startGame: contrasted successfully
+[TECH] GameMaster startGame: contrast PlayerController
+[TECH] GameMaster startGame: PlayerController contrasted successfully and playerEnt added to the field
+[TECH] GameMaster: playerController hod!

@@ -13,6 +13,7 @@
 #include "ExternalComandController/Actions/PlayerActionUseSpell.h"
 #include "ExternalComandController/Actions/PlayerUpgradeAction.h"
 
+class GameMasterBase;
 
 class PlayerController {
 public:
@@ -20,7 +21,7 @@ public:
                                                                                                  field(field),
                                                                                                  playerView(playerView) {}
 
-    void doMove(GameMaster& gameMaster, PlayerAction* action);
+    void doMove(GameMasterBase& gameMaster, PlayerAction* action);
 
 protected:
     PlayerManager manager;
@@ -28,7 +29,7 @@ protected:
     PlayerView playerView;
 
     bool canMoveOn(std::vector<std::vector<int>>& distances, Constants::XYPair moveFrom, Constants::XYPair moveTo);
-    void moveTo(std::vector<std::vector<int>>& distances, Constants::XYPair moveFrom, Constants::XYPair moveTo, GameMaster& gameMaster);
+    void moveTo(std::vector<std::vector<int>>& distances, Constants::XYPair moveFrom, Constants::XYPair moveTo, GameMasterBase& gameMaster);
 };
 
 

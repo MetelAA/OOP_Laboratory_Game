@@ -6,13 +6,16 @@
 #define LABAOOP2_ENEMYDEFENCETOWERCONTROLLER_H
 
 #include "../../EntityManagers/BuildingManagers/EnemyDefenceTowerManager.h"
-class GameMaster;
+#include "../ExternalComandController/InputSpotter.h"
+#include "../../../GameRender/Renderer.h"
+
+class GameMasterBase;
 
 class EnemyDefenceTowerController {
 public:
     EnemyDefenceTowerController(const Field &field, const EnemyDefenceTowerManager &manager) : field(field),
                                                                                                manager(manager) {}
-    void doMove(GameMaster& gameMaster);
+    void doMove(GameMasterBase& gameMaster);
     bool isAlive();
 
 private:

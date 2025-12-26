@@ -4,14 +4,15 @@
 
 #include <iostream>
 #include "PlayerController.h"
-#include "../GameMaster.h"
+#include "../GameMasterBase.h"
 #include "ExternalComandController/Actions/PlayerAction.h"
 #include "../../Exceptions/Notifications/CantAttackOnCoordsNotification.h"
 #include "../../Logger/Logger.h"
 
 #include <cmath>
+#include <queue>
 
-void PlayerController::doMove(GameMaster& gameMaster, PlayerAction* action) {
+void PlayerController::doMove(GameMasterBase& gameMaster, PlayerAction* action) {
     switch (action->type) {
         case ActionType::SaveGame: {
             gameMaster.saveGame();
@@ -136,7 +137,7 @@ bool PlayerController::canMoveOn(std::vector<std::vector<int>>& distances, Const
 
 void
 PlayerController::moveTo(std::vector<std::vector<int>> &distances, Constants::XYPair moveFrom, Constants::XYPair moveTo,
-                         GameMaster &gameMaster) {
+                         GameMasterBase &gameMaster) {
     Constants::XYPair coords = moveFrom;
     while(true){
         for(Constants::dxdy dxdy : Constants::dxdys){

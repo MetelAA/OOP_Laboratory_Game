@@ -11,11 +11,11 @@
 #include "../Exceptions/Notifications/CellImpassableNotification.h"
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
-class GameMaster;
+class GameMasterBase;
 
 class AllySpawner {
 public:
-    AllySpawner(const CompControlledCreatureModel &allyModel, Field &field, GameMaster &gameMaster) : allyModel(allyModel),
+    AllySpawner(const CompControlledCreatureModel &allyModel, Field &field, GameMasterBase &gameMaster) : allyModel(allyModel),
                                                                                                 field(field),
                                                                                                 gameMaster(
                                                                                                         gameMaster) {}
@@ -25,7 +25,7 @@ public:
 protected:
     const CompControlledCreatureModel allyModel;
     Field& field;
-    GameMaster& gameMaster;
+    GameMasterBase& gameMaster;
 };
 
 

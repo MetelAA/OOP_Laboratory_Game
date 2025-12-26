@@ -29,8 +29,9 @@ void GameSetup::start() {
     }else{
         json = ReadWrightJson::read("../level0.txt");
     }
-    GameMaster gm;
-    if(gm.startGame(json)){
+    GameMaster<GamerConsoleInputSpotter, ConsoleRenderer> gm;
+    std::string keysJson = ReadWrightJson::read("../keysModel.txt");
+    if(gm.startGame(json, keysJson)){
         setupLevelN("../level1.txt");
     }else{
         start();
@@ -40,9 +41,10 @@ void GameSetup::start() {
 
 void GameSetup::setupLevelN(std::string fileName) {
     std::string json;
+    std::string keysJson = ReadWrightJson::read("../keysModel.txt");
     json = ReadWrightJson::read(fileName);
-    GameMaster gm;
-    gm.startGame(json);
+    GameMaster<GamerConsoleInputSpotter, ConsoleRenderer> gm;
+    gm.startGame(json, keysJson);
 }
 
 bool chooseSetupType(){ //true - запуск с сохранения, false - запуск с нового уровня

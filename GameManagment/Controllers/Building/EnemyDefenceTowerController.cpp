@@ -8,7 +8,7 @@
 #include "../../GameMaster.h"
 #include "../../../Logger/Logger.h"
 
-void EnemyDefenceTowerController::doMove(GameMaster &gameMaster) {
+void EnemyDefenceTowerController::doMove(GameMasterBase &gameMaster) {
     std::string headStr;
     {
         std::stringstream ss;

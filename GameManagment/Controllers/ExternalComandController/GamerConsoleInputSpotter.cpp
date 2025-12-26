@@ -1,7 +1,7 @@
 //
 // Created by Artem on 17.12.2025.
 //
-#include "GamerInputSpotter.h"
+#include "GamerConsoleInputSpotter.h"
 #include "Actions/PlayerAction.h"
 #include "Actions/PlayerActionWithCoords.h"
 #include "Actions/PlayerActionUseSpell.h"
@@ -10,7 +10,7 @@
 #include "../../../Exceptions/Notifications/CantAttackOnCoordsNotification.h"
 #include "../../../Exceptions/Notifications/CantCastSpellOnCellNotification.h"
 
-void GamerInputSpotter::playerMove(GameMaster &master) {
+void GamerConsoleInputSpotter::playerMove(GameMasterBase &master) {
     std::string c;
     c = Constants::getInputWithoutN("Если хотите выйти и сохранить игру нажмиту \"" + std::string(1, this->keysModel.saveGameKey) + "\"");
     if(c[0] == this->keysModel.saveGameKey) {
@@ -65,7 +65,7 @@ void GamerInputSpotter::playerMove(GameMaster &master) {
     }
 }
 
-void GamerInputSpotter::changeAttackType(GameMaster &master, bool* isChanged) {
+void GamerConsoleInputSpotter::changeAttackType(GameMasterBase &master, bool* isChanged) {
     bool flag = true;
     while(flag) {
         char ny = Constants::getInputWithoutN("Вы хотите сменить тип атаки? (" + std::string(1, this->keysModel.confirmActionKey) + "\\" + std::string(1, this->keysModel.dismissActionKey) +"): ");
@@ -86,7 +86,7 @@ void GamerInputSpotter::changeAttackType(GameMaster &master, bool* isChanged) {
     }
 }
 
-void GamerInputSpotter::attackOnCoords(GameMaster &master) {
+void GamerConsoleInputSpotter::attackOnCoords(GameMasterBase &master) {
     bool flag = true;
 
     while(flag) {
@@ -119,7 +119,7 @@ const std::map<SpellType, std::string> enumTypeToStrType = {
         {SpellType::CreateTrapSpell, "CreateTrapSpell"}
 };
 
-void GamerInputSpotter::useSpell(GameMaster &master) {
+void GamerConsoleInputSpotter::useSpell(GameMasterBase &master) {
     std::cout << "В вашей руке: ";
     if(this->player.getSpellHand().getSpells().size() == 0) {
         std::cout << "пусто, применять нечего" << std::endl;
@@ -180,7 +180,7 @@ void GamerInputSpotter::useSpell(GameMaster &master) {
 
 }
 
-void GamerInputSpotter::waitingForContinueCommand(GameMaster &master) {
+void GamerConsoleInputSpotter::waitingForContinueCommand(GameMasterBase &master) {
     bool flag = true;
     while(flag) {
         char cont = Constants::getInputWithoutN("Нажмите " + std::string(1, this->keysModel.continueKey) + " для продолжения: ");
@@ -195,7 +195,7 @@ void GamerInputSpotter::waitingForContinueCommand(GameMaster &master) {
     }
 }
 
-void GamerInputSpotter::upgradePlayer(GameMaster &master) {
+void GamerConsoleInputSpotter::upgradePlayer(GameMasterBase &master) {
     bool flag = true;
     while(flag) {
         std::cout << "Есть возможность улучшить игрока" << std::endl;

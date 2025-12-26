@@ -13,19 +13,19 @@
 #include "../Exceptions/CoordinateException.h"
 #include "../Exceptions/SpawnEntityException.h"
 #include "../GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h"
-class GameMaster;
+class GameMasterBase;
 
 
 class EnemySpawner {
 public:
-    EnemySpawner(const CompControlledCreatureModel &enemyModel, Field &field, GameMaster& gameMaster) : enemyModel(enemyModel), field(field), gameMaster(gameMaster) {}
+    EnemySpawner(const CompControlledCreatureModel &enemyModel, Field &field, GameMasterBase& gameMaster) : enemyModel(enemyModel), field(field), gameMaster(gameMaster) {}
 
     void createEnemy(int x, int y);
 
 protected:
     const CompControlledCreatureModel enemyModel;
     Field& field;
-    GameMaster& gameMaster;
+    GameMasterBase& gameMaster;
 };
 
 

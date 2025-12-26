@@ -17,13 +17,15 @@
 #include "../Model/EnemyDefenceTowerModel.h"
 #include "../Model/EnemySpawnerBuildingModel.h"
 #include "../GameRender/ConsoleRenderer.h"
-#include "Controllers/ExternalComandController/GamerInputSpotter.h"
+#include "Controllers/ExternalComandController/GamerConsoleInputSpotter.h"
+#include "GameMasterBase.h"
 
-class GameMaster {
+template<typename InputHandler, typename DrawStrategy>
+class GameMaster : public GameMasterBase{
 public:
     GameMaster() {};
 
-    bool startGame(const std::string &json);
+    bool startGame(const std::string &json, const std::string& keysJson);
 
     void gameCycle();
 
@@ -45,7 +47,7 @@ private:
     std::vector<std::shared_ptr<EnemySpawnerBuildingController>> enemySpawnerBuildingControllers;
     std::vector<std::shared_ptr<EnemyDefenceTowerController>> defenceTowerControllers;
     std::shared_ptr<PlayerController> playerController;
-    std::unique_ptr<GamerInputSpotter> gamerInputSpotter;
+    std::unique_ptr<InputHandler> inputHandler;
 
     std::vector<std::shared_ptr<Entity>> entities;
 
@@ -53,7 +55,7 @@ private:
     std::unique_ptr<AllySpawner> allySpawner;
     std::unique_ptr<SpellFactory> spellFactory;
     std::shared_ptr<PlayerView> playerView;
-    ConsoleRenderer *renderer;
+    GameVisualizer<DrawStrategy>* visualizer;
 
     const CompControlledCreatureModel enemyModel{3, 2, 2, 70};
     const CompControlledCreatureModel allyModel{3, 2, 2, 70};
@@ -63,5 +65,6 @@ private:
     void checkEntitiesAfterMove();
 };
 
+#include "GameMaster.tpp"
 
 #endif //LABA1_GAMEMASTER_H

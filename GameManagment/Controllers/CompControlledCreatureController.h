@@ -12,21 +12,22 @@
 #include <stack>
 #include <iostream>
 #include <utility>
-class GameMaster;
+
+class GameMasterBase;
 
 class CompControlledCreatureController {
 public:
     CompControlledCreatureController(const Field &field,
                                      CompControlledCreatureManager manager): field(field), manager(std::move(manager)) {}
 
-    void computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMaster& gameMaster);
+    void computeAndDoMove(std::map<EntityType, bool>& typesToAttack, std::vector<EntityType>& priorityOfAttack, GameMasterBase& gameMaster);
     bool isAlive();
 
 private:
     const Field& field;
     CompControlledCreatureManager manager;
 
-    void moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMaster& gameMaster);
+    void moveTo(std::stack<Constants::XYPair> trip, std::string headerCout, GameMasterBase& gameMaster);
 
     struct EntityCoordsWithNearestPositionToAttackFrom{
         Constants::XYPair attackFromCoordinates;

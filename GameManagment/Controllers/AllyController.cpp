@@ -4,6 +4,6 @@
 
 #include "AllyController.h"
 
-void AllyController::doMove(GameMaster& gameMaster) {
+void AllyController::doMove(GameMasterBase& gameMaster) {
     this->computeAndDoMove(typesToAttack, priorityOfAttack, gameMaster);
 }

@@ -5,7 +5,7 @@
 #include "AllySpawner.h"
 #include "../GameManagment/EntityManagers/CreatureManagers/CompControlledCreatureManager.h"
 #include "../GameManagment/Controllers/AllyController.h"
-#include "../GameManagment/GameMaster.h"
+#include "../GameManagment/GameMasterBase.h"
 
 void AllySpawner::createAlly(int x, int y) {
     try{

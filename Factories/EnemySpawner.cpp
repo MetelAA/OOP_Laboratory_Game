@@ -4,7 +4,8 @@
 
 #include "EnemySpawner.h"
 #include "../GameManagment/Controllers/CompControlledCreatureController.h"
-#include "../GameManagment/GameMaster.h"
+#include "../GameManagment/GameMasterBase.h"
+#include "../GameManagment/Controllers/EnemyController.h"
 
 class CompControlledCreatureController;
 
